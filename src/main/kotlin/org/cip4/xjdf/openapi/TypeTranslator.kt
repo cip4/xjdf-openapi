@@ -76,7 +76,7 @@ class TypeTranslator {
             "ISOPaperSubstrate" -> Schema(type = "string") // TODO: find better mapping
             "MediaType" -> Schema(type = "string") // TODO: find better mapping
             "EnumOpacity" -> Schema(type = "string") // TODO: find better mapping
-            "CMYKColor" -> Schema(type = "string") // TODO: find better mapping
+            "CMYKColor" -> Schema(type = "array", items = translate("xs:float")) // TODO: find better mapping
             "TransferFunction" -> Schema(type = "string") // TODO: find better mapping
             "EnumAutomation" -> Schema(type = "string") // TODO: find better mapping
             "EnumDrying" -> Schema(type = "string") // TODO: find better mapping
