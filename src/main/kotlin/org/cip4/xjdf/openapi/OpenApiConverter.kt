@@ -54,10 +54,11 @@ class OpenApiConverter(sourceXsd: InputStream) {
     }
 
     fun convertModel(): OpenApi {
+        val pg = PathsGenerator()
         val openApi = OpenApi(
             openapi = "3.0.0",
             info = info(),
-            paths = mapOf(Pair("/", PathItem("void")))
+            paths = pg.paths()
         )
         val nameTranslator = TypeTranslator()
         convertTopLevelElements(nameTranslator, openApi.components)
