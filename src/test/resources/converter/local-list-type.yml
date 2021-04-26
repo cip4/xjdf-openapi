@@ -1,0 +1,8 @@
+schemas:
+  Foo:
+    type: object
+    properties:
+      Bar:
+        type: array
+        items:
+          $ref: '#/components/schemas/Enumeration'

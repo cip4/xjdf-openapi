@@ -1,0 +1,13 @@
+schemas:
+  Foo:
+    type: object
+    properties:
+      Bar:
+        type: array
+        items:
+          $ref: '#/components/schemas/Bar'
+  Bar:
+    type: object
+    properties:
+      att:
+        type: string

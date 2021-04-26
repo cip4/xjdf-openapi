@@ -1,0 +1,9 @@
+schemas:
+  Foo:
+    type: object
+    properties:
+      Bar:
+        type: array
+        items:
+          type: string
+          enum: [ 'V1', 'V2' ]

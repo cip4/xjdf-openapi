@@ -1,0 +1,7 @@
+schemas:
+  Foo:
+    type: object
+    properties:
+      Bar:
+        type: integer
+        minimum: 2

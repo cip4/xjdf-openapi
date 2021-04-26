@@ -1,0 +1,23 @@
+schemas:
+  Foo:
+    type: object
+    properties:
+      Bar:
+        $ref: '#/components/schemas/Bar'
+      Bar2:
+        $ref: '#/components/schemas/Bar2'
+      optionalAttr:
+        type: string
+      requiredAttr:
+        type: string
+    required: [ Bar2, requiredAttr ]
+  Bar:
+    type: object
+    properties:
+      att:
+        type: string
+  Bar2:
+    type: object
+    properties:
+      att:
+        type: string
