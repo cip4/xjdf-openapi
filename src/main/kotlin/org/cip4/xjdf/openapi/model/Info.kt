@@ -8,8 +8,4 @@ data class Info(
     val title: String,
     val description: String?,
     val version: String
-): YmlModel {
-    override fun toYml(): String {
-        return Yaml.default.encodeToString(this)
-    }
-}
+): YmlModel

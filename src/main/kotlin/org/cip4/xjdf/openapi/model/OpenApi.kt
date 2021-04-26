@@ -12,8 +12,4 @@ data class OpenApi(
     val info: Info,
     val paths: Map<String, PathItem>,
     var components: Components = Components()
-) : YmlModel {
-    override fun toYml(): String {
-        return Yaml.default.encodeToString(this)
-    }
-}
+) : YmlModel
