@@ -4,7 +4,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class PathItem(
-    val summary: String
+    val summary: String? = null,
+    val get: Operation? = null,
+    val post: Operation? = null,
 ): PathItemOrReference {
     override fun toYml(): String {
         return "summary: $summary"
