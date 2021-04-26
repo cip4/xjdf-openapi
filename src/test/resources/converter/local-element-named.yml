@@ -1,0 +1,6 @@
+schemas:
+  Foo:
+    type: object
+    properties:
+      Bar:
+        type: string

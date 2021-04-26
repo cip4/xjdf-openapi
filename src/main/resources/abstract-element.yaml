@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /:
+    post:
+      responses:
+        '200':
+          description: "Follow me"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/Bar"
+                  - $ref: "#/components/schemas/Baz"
+                discriminator:
+                  propertyName: ttype
+components:
+  schemas:
+    Foo:
+      type: object
+      properties:
+        fooP:
+          type: integer
+    Bar:
+      allOf:
+        - $ref: "#/components/schemas/Foo"
+        - type: object
+          properties:
+            barV:
+              type: string
+            ttype:
+              type: string
+    Baz:
+      allOf:
+        - $ref: "#/components/schemas/Foo"
+        - type: object
+          properties:
+            bazV:
+              type: string
+            ttype:
+              type: string

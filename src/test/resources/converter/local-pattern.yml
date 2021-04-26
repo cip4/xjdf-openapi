@@ -1,0 +1,7 @@
+schemas:
+  Foo:
+    type: object
+    properties:
+      Bar:
+        type: string
+        pattern: '[A-Z][A-Z]'

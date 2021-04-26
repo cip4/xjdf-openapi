@@ -1,9 +1,8 @@
-name: Pull-Request
-
+name: Build on commit
 on:
-  pull_request:
-    branches: [ master ]
-
+  push:
+    branches:
+      - '!master'
 jobs:
   openapi-doc:
     runs-on: ubuntu-latest
