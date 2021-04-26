@@ -45,9 +45,9 @@ class OpenApiConverter(sourceXsd: InputStream) {
 
         outputStream.writer().use { writer ->
             if (header) {
-                YmlWriter(writer).writeLines(format.encodeToString(openApi))
+                writer.write(format.encodeToString(openApi))
             } else {
-                YmlWriter(writer).writeLines(format.encodeToString(openApi.components.schemas))
+                writer.write(format.encodeToString(openApi.components.schemas))
             }
         }
 

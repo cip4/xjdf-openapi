@@ -17,11 +17,11 @@ class ComplexType(
         val localElements = getLocalElements()
         val attributes = getAttributes()
         val properties = (localElements.map { it.getModel() } +
-                attributes.map { it.getModel() }).map { it.name to it.schema }.toMap()
+                attributes.map { it.getModel() }).associate { it.name to it.schema }
 
         var schema = Schema(
             type = "object",
-            properties = if (properties.isEmpty()) null else properties
+            properties = properties.ifEmpty { null }
         )
         val required = localElements.filter { it.isRequired }.map { it.name } +
                 attributes.filter { it.isRequired }.map { it.name }
