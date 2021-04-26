@@ -34,7 +34,7 @@ tasks.test {
 
 swaggerSources {
     register("xjdf") {
-        setInputFile(file("src/main/resources/xjdf.yml"))
+        setInputFile(file("build/resources/main/xjdf.yml"))
     }
 }
 
