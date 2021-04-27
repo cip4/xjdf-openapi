@@ -9,6 +9,7 @@ window.swaggerSpec={
     "/queue-entry/submit" : {
       "post" : {
         "requestBody" : {
+          "required" : true,
           "content" : {
             "application/json" : {
               "schema" : {
@@ -87,9 +88,669 @@ window.swaggerSpec={
         }
       }
     },
-    "/queue-status/query" : {
+    "/queue-entry/modify" : {
       "post" : {
         "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandModifyQueueEntry" : {
+                    "$ref" : "#/components/schemas/CommandModifyQueueEntry"
+                  }
+                },
+                "required" : [ "Header", "CommandModifyQueueEntry" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseModifyQueueEntry" : {
+                      "$ref" : "#/components/schemas/ResponseModifyQueueEntry"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseModifyQueueEntry" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/queue-entry/resubmit" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandResubmitQueueEntry" : {
+                    "$ref" : "#/components/schemas/CommandResubmitQueueEntry"
+                  }
+                },
+                "required" : [ "Header", "CommandResubmitQueueEntry" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseResubmitQueueEntry" : {
+                      "$ref" : "#/components/schemas/ResponseResubmitQueueEntry"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseResubmitQueueEntry" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/queue-entry/return" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandReturnQueueEntry" : {
+                    "$ref" : "#/components/schemas/CommandReturnQueueEntry"
+                  }
+                },
+                "required" : [ "Header", "CommandReturnQueueEntry" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseReturnQueueEntry" : {
+                      "$ref" : "#/components/schemas/ResponseReturnQueueEntry"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseReturnQueueEntry" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/queue-entry/request" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandRequestQueueEntry" : {
+                    "$ref" : "#/components/schemas/CommandRequestQueueEntry"
+                  }
+                },
+                "required" : [ "Header", "CommandRequestQueueEntry" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseRequestQueueEntry" : {
+                      "$ref" : "#/components/schemas/ResponseRequestQueueEntry"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseRequestQueueEntry" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gang/force" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandForceGang" : {
+                    "$ref" : "#/components/schemas/CommandForceGang"
+                  }
+                },
+                "required" : [ "Header", "CommandForceGang" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseForceGang" : {
+                      "$ref" : "#/components/schemas/ResponseForceGang"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseForceGang" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gang/status" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "QueryGangStatus" : {
+                    "$ref" : "#/components/schemas/QueryGangStatus"
+                  }
+                },
+                "required" : [ "Header", "QueryGangStatus" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseGangStatus" : {
+                      "$ref" : "#/components/schemas/ResponseGangStatus"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseGangStatus" ]
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : {
+          "signal" : {
+            "{$request.body#/Subscription/URL}" : {
+              "post" : {
+                "requestBody" : {
+                  "required" : true,
+                  "content" : {
+                    "application/json" : {
+                      "schema" : {
+                        "type" : "object",
+                        "properties" : {
+                          "Version" : {
+                            "type" : "string"
+                          },
+                          "Header" : {
+                            "$ref" : "#/components/schemas/Header"
+                          },
+                          "SignalGangStatus" : {
+                            "$ref" : "#/components/schemas/SignalGangStatus"
+                          }
+                        },
+                        "required" : [ "Header", "SignalGangStatus" ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/known-devices" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "QueryKnownDevices" : {
+                    "$ref" : "#/components/schemas/QueryKnownDevices"
+                  }
+                },
+                "required" : [ "Header", "QueryKnownDevices" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseKnownDevices" : {
+                      "$ref" : "#/components/schemas/ResponseKnownDevices"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseKnownDevices" ]
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : {
+          "signal" : {
+            "{$request.body#/Subscription/URL}" : {
+              "post" : {
+                "requestBody" : {
+                  "required" : true,
+                  "content" : {
+                    "application/json" : {
+                      "schema" : {
+                        "type" : "object",
+                        "properties" : {
+                          "Version" : {
+                            "type" : "string"
+                          },
+                          "Header" : {
+                            "$ref" : "#/components/schemas/Header"
+                          },
+                          "SignalKnownDevices" : {
+                            "$ref" : "#/components/schemas/SignalKnownDevices"
+                          }
+                        },
+                        "required" : [ "Header", "SignalKnownDevices" ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/known-messages" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "QueryKnownMessages" : {
+                    "$ref" : "#/components/schemas/QueryKnownMessages"
+                  }
+                },
+                "required" : [ "Header", "QueryKnownMessages" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseKnownMessages" : {
+                      "$ref" : "#/components/schemas/ResponseKnownMessages"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseKnownMessages" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/known-subscriptions" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "QueryKnownSubscriptions" : {
+                    "$ref" : "#/components/schemas/QueryKnownSubscriptions"
+                  }
+                },
+                "required" : [ "Header", "QueryKnownSubscriptions" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseKnownSubscriptions" : {
+                      "$ref" : "#/components/schemas/ResponseKnownSubscriptions"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseKnownSubscriptions" ]
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : {
+          "signal" : {
+            "{$request.body#/Subscription/URL}" : {
+              "post" : {
+                "requestBody" : {
+                  "required" : true,
+                  "content" : {
+                    "application/json" : {
+                      "schema" : {
+                        "type" : "object",
+                        "properties" : {
+                          "Version" : {
+                            "type" : "string"
+                          },
+                          "Header" : {
+                            "$ref" : "#/components/schemas/Header"
+                          },
+                          "SignalKnownSubscriptions" : {
+                            "$ref" : "#/components/schemas/SignalKnownSubscriptions"
+                          }
+                        },
+                        "required" : [ "Header", "SignalKnownSubscriptions" ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/notification" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "QueryNotification" : {
+                    "$ref" : "#/components/schemas/QueryNotification"
+                  }
+                },
+                "required" : [ "Header", "QueryNotification" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseNotification" : {
+                      "$ref" : "#/components/schemas/ResponseNotification"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseNotification" ]
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : {
+          "signal" : {
+            "{$request.body#/Subscription/URL}" : {
+              "post" : {
+                "requestBody" : {
+                  "required" : true,
+                  "content" : {
+                    "application/json" : {
+                      "schema" : {
+                        "type" : "object",
+                        "properties" : {
+                          "Version" : {
+                            "type" : "string"
+                          },
+                          "Header" : {
+                            "$ref" : "#/components/schemas/Header"
+                          },
+                          "SignalNotification" : {
+                            "$ref" : "#/components/schemas/SignalNotification"
+                          }
+                        },
+                        "required" : [ "Header", "SignalNotification" ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pipe-control" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandPipeControl" : {
+                    "$ref" : "#/components/schemas/CommandPipeControl"
+                  }
+                },
+                "required" : [ "Header", "CommandPipeControl" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponsePipeControl" : {
+                      "$ref" : "#/components/schemas/ResponsePipeControl"
+                    }
+                  },
+                  "required" : [ "Header", "ResponsePipeControl" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/queue-status" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
           "content" : {
             "application/json" : {
               "schema" : {
@@ -128,6 +789,360 @@ window.swaggerSpec={
                     }
                   },
                   "required" : [ "Header", "ResponseQueueStatus" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/command" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandResource" : {
+                    "$ref" : "#/components/schemas/CommandResource"
+                  }
+                },
+                "required" : [ "Header", "CommandResource" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseResource" : {
+                      "$ref" : "#/components/schemas/ResponseResource"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseResource" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/query" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "QueryResource" : {
+                    "$ref" : "#/components/schemas/QueryResource"
+                  }
+                },
+                "required" : [ "Header", "QueryResource" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseResource" : {
+                      "$ref" : "#/components/schemas/ResponseResource"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseResource" ]
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : {
+          "signal" : {
+            "{$request.body#/Subscription/URL}" : {
+              "post" : {
+                "requestBody" : {
+                  "required" : true,
+                  "content" : {
+                    "application/json" : {
+                      "schema" : {
+                        "type" : "object",
+                        "properties" : {
+                          "Version" : {
+                            "type" : "string"
+                          },
+                          "Header" : {
+                            "$ref" : "#/components/schemas/Header"
+                          },
+                          "SignalResource" : {
+                            "$ref" : "#/components/schemas/SignalResource"
+                          }
+                        },
+                        "required" : [ "Header", "SignalResource" ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persistent-channel/stop" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandStopPersistentChannel" : {
+                    "$ref" : "#/components/schemas/CommandStopPersistentChannel"
+                  }
+                },
+                "required" : [ "Header", "CommandStopPersistentChannel" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseStopPersistentChannel" : {
+                      "$ref" : "#/components/schemas/ResponseStopPersistentChannel"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseStopPersistentChannel" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "QueryStatus" : {
+                    "$ref" : "#/components/schemas/QueryStatus"
+                  }
+                },
+                "required" : [ "Header", "QueryStatus" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseStatus" : {
+                      "$ref" : "#/components/schemas/ResponseStatus"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseStatus" ]
+                }
+              }
+            }
+          }
+        },
+        "callbacks" : {
+          "signal" : {
+            "{$request.body#/Subscription/URL}" : {
+              "post" : {
+                "requestBody" : {
+                  "required" : true,
+                  "content" : {
+                    "application/json" : {
+                      "schema" : {
+                        "type" : "object",
+                        "properties" : {
+                          "Version" : {
+                            "type" : "string"
+                          },
+                          "Header" : {
+                            "$ref" : "#/components/schemas/Header"
+                          },
+                          "SignalStatus" : {
+                            "$ref" : "#/components/schemas/SignalStatus"
+                          }
+                        },
+                        "required" : [ "Header", "SignalStatus" ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wake-up" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandWakeUp" : {
+                    "$ref" : "#/components/schemas/CommandWakeUp"
+                  }
+                },
+                "required" : [ "Header", "CommandWakeUp" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseWakeUp" : {
+                      "$ref" : "#/components/schemas/ResponseWakeUp"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseWakeUp" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/shutdown" : {
+      "post" : {
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "Version" : {
+                    "type" : "string"
+                  },
+                  "Header" : {
+                    "$ref" : "#/components/schemas/Header"
+                  },
+                  "CommandShutDown" : {
+                    "$ref" : "#/components/schemas/CommandShutDown"
+                  }
+                },
+                "required" : [ "Header", "CommandShutDown" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Version" : {
+                      "type" : "string"
+                    },
+                    "Header" : {
+                      "$ref" : "#/components/schemas/Header"
+                    },
+                    "ResponseShutDown" : {
+                      "$ref" : "#/components/schemas/ResponseShutDown"
+                    }
+                  },
+                  "required" : [ "Header", "ResponseShutDown" ]
                 }
               }
             }
