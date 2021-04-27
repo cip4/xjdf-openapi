@@ -4,5 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class RequestBody (
+    val required: Boolean,
     val content: Map<String, MediaType>
 )

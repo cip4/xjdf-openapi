@@ -6,5 +6,6 @@ import kotlinx.serialization.Serializable
 data class Operation (
     val tags: List<String>? = null,
     val requestBody: RequestBody? = null,
-    val responses: Map<String, Response>? = null
+    val responses: Map<String, Response>? = null,
+    val callbacks: Map<String, Map<String, PathItem>>? = null,
 )

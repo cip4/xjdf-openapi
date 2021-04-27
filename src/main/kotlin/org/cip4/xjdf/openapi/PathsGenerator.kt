@@ -11,7 +11,8 @@ class PathsGenerator {
                 PathItem(
                     post = Operation(
                         requestBody = RequestBody(
-                            mapOf(
+                            required = true,
+                            content = mapOf(
                                 Pair(
                                     "application/json",
                                     MediaType(
@@ -49,56 +50,28 @@ class PathsGenerator {
                                 )
                             )
                         ),
-                        responses = mapOf(
-                            Pair(
-                                "200",
-                                Response(
-                                    content = mapOf(
-                                        Pair(
-                                            "application/json",
-                                            MediaType(
-                                                strippedXjmf("ResponseSubmitQueueEntry")
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
+                        responses = responses("ResponseSubmitQueueEntry")
                     )
                 )
             ),
-            Pair(
-                "/queue-status/query",
-                PathItem(
-                    post = Operation(
-                        requestBody = RequestBody(
-                            mapOf(
-                                Pair(
-                                    "application/json",
-                                    MediaType(
-                                        strippedXjmf("QueryQueueStatus")
-                                    )
-                                )
-                            )
-                        ),
-                        responses = mapOf(
-                            Pair(
-                                "200",
-                                Response(
-                                    content = mapOf(
-                                        Pair(
-                                            "application/json",
-                                            MediaType(
-                                                strippedXjmf("ResponseQueueStatus")
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            )
+            command("/queue-entry/modify", "ModifyQueueEntry"),
+            command("/queue-entry/resubmit", "ResubmitQueueEntry"),
+            command("/queue-entry/return", "ReturnQueueEntry"),
+            command("/queue-entry/request", "RequestQueueEntry"),
+            command("/gang/force", "ForceGang"),
+            query("/gang/status", "GangStatus", true),
+            query("/known-devices", "KnownDevices", true),
+            query("/known-messages", "KnownMessages", false),
+            query("/known-subscriptions", "KnownSubscriptions", true),
+            query("/notification", "Notification", true),
+            command("/pipe-control", "PipeControl"),
+            query("/queue-status", "QueueStatus", false),
+            command("/resource/command", "Resource"),
+            query("/resource/query", "Resource", true),
+            command("/persistent-channel/stop", "StopPersistentChannel"),
+            query("/status", "Status", true),
+            command("/wake-up", "WakeUp"),
+            command("/shutdown", "ShutDown"),
         )
     }
 
@@ -111,6 +84,81 @@ class PathsGenerator {
                 Pair(operation, Schema(`$ref` = "#/components/schemas/$operation"))
             ),
             required = listOf("Header", operation)
+        )
+    }
+
+    private fun buildPathItem(
+        path: String,
+        requestType: String,
+        responseType: String,
+        callbackType: String? = null
+    ): Pair<String, PathItem> {
+        return Pair(
+            path,
+            PathItem(
+                post = Operation(
+                    requestBody = requestBody(requestType),
+                    responses = responses(responseType),
+                    callbacks = callbackType?.let { callbacks(callbackType) }
+                )
+            )
+        )
+    }
+
+    private fun responses(responseType: String) = mapOf(
+        Pair(
+            "200",
+            Response(
+                content = mapOf(
+                    Pair(
+                        "application/json",
+                        MediaType(
+                            strippedXjmf(responseType)
+                        )
+                    )
+                )
+            )
+        )
+    )
+
+    private fun callbacks(signalType: String) = mapOf(
+        Pair(
+            "signal",
+            mapOf(
+                Pair(
+                    "{\$request.body#/Subscription/URL}",
+                    PathItem(
+                        post = Operation(
+                            requestBody = requestBody(signalType)
+                        )
+                    )
+                )
+            )
+        )
+    )
+
+    private fun requestBody(requestType: String) = RequestBody(
+        required = true,
+        content = mapOf(
+            Pair(
+                "application/json",
+                MediaType(
+                    strippedXjmf(requestType)
+                )
+            )
+        )
+    )
+
+    private fun command(path: String, command: String): Pair<String, PathItem> {
+        return buildPathItem(path, "Command$command", "Response$command")
+    }
+
+    private fun query(path: String, query: String, hasSignal: Boolean): Pair<String, PathItem> {
+        return buildPathItem(
+            path,
+            "Query$query",
+            "Response$query",
+            if (hasSignal) "Signal$query" else null
         )
     }
 
