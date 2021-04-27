@@ -1,8 +1,6 @@
 package org.cip4.xjdf.openapi.model
 
-import com.charleskorn.kaml.Yaml
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.encodeToString
 
 @Serializable
 data class Schema(
@@ -13,10 +11,12 @@ data class Schema(
     var format: String? = null,
     var enum: List<String>? = null,
     var minimum: Int? = null,
+    var maximum: Int? = null,
     var pattern: String? = null,
     var oneOf: List<Reference>? = null,
     var allOf: List<Schema>? = null,
     var minItems: Int? = null,
+    var maxItems: Int? = null,
     val `$ref`: String? = null
 ) : YmlModel {
 

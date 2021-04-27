@@ -4,18 +4,26 @@ import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.Node
 import javax.xml.xpath.XPath
 
-abstract class AttributeType : OpenApiParticle<Schema>() {
-    interface Factory<T : AttributeType> {
+abstract class SimpleType(
+    val node: Node
+) {
 
+    val name: String?
+        get() = node.attributes.getNamedItem("name")?.nodeValue
+
+    abstract fun getModel(): Schema
+
+    interface Factory<T : SimpleType> {
         fun supports(candidate: Node, xPath: XPath): Boolean
 
         fun create(node: Node, context: Context): T
 
         companion object {
-            fun create(node: Node, context: Context): AttributeType {
+            fun create(node: Node, context: Context): SimpleType {
                 val factories = listOf(
-                    AttributeReferencedType.Factory,
-                    LocalType.Factory,
+                    SimpleTypeRestriction.Factory,
+                    SimpleTypeList.Factory,
+                    SimpleTypeLocalList.Factory
                 )
                 val factory = factories.find { factory ->
                     factory.supports(node, context.xPath)
@@ -23,6 +31,5 @@ abstract class AttributeType : OpenApiParticle<Schema>() {
                 return factory.create(node, context)
             }
         }
-
     }
 }

@@ -6,30 +6,30 @@ import org.w3c.dom.NodeList
 import javax.xml.xpath.XPath
 import javax.xml.xpath.XPathConstants
 
-class LocalListType(
-    private val node: Node,
-    private val context: Context
-) : AttributeType() {
+class SimpleTypeList(
+    node: Node,
+    private val context: Context,
+) : SimpleType(node) {
 
     private val itemType: Schema
         get() = context.nameTranslator.translate(
             context.xPath.evaluate(
-                "xs:simpleType/xs:list/@itemType",
+                "xs:list/@itemType",
                 node,
                 XPathConstants.STRING
             ) as String
         )
 
-    companion object Factory: TypeFactory<LocalListType> {
+    companion object Factory : SimpleType.Factory<SimpleTypeList> {
         override fun supports(candidate: Node, xPath: XPath): Boolean =
             (xPath.evaluate(
-                "xs:simpleType/xs:list/@itemType",
+                "xs:list/@itemType",
                 candidate,
                 XPathConstants.NODESET
             ) as NodeList).length > 0
 
-        override fun create(node: Node, context: Context): LocalListType =
-            LocalListType(node, context)
+        override fun create(node: Node, context: Context): SimpleTypeList =
+            SimpleTypeList(node, context)
     }
 
     override fun getModel(): Schema {

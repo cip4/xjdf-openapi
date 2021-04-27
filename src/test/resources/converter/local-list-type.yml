@@ -6,3 +6,5 @@ schemas:
         type: array
         items:
           $ref: '#/components/schemas/Enumeration'
+  Enumeration:
+    type: string

@@ -3,7 +3,10 @@ package org.cip4.xjdf.openapi
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
 import kotlinx.serialization.encodeToString
-import org.cip4.xjdf.openapi.model.*
+import org.cip4.xjdf.openapi.model.Components
+import org.cip4.xjdf.openapi.model.Info
+import org.cip4.xjdf.openapi.model.NamedSchema
+import org.cip4.xjdf.openapi.model.OpenApi
 import org.w3c.dom.Document
 import org.w3c.dom.NodeList
 import org.xml.sax.InputSource
@@ -63,8 +66,29 @@ class OpenApiConverter(sourceXsd: InputStream) {
         val nameTranslator = TypeTranslator()
         convertTopLevelElements(nameTranslator, openApi.components)
         convertTopLevelComplexTypes(nameTranslator, openApi.components)
-
+        convertTopLevelSimpleTypes(nameTranslator, openApi.components)
         return openApi
+    }
+
+    private fun convertTopLevelSimpleTypes(nameTranslator: TypeTranslator, components: Components) {
+        val elements = xPath.evaluate(
+            "/xs:schema/xs:simpleType",
+            doc,
+            XPathConstants.NODESET
+        ) as NodeList
+
+        for (i in 0 until elements.length) {
+            val simpleType = SimpleType.Factory.create(
+                elements.item(i),
+                Context(xPath, nameTranslator, elements.item(i))
+            )
+            components.add(
+                NamedSchema(
+                    simpleType.name!!,
+                    simpleType.getModel()
+                )
+            )
+        }
     }
 
     fun convertTopLevelElements(nameTranslator: TypeTranslator, components: Components) {

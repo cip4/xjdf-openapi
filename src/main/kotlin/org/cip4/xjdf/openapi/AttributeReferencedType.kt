@@ -12,7 +12,7 @@ class AttributeReferencedType(
     private val type: Schema
         get() = context.nameTranslator.translate(node.attributes.getNamedItem("type").nodeValue)
 
-    companion object Factory: TypeFactory<AttributeReferencedType> {
+    companion object Factory : AttributeType.Factory<AttributeReferencedType> {
         override fun supports(candidate: Node, xPath: XPath): Boolean =
             candidate.attributes.getNamedItem("type") != null
 

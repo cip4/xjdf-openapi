@@ -19,6 +19,6 @@ class Attribute(
     }
 
     private fun attributeType(): AttributeType {
-        return TypeFactory.create(node, context)
+        return AttributeType.Factory.create(node, context)
     }
 }
