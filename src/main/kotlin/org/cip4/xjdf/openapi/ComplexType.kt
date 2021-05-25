@@ -14,6 +14,7 @@ class ComplexType(
             ?: UUID.randomUUID().toString()
 
     override fun getModel(): NamedSchema {
+        // TODO: When a class references an abstract class, we need to reference all implementing classes instead.
         val localElements = getLocalElements()
         val attributes = getAttributes()
         val properties = (localElements.map { it.getModel() } +
