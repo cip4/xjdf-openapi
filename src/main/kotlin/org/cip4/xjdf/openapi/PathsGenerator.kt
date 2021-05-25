@@ -99,7 +99,7 @@ class PathsGenerator {
                 post = Operation(
                     requestBody = requestBody(requestType),
                     responses = responses(responseType),
-                    callbacks = callbackType?.let { callbacks(callbackType) }
+                    callbacks = callbackType?.let { callbacks(requestType, callbackType) }
                 )
             )
         )
@@ -116,20 +116,22 @@ class PathsGenerator {
                             strippedXjmf(responseType)
                         )
                     )
-                )
+                ),
+                description = "TBD" // TODO: Add required description
             )
         )
     )
 
-    private fun callbacks(signalType: String) = mapOf(
+    private fun callbacks(queryType: String, signalType: String) = mapOf(
         Pair(
             "signal",
             mapOf(
                 Pair(
-                    "{\$request.body#/Subscription/URL}",
+                    "{\$request.body#/$queryType/Subscription}", // "{\$request.body#/$queryType/Subscription/URL}"
                     PathItem(
                         post = Operation(
-                            requestBody = requestBody(signalType)
+                            requestBody = requestBody(signalType),
+                            responses = responses("XJDF") //TODO: Map to correct type
                         )
                     )
                 )

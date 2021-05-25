@@ -4,5 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 class Response (
-    val content: Map<String, MediaType>
+    val content: Map<String, MediaType>,
+    val description: String
 )
