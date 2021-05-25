@@ -83,7 +83,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseSubmitQueueEntry" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -132,7 +133,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseModifyQueueEntry" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -181,7 +183,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseResubmitQueueEntry" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -230,7 +233,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseReturnQueueEntry" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -279,7 +283,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseRequestQueueEntry" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -328,7 +333,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseForceGang" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -377,12 +383,13 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseGangStatus" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         },
         "callbacks" : {
           "signal" : {
-            "{$request.body#/Subscription/URL}" : {
+            "{$request.body#/QueryGangStatus/Subscription}" : {
               "post" : {
                 "requestBody" : {
                   "required" : true,
@@ -404,6 +411,30 @@ window.swaggerSpec={
                         "required" : [ "Header", "SignalGangStatus" ]
                       }
                     }
+                  }
+                },
+                "responses" : {
+                  "200" : {
+                    "content" : {
+                      "application/json" : {
+                        "schema" : {
+                          "type" : "object",
+                          "properties" : {
+                            "Version" : {
+                              "type" : "string"
+                            },
+                            "Header" : {
+                              "$ref" : "#/components/schemas/Header"
+                            },
+                            "XJDF" : {
+                              "$ref" : "#/components/schemas/XJDF"
+                            }
+                          },
+                          "required" : [ "Header", "XJDF" ]
+                        }
+                      }
+                    },
+                    "description" : "TBD"
                   }
                 }
               }
@@ -456,12 +487,13 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseKnownDevices" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         },
         "callbacks" : {
           "signal" : {
-            "{$request.body#/Subscription/URL}" : {
+            "{$request.body#/QueryKnownDevices/Subscription}" : {
               "post" : {
                 "requestBody" : {
                   "required" : true,
@@ -483,6 +515,30 @@ window.swaggerSpec={
                         "required" : [ "Header", "SignalKnownDevices" ]
                       }
                     }
+                  }
+                },
+                "responses" : {
+                  "200" : {
+                    "content" : {
+                      "application/json" : {
+                        "schema" : {
+                          "type" : "object",
+                          "properties" : {
+                            "Version" : {
+                              "type" : "string"
+                            },
+                            "Header" : {
+                              "$ref" : "#/components/schemas/Header"
+                            },
+                            "XJDF" : {
+                              "$ref" : "#/components/schemas/XJDF"
+                            }
+                          },
+                          "required" : [ "Header", "XJDF" ]
+                        }
+                      }
+                    },
+                    "description" : "TBD"
                   }
                 }
               }
@@ -535,7 +591,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseKnownMessages" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -584,12 +641,13 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseKnownSubscriptions" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         },
         "callbacks" : {
           "signal" : {
-            "{$request.body#/Subscription/URL}" : {
+            "{$request.body#/QueryKnownSubscriptions/Subscription}" : {
               "post" : {
                 "requestBody" : {
                   "required" : true,
@@ -611,6 +669,30 @@ window.swaggerSpec={
                         "required" : [ "Header", "SignalKnownSubscriptions" ]
                       }
                     }
+                  }
+                },
+                "responses" : {
+                  "200" : {
+                    "content" : {
+                      "application/json" : {
+                        "schema" : {
+                          "type" : "object",
+                          "properties" : {
+                            "Version" : {
+                              "type" : "string"
+                            },
+                            "Header" : {
+                              "$ref" : "#/components/schemas/Header"
+                            },
+                            "XJDF" : {
+                              "$ref" : "#/components/schemas/XJDF"
+                            }
+                          },
+                          "required" : [ "Header", "XJDF" ]
+                        }
+                      }
+                    },
+                    "description" : "TBD"
                   }
                 }
               }
@@ -663,12 +745,13 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseNotification" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         },
         "callbacks" : {
           "signal" : {
-            "{$request.body#/Subscription/URL}" : {
+            "{$request.body#/QueryNotification/Subscription}" : {
               "post" : {
                 "requestBody" : {
                   "required" : true,
@@ -690,6 +773,30 @@ window.swaggerSpec={
                         "required" : [ "Header", "SignalNotification" ]
                       }
                     }
+                  }
+                },
+                "responses" : {
+                  "200" : {
+                    "content" : {
+                      "application/json" : {
+                        "schema" : {
+                          "type" : "object",
+                          "properties" : {
+                            "Version" : {
+                              "type" : "string"
+                            },
+                            "Header" : {
+                              "$ref" : "#/components/schemas/Header"
+                            },
+                            "XJDF" : {
+                              "$ref" : "#/components/schemas/XJDF"
+                            }
+                          },
+                          "required" : [ "Header", "XJDF" ]
+                        }
+                      }
+                    },
+                    "description" : "TBD"
                   }
                 }
               }
@@ -742,7 +849,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponsePipeControl" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -791,7 +899,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseQueueStatus" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -840,7 +949,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseResource" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -889,12 +999,13 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseResource" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         },
         "callbacks" : {
           "signal" : {
-            "{$request.body#/Subscription/URL}" : {
+            "{$request.body#/QueryResource/Subscription}" : {
               "post" : {
                 "requestBody" : {
                   "required" : true,
@@ -916,6 +1027,30 @@ window.swaggerSpec={
                         "required" : [ "Header", "SignalResource" ]
                       }
                     }
+                  }
+                },
+                "responses" : {
+                  "200" : {
+                    "content" : {
+                      "application/json" : {
+                        "schema" : {
+                          "type" : "object",
+                          "properties" : {
+                            "Version" : {
+                              "type" : "string"
+                            },
+                            "Header" : {
+                              "$ref" : "#/components/schemas/Header"
+                            },
+                            "XJDF" : {
+                              "$ref" : "#/components/schemas/XJDF"
+                            }
+                          },
+                          "required" : [ "Header", "XJDF" ]
+                        }
+                      }
+                    },
+                    "description" : "TBD"
                   }
                 }
               }
@@ -968,7 +1103,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseStopPersistentChannel" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -1017,12 +1153,13 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseStatus" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         },
         "callbacks" : {
           "signal" : {
-            "{$request.body#/Subscription/URL}" : {
+            "{$request.body#/QueryStatus/Subscription}" : {
               "post" : {
                 "requestBody" : {
                   "required" : true,
@@ -1044,6 +1181,30 @@ window.swaggerSpec={
                         "required" : [ "Header", "SignalStatus" ]
                       }
                     }
+                  }
+                },
+                "responses" : {
+                  "200" : {
+                    "content" : {
+                      "application/json" : {
+                        "schema" : {
+                          "type" : "object",
+                          "properties" : {
+                            "Version" : {
+                              "type" : "string"
+                            },
+                            "Header" : {
+                              "$ref" : "#/components/schemas/Header"
+                            },
+                            "XJDF" : {
+                              "$ref" : "#/components/schemas/XJDF"
+                            }
+                          },
+                          "required" : [ "Header", "XJDF" ]
+                        }
+                      }
+                    },
+                    "description" : "TBD"
                   }
                 }
               }
@@ -1096,7 +1257,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseWakeUp" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
@@ -1145,7 +1307,8 @@ window.swaggerSpec={
                   "required" : [ "Header", "ResponseShutDown" ]
                 }
               }
-            }
+            },
+            "description" : "TBD"
           }
         }
       }
