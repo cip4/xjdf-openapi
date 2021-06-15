@@ -15,7 +15,7 @@ jobs:
         with:
           java-version: 11
       - name: Build with Gradle 🔧
-        run: ./gradlew generateSwaggerUI
+        run: ./gradlew test generateSwaggerUI
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:

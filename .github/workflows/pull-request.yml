@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: 11
       - name: Build with Gradle 🔧
-        run: ./gradlew generateSwaggerUI
+        run: ./gradlew test generateSwaggerUI
       - uses: actions/upload-artifact@v2
         with:
           name: Documentation

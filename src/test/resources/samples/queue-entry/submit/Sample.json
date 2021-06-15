@@ -1,0 +1,17 @@
+{
+  "Header": {
+    "DeviceID": "TestSender",
+    "Time": "2019-03-26T14:07:49.216+00:00",
+    "ID": "l_000002"
+  },
+  "CommandSubmitQueueEntry": {
+    "QueueSubmissionParams": {
+      "URL": "https:\/\/jobserver.xjdf.org?job1"
+    },
+    "Header": {
+      "DeviceID": "TestSender",
+      "Time": "2019-03-26T14:07:49.217+00:00",
+      "ID": "C1"
+    }
+  }
+}
