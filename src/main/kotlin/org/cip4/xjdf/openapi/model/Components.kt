@@ -69,7 +69,7 @@ data class Components(
     val schemas: MutableMap<String, Schema> = mutableMapOf()
 ) : YmlModel {
 
-    fun add(name: String, schema: Schema) {
+    private fun add(name: String, schema: Schema) {
         schemas[name] = schema
     }
 

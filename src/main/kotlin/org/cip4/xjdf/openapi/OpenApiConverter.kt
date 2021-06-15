@@ -78,7 +78,7 @@ import javax.xml.xpath.XPathConstants
 import javax.xml.xpath.XPathFactory
 
 class OpenApiConverter(sourceXsd: InputStream) {
-    var doc: Document
+    private var doc: Document
     var xPath: XPath
 
     init {
@@ -151,7 +151,7 @@ class OpenApiConverter(sourceXsd: InputStream) {
         }
     }
 
-    fun convertTopLevelElements(nameTranslator: TypeTranslator, components: Components) {
+    private fun convertTopLevelElements(nameTranslator: TypeTranslator, components: Components) {
         val elements = xPath.evaluate(
             "/xs:schema/xs:element",
             doc,
@@ -165,7 +165,7 @@ class OpenApiConverter(sourceXsd: InputStream) {
         }
     }
 
-    fun convertTopLevelComplexTypes(nameTranslator: TypeTranslator, components: Components) {
+    private fun convertTopLevelComplexTypes(nameTranslator: TypeTranslator, components: Components) {
         val elements = xPath.evaluate(
             "/xs:schema/xs:complexType",
             doc,

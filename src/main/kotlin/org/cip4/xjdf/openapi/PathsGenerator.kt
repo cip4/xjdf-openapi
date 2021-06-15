@@ -135,7 +135,7 @@ class PathsGenerator {
         )
     }
 
-    fun strippedXjmf(operation: String): Schema {
+    private fun strippedXjmf(operation: String): Schema {
         return Schema(
             type = "object",
             properties = mapOf(

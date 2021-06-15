@@ -76,7 +76,6 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
-import java.util.function.Predicate
 import java.util.stream.Stream
 
 class SampleValidationTest {
@@ -116,7 +115,7 @@ class SampleValidationTest {
 
 
             return Files.walk(fixtureDir)
-                .filter(Predicate { path -> path.toString().toLowerCase().endsWith(".json") })
+                .filter { path -> path.toString().toLowerCase().endsWith(".json") }
                 .map { path ->
                     Arguments.of(
                         fixtureDir.relativize(path).parent,
