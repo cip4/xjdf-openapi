@@ -11,7 +11,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -66,7 +66,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -94,7 +94,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -116,7 +116,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -144,7 +144,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -166,7 +166,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -194,7 +194,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -216,7 +216,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -244,7 +244,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -266,7 +266,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -294,7 +294,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -316,7 +316,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -344,7 +344,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -366,7 +366,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -394,7 +394,7 @@ window.swaggerSpec={
                 "requestBody" : {
                   "required" : true,
                   "content" : {
-                    "application/json" : {
+                    "application/vnd.cip4-xjmf+json" : {
                       "schema" : {
                         "type" : "object",
                         "properties" : {
@@ -416,7 +416,7 @@ window.swaggerSpec={
                 "responses" : {
                   "200" : {
                     "content" : {
-                      "application/json" : {
+                      "application/vnd.cip4-xjmf+json" : {
                         "schema" : {
                           "type" : "object",
                           "properties" : {
@@ -448,7 +448,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -470,7 +470,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -498,7 +498,7 @@ window.swaggerSpec={
                 "requestBody" : {
                   "required" : true,
                   "content" : {
-                    "application/json" : {
+                    "application/vnd.cip4-xjmf+json" : {
                       "schema" : {
                         "type" : "object",
                         "properties" : {
@@ -520,7 +520,7 @@ window.swaggerSpec={
                 "responses" : {
                   "200" : {
                     "content" : {
-                      "application/json" : {
+                      "application/vnd.cip4-xjmf+json" : {
                         "schema" : {
                           "type" : "object",
                           "properties" : {
@@ -552,7 +552,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -574,7 +574,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -602,7 +602,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -624,7 +624,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -652,7 +652,7 @@ window.swaggerSpec={
                 "requestBody" : {
                   "required" : true,
                   "content" : {
-                    "application/json" : {
+                    "application/vnd.cip4-xjmf+json" : {
                       "schema" : {
                         "type" : "object",
                         "properties" : {
@@ -674,7 +674,7 @@ window.swaggerSpec={
                 "responses" : {
                   "200" : {
                     "content" : {
-                      "application/json" : {
+                      "application/vnd.cip4-xjmf+json" : {
                         "schema" : {
                           "type" : "object",
                           "properties" : {
@@ -706,7 +706,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -728,7 +728,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -756,7 +756,7 @@ window.swaggerSpec={
                 "requestBody" : {
                   "required" : true,
                   "content" : {
-                    "application/json" : {
+                    "application/vnd.cip4-xjmf+json" : {
                       "schema" : {
                         "type" : "object",
                         "properties" : {
@@ -778,7 +778,7 @@ window.swaggerSpec={
                 "responses" : {
                   "200" : {
                     "content" : {
-                      "application/json" : {
+                      "application/vnd.cip4-xjmf+json" : {
                         "schema" : {
                           "type" : "object",
                           "properties" : {
@@ -810,7 +810,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -832,7 +832,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -860,7 +860,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -882,7 +882,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -910,7 +910,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -932,7 +932,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -960,7 +960,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -982,7 +982,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -1010,7 +1010,7 @@ window.swaggerSpec={
                 "requestBody" : {
                   "required" : true,
                   "content" : {
-                    "application/json" : {
+                    "application/vnd.cip4-xjmf+json" : {
                       "schema" : {
                         "type" : "object",
                         "properties" : {
@@ -1032,7 +1032,7 @@ window.swaggerSpec={
                 "responses" : {
                   "200" : {
                     "content" : {
-                      "application/json" : {
+                      "application/vnd.cip4-xjmf+json" : {
                         "schema" : {
                           "type" : "object",
                           "properties" : {
@@ -1064,7 +1064,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -1086,7 +1086,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -1114,7 +1114,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -1136,7 +1136,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -1164,7 +1164,7 @@ window.swaggerSpec={
                 "requestBody" : {
                   "required" : true,
                   "content" : {
-                    "application/json" : {
+                    "application/vnd.cip4-xjmf+json" : {
                       "schema" : {
                         "type" : "object",
                         "properties" : {
@@ -1186,7 +1186,7 @@ window.swaggerSpec={
                 "responses" : {
                   "200" : {
                     "content" : {
-                      "application/json" : {
+                      "application/vnd.cip4-xjmf+json" : {
                         "schema" : {
                           "type" : "object",
                           "properties" : {
@@ -1218,7 +1218,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -1240,7 +1240,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -1268,7 +1268,7 @@ window.swaggerSpec={
         "requestBody" : {
           "required" : true,
           "content" : {
-            "application/json" : {
+            "application/vnd.cip4-xjmf+json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
@@ -1290,7 +1290,7 @@ window.swaggerSpec={
         "responses" : {
           "200" : {
             "content" : {
-              "application/json" : {
+              "application/vnd.cip4-xjmf+json" : {
                 "schema" : {
                   "type" : "object",
                   "properties" : {
@@ -1352,7 +1352,8 @@ window.swaggerSpec={
             "format" : "date-time"
           },
           "ExternalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GrossWeight" : {
             "type" : "number",
@@ -1360,7 +1361,8 @@ window.swaggerSpec={
           },
           "ID" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "Orientation" : {
             "$ref" : "#/components/schemas/Orientation"
@@ -1379,7 +1381,8 @@ window.swaggerSpec={
           },
           "Status" : {
             "type" : "string",
-            "enum" : [ "Available", "Unavailable" ]
+            "enum" : [ "Available", "Unavailable" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Transformation" : {
             "$ref" : "#/components/schemas/matrix"
@@ -1396,10 +1399,12 @@ window.swaggerSpec={
             "type" : "string"
           },
           "ExternalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Name" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Name" ]
@@ -1446,7 +1451,8 @@ window.swaggerSpec={
           "ModuleIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Waste" : {
@@ -1454,7 +1460,8 @@ window.swaggerSpec={
             "format" : "float"
           },
           "WasteDetails" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Waste" ]
@@ -1481,11 +1488,13 @@ window.swaggerSpec={
             "type" : "string"
           },
           "ExternalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ID" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "IsRoot" : {
             "type" : "boolean"
@@ -1497,10 +1506,12 @@ window.swaggerSpec={
             "type" : "integer"
           },
           "PartVersion" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ProductType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ProductTypeDetails" : {
             "type" : "string"
@@ -1520,16 +1531,20 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PipeID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PipeProtocol" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "XJMFURL" : {
             "$ref" : "#/components/schemas/URL"
@@ -1556,7 +1571,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/ResourceSet"
           },
           "Category" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "CommentURL" : {
             "$ref" : "#/components/schemas/URL"
@@ -1567,31 +1583,39 @@ window.swaggerSpec={
           "ICSVersions" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ProjectID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RelatedJobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RelatedJobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RelatedProjectID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Types" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Version" : {
@@ -1626,20 +1650,25 @@ window.swaggerSpec={
           },
           "ID" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "Name" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ProcessUsage" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Unit" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Usage" : {
             "type" : "string",
-            "enum" : [ "Input", "Output" ]
+            "enum" : [ "Input", "Output" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Name" ]
@@ -1649,7 +1678,8 @@ window.swaggerSpec={
         "properties" : {
           "DeviceDetails" : {
             "type" : "string",
-            "enum" : [ "Brief", "Modules", "Full" ]
+            "enum" : [ "Brief", "Modules", "Full" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -1672,7 +1702,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/JobPhase"
           },
           "CounterUnit" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "EndTime" : {
             "type" : "string",
@@ -1689,7 +1720,8 @@ window.swaggerSpec={
           "ModuleIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "PowerOnTime" : {
@@ -1708,12 +1740,14 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/DeviceStatus"
           },
           "StatusDetails" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ToolIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "TotalProductionCounter" : {
@@ -1729,12 +1763,14 @@ window.swaggerSpec={
           "GangNames" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Policy" : {
             "type" : "string",
-            "enum" : [ "All", "Optimized" ]
+            "enum" : [ "All", "Optimized" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -1746,7 +1782,8 @@ window.swaggerSpec={
             "format" : "float"
           },
           "GangName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "GangName" ]
@@ -1757,7 +1794,8 @@ window.swaggerSpec={
           "GangNames" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         }
@@ -1794,26 +1832,31 @@ window.swaggerSpec={
             "format" : "float"
           },
           "CostCenterID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "DeadLine" : {
             "type" : "string",
-            "enum" : [ "InTime", "Late", "Warning" ]
+            "enum" : [ "InTime", "Late", "Warning" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "EndTime" : {
             "type" : "string",
             "format" : "date-time"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ModuleIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "PercentCompleted" : {
@@ -1821,13 +1864,16 @@ window.swaggerSpec={
             "format" : "float"
           },
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RelatedJobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RelatedJobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RestTime" : {
             "type" : "string",
@@ -1841,12 +1887,14 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/NodeStatus"
           },
           "StatusDetails" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ToolIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Waste" : {
@@ -1854,7 +1902,8 @@ window.swaggerSpec={
             "format" : "float"
           },
           "WorkStepID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "JobID", "Status" ]
@@ -1866,7 +1915,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Comment"
           },
           "ActivityID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ActivityName" : {
             "type" : "string"
@@ -1876,12 +1926,14 @@ window.swaggerSpec={
             "format" : "date-time"
           },
           "PersonalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Roles" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "StartTime" : {
@@ -1906,23 +1958,28 @@ window.swaggerSpec={
             "type" : "string"
           },
           "DeviceID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ICSVersions" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "ID" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "PersonalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "refID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Time" : {
             "type" : "string",
@@ -1938,17 +1995,20 @@ window.swaggerSpec={
             "type" : "array",
             "items" : {
               "type" : "string",
-              "enum" : [ "FireAndForget", "Reliable", "Response" ]
+              "enum" : [ "FireAndForget", "Reliable", "Response" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Type" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "URLSchemes" : {
             "type" : "array",
             "items" : {
               "type" : "string",
-              "enum" : [ "http", "https" ]
+              "enum" : [ "http", "https" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         },
@@ -1964,17 +2024,21 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/ResourceSet"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Operation" : {
             "type" : "string",
-            "enum" : [ "Close", "Pause", "Pull", "Push" ]
+            "enum" : [ "Close", "Pause", "Pull", "Push" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PipeID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "JobID", "Operation", "PipeID" ]
@@ -2016,28 +2080,34 @@ window.swaggerSpec={
             "format" : "date-time"
           },
           "GangName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GangPolicy" : {
             "$ref" : "#/components/schemas/EnumGangPolicy"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Priority" : {
             "type" : "integer"
           },
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RelatedJobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RelatedJobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "StartTime" : {
             "type" : "string",
@@ -2047,7 +2117,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/NodeStatus"
           },
           "StatusDetails" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SubmissionTime" : {
             "type" : "string",
@@ -2066,22 +2137,27 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Part"
           },
           "FirstEntry" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GangNames" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "LastEntry" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MaxEntries" : {
             "type" : "integer"
@@ -2103,7 +2179,8 @@ window.swaggerSpec={
           "QueueEntryIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "StatusList" : {
@@ -2121,16 +2198,19 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Activation"
           },
           "GangName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GangPolicy" : {
             "$ref" : "#/components/schemas/EnumGangPolicy"
           },
           "NextQueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PrevQueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Priority" : {
             "type" : "integer"
@@ -2154,10 +2234,12 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Activation"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "QueueURL" : {
             "$ref" : "#/components/schemas/URL"
@@ -2173,7 +2255,8 @@ window.swaggerSpec={
           },
           "UpdateMethod" : {
             "type" : "string",
-            "enum" : [ "Complete", "CompleteSet", "Incremental", "Remove", "RemoveSet" ]
+            "enum" : [ "Complete", "CompleteSet", "Incremental", "Remove", "RemoveSet" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "ResourceSet", "UpdateMethod" ]
@@ -2192,23 +2275,29 @@ window.swaggerSpec={
           },
           "CommandResult" : {
             "type" : "string",
-            "enum" : [ "Merged", "New", "Rejected", "Removed", "Replaced" ]
+            "enum" : [ "Merged", "New", "Rejected", "Removed", "Replaced" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Level" : {
             "type" : "string",
-            "enum" : [ "Empty", "Full", "High", "Low", "OK" ]
+            "enum" : [ "Empty", "Full", "High", "Low", "OK" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ModuleID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Scope" : {
             "$ref" : "#/components/schemas/Scope"
@@ -2220,7 +2309,8 @@ window.swaggerSpec={
           "Types" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "TotalAmount" : {
@@ -2237,25 +2327,31 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Part"
           },
           "ExternalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ResourceDetails" : {
             "type" : "string",
-            "enum" : [ "Brief", "Full" ]
+            "enum" : [ "Brief", "Full" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ResourceName" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Scope" : {
@@ -2268,11 +2364,13 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "UpdateMethod" : {
             "type" : "string",
-            "enum" : [ "Complete", "Incremental", "Remove" ]
+            "enum" : [ "Complete", "Incremental", "Remove" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "URL" : {
             "$ref" : "#/components/schemas/URL"
@@ -2284,7 +2382,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "URL" : {
             "$ref" : "#/components/schemas/URL"
@@ -2297,7 +2396,8 @@ window.swaggerSpec={
         "properties" : {
           "ShutDownType" : {
             "type" : "string",
-            "enum" : [ "StandBy", "Full" ]
+            "enum" : [ "StandBy", "Full" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -2305,7 +2405,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -2313,10 +2414,12 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "ChannelID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MessageType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "URL" : {
             "$ref" : "#/components/schemas/URL"
@@ -2349,7 +2452,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "DeviceID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "URL" : {
             "$ref" : "#/components/schemas/URL"
@@ -2363,13 +2467,16 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Subscription"
           },
           "ChannelID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "DeviceID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MessageType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Subscription", "ChannelID", "MessageType" ]
@@ -2402,7 +2509,8 @@ window.swaggerSpec={
           },
           "ItemRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "TotalAmount" : {
             "type" : "integer"
@@ -2437,7 +2545,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "CoilShape" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Diameter" : {
             "type" : "number",
@@ -2455,7 +2564,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Part"
           },
           "PartContext" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Part" ]
@@ -2490,7 +2600,8 @@ window.swaggerSpec={
           },
           "EdgeShape" : {
             "type" : "string",
-            "enum" : [ "Beveled", "Rounded" ]
+            "enum" : [ "Beveled", "Rounded" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "EmbossingType" : {
             "$ref" : "#/components/schemas/EmbossType"
@@ -2510,7 +2621,8 @@ window.swaggerSpec={
           },
           "ToolRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           }
         },
         "required" : [ "Direction", "EmbossingType" ]
@@ -2544,10 +2656,12 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/XYPair"
           },
           "Separation" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ToolName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "EmbossingType" ]
@@ -2556,7 +2670,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "EventID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "EventValue" : {
             "type" : "string"
@@ -2572,30 +2687,36 @@ window.swaggerSpec={
           },
           "ExpansionPolicy" : {
             "type" : "string",
-            "enum" : [ "HorizontalOnly", "HorizontalVertical", "VerticalOnly", "VerticalHorizontal" ]
+            "enum" : [ "HorizontalOnly", "HorizontalVertical", "VerticalOnly", "VerticalHorizontal" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GutterPolicy" : {
             "type" : "string",
-            "enum" : [ "Distribute", "Fixed" ]
+            "enum" : [ "Distribute", "Fixed" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "HorizontalGridDirection" : {
             "type" : "string",
-            "enum" : [ "LeftToRight", "RightToLeft" ]
+            "enum" : [ "LeftToRight", "RightToLeft" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MinGutter" : {
             "$ref" : "#/components/schemas/XYPair"
           },
           "RotatePolicy" : {
             "type" : "string",
-            "enum" : [ "NoRotate", "RotateOrthogonal", "RotateClockwise", "RotateCounterClockwise" ]
+            "enum" : [ "NoRotate", "RotateOrthogonal", "RotateClockwise", "RotateCounterClockwise" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SizePolicy" : {
             "type" : "string",
-            "enum" : [ "Abort", "ClipToMaxPage", "CompleteGrid", "FillGrid", "FitToPage", "ReduceToFit", "Tile" ]
+            "enum" : [ "Abort", "ClipToMaxPage", "CompleteGrid", "FillGrid", "FitToPage", "ReduceToFit", "Tile" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "VerticalGridDirection" : {
             "type" : "string",
-            "enum" : [ "BottomToTop", "TopToBottom" ]
+            "enum" : [ "BottomToTop", "TopToBottom" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -2609,7 +2730,8 @@ window.swaggerSpec={
             "type" : "boolean"
           },
           "CoverStyle" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "EndSheets" : {
             "type" : "boolean"
@@ -2625,7 +2747,8 @@ window.swaggerSpec={
           },
           "Jacket" : {
             "type" : "string",
-            "enum" : [ "None", "Loose", "Glue" ]
+            "enum" : [ "None", "Loose", "Glue" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JacketFoldingWidth" : {
             "type" : "number",
@@ -2640,7 +2763,8 @@ window.swaggerSpec={
           "SpineOperations" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Thickness" : {
@@ -2723,7 +2847,8 @@ window.swaggerSpec={
             "type" : "boolean"
           },
           "ImageAutoFilterStrategy" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ImageDepth" : {
             "type" : "integer"
@@ -2734,10 +2859,12 @@ window.swaggerSpec={
           },
           "ImageDownsampleType" : {
             "type" : "string",
-            "enum" : [ "Average", "Bicubic", "Subsample" ]
+            "enum" : [ "Average", "Bicubic", "Subsample" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ImageFilter" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ImageResolution" : {
             "type" : "number",
@@ -2745,7 +2872,8 @@ window.swaggerSpec={
           },
           "ImageType" : {
             "type" : "string",
-            "enum" : [ "Color", "Grayscale", "Monochrome" ]
+            "enum" : [ "Color", "Grayscale", "Monochrome" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JPXQuality" : {
             "type" : "integer"
@@ -2770,7 +2898,8 @@ window.swaggerSpec={
           "JobTemplate" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         }
@@ -2792,7 +2921,8 @@ window.swaggerSpec={
           },
           "ContentRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           }
         }
       },
@@ -2810,12 +2940,14 @@ window.swaggerSpec={
             "type" : "array",
             "items" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             }
           },
           "KnockoutSource" : {
             "type" : "string",
-            "enum" : [ "ClipPath", "SourceClipPath", "TrimBox" ]
+            "enum" : [ "ClipPath", "SourceClipPath", "TrimBox" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "MarkColor", "KnockoutSource" ]
@@ -2837,7 +2969,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "MilestoneType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "TypeAmount" : {
             "type" : "integer"
@@ -2864,16 +2997,20 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Severity"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobPartID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ModuleID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Class" ]
@@ -2900,62 +3037,76 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "BinderySignatureID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "BlockName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ContactType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "DocIndex" : {
             "$ref" : "#/components/schemas/IntegerRange"
           },
           "DropID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Location" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "LotID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Metadata" : {
             "$ref" : "#/components/schemas/regExp"
           },
           "Option" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PageNumber" : {
             "$ref" : "#/components/schemas/IntegerRange"
           },
           "PartVersion" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PreviewType" : {
             "type" : "string",
             "enum" : [ "Animation", "Identification", "SeparatedThumbNail", "Separation", "SeparationRaw", "Static3D", "ThumbNail", "Viewable" ]
           },
           "PrintCondition" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Product" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ProductPart" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "QualityMeasurement" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Run" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RunIndex" : {
             "$ref" : "#/components/schemas/IntegerRange"
           },
           "Separation" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SetIndex" : {
             "$ref" : "#/components/schemas/IntegerRange"
@@ -2964,23 +3115,27 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/IntegerRange"
           },
           "SheetName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Side" : {
             "$ref" : "#/components/schemas/Side"
           },
           "StationName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "TileID" : {
             "$ref" : "#/components/schemas/XYPair"
           },
           "TransferCurveName" : {
             "type" : "string",
-            "enum" : [ "Film", "Plate", "Press", "Substrate", "Proof" ]
+            "enum" : [ "Film", "Plate", "Press", "Substrate", "Proof" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "WebName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -3012,10 +3167,12 @@ window.swaggerSpec={
             "type" : "boolean"
           },
           "OCGIntent" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "OCGProcess" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "OCGZoom" : {
             "type" : "number",
@@ -3075,10 +3232,12 @@ window.swaggerSpec={
           },
           "EndStatus" : {
             "type" : "string",
-            "enum" : [ "Aborted", "Completed" ]
+            "enum" : [ "Aborted", "Completed" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "QueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ReturnTime" : {
             "type" : "string",
@@ -3103,11 +3262,13 @@ window.swaggerSpec={
           },
           "AnchorType" : {
             "type" : "string",
-            "enum" : [ "Parent", "Sibling" ]
+            "enum" : [ "Parent", "Sibling" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "rRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           }
         },
         "required" : [ "Anchor", "AnchorType", "rRef" ]
@@ -3129,7 +3290,8 @@ window.swaggerSpec={
             "type" : "string"
           },
           "RibbonEnd" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "VisibleLength" : {
             "type" : "number",
@@ -3169,11 +3331,13 @@ window.swaggerSpec={
           },
           "GlueProcedure" : {
             "type" : "string",
-            "enum" : [ "Spine", "SideOnly", "SingleSide", "SideSpine" ]
+            "enum" : [ "Spine", "SideOnly", "SingleSide", "SideSpine" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Scoring" : {
             "type" : "string",
-            "enum" : [ "TwiceScored", "QuadScored", "None" ]
+            "enum" : [ "TwiceScored", "QuadScored", "None" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SpineGlue" : {
             "$ref" : "#/components/schemas/EnumGlue"
@@ -3181,7 +3345,8 @@ window.swaggerSpec={
           "SpineOperations" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         }
@@ -3235,12 +3400,14 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/URL"
           },
           "ModuleID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ModuleType" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Revision" : {
@@ -3288,11 +3455,13 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "CoilShape" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Material" : {
             "type" : "string",
-            "enum" : [ "Steel", "ColorCoatedSteel", "Plastic" ]
+            "enum" : [ "Steel", "ColorCoatedSteel", "Plastic" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -3300,11 +3469,13 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "CombShape" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Material" : {
             "type" : "string",
-            "enum" : [ "Steel", "ColorCoatedSteel", "Plastic" ]
+            "enum" : [ "Steel", "ColorCoatedSteel", "Plastic" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -3312,16 +3483,19 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "BinderMaterial" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RingShape" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RivetsExposed" : {
             "type" : "boolean"
           },
           "ViewBinder" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -3330,7 +3504,8 @@ window.swaggerSpec={
         "properties" : {
           "ChildRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           }
         },
         "required" : [ "ChildRef" ]
@@ -3343,7 +3518,8 @@ window.swaggerSpec={
           },
           "ChildRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "Folio" : {
             "type" : "integer"
@@ -3362,7 +3538,8 @@ window.swaggerSpec={
         "properties" : {
           "ChildRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "FolioFrom" : {
             "type" : "integer"
@@ -3384,7 +3561,8 @@ window.swaggerSpec={
           },
           "ChildRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "Face" : {
             "$ref" : "#/components/schemas/Face"
@@ -3411,7 +3589,8 @@ window.swaggerSpec={
             "type" : "string"
           },
           "Organization" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -3420,7 +3599,8 @@ window.swaggerSpec={
         "properties" : {
           "PreflightLevel" : {
             "type" : "string",
-            "enum" : [ "Basic", "Extended", "Premium" ]
+            "enum" : [ "Basic", "Extended", "Premium" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -3432,7 +3612,8 @@ window.swaggerSpec={
           },
           "CutDepth" : {
             "type" : "string",
-            "enum" : [ "Full", "Partial" ]
+            "enum" : [ "Full", "Partial" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "CutOut" : {
             "type" : "boolean"
@@ -3442,11 +3623,13 @@ window.swaggerSpec={
           },
           "CutType" : {
             "type" : "string",
-            "enum" : [ "Cut", "Perforate" ]
+            "enum" : [ "Cut", "Perforate" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ShapeType" : {
             "type" : "string",
-            "enum" : [ "Line", "Path", "Rectangular", "Round", "RoundedRectangle" ]
+            "enum" : [ "Line", "Path", "Rectangular", "Round", "RoundedRectangle" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ShapeTypeDetails" : {
             "type" : "string"
@@ -3461,7 +3644,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/AddressLine"
           },
           "AddressUsage" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "City" : {
             "type" : "string"
@@ -3543,11 +3727,13 @@ window.swaggerSpec={
           },
           "TransferFunctionInfo" : {
             "type" : "string",
-            "enum" : [ "Preserve", "Remove", "Apply" ]
+            "enum" : [ "Preserve", "Remove", "Apply" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "UCRandBGInfo" : {
             "type" : "string",
-            "enum" : [ "Preserve", "Remove" ]
+            "enum" : [ "Preserve", "Remove" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "UsePrologue" : {
             "type" : "boolean"
@@ -3559,14 +3745,16 @@ window.swaggerSpec={
         "properties" : {
           "ApprovalRole" : {
             "type" : "string",
-            "enum" : [ "Approvinator", "Informative", "Obligated" ]
+            "enum" : [ "Approvinator", "Informative", "Obligated" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ApprovalRoleDetails" : {
             "type" : "string"
           },
           "ContactRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           }
         },
         "required" : [ "ContactRef" ]
@@ -3578,7 +3766,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/AssemblySection"
           },
           "BinderySignatureID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "CommonFolds" : {
             "type" : "integer",
@@ -3588,7 +3777,8 @@ window.swaggerSpec={
             "type" : "string"
           },
           "ExternalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "BinderySignatureID" ]
@@ -3622,10 +3812,12 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "BarcodeVersion" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ErrorCorrectionLevel" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "XCells" : {
             "type" : "integer"
@@ -3677,7 +3869,8 @@ window.swaggerSpec={
         "properties" : {
           "Action" : {
             "type" : "string",
-            "enum" : [ "LongFoldLeftToRight", "LongFoldRightToLeft", "LongPreFoldLeftToRight", "LongPreFoldRightToLeft", "FrontFoldComplete", "FrontFoldDiagonal", "FrontFoldCompleteDiagonal", "BackFoldComplete", "BackFoldDiagonal", "BackFoldCompleteDiagonal", "ReverseFold", "Milling", "Rotate90", "Rotate180", "Rotate270" ]
+            "enum" : [ "LongFoldLeftToRight", "LongFoldRightToLeft", "LongPreFoldLeftToRight", "LongPreFoldRightToLeft", "FrontFoldComplete", "FrontFoldDiagonal", "FrontFoldCompleteDiagonal", "BackFoldComplete", "BackFoldDiagonal", "BackFoldCompleteDiagonal", "ReverseFold", "Milling", "Rotate90", "Rotate180", "Rotate270" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "FoldIndex" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -3693,7 +3886,8 @@ window.swaggerSpec={
           },
           "BandOrdering" : {
             "type" : "string",
-            "enum" : [ "BandMajor", "ColorMajor" ]
+            "enum" : [ "BandMajor", "ColorMajor" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "FrameHeight" : {
             "type" : "integer"
@@ -3710,7 +3904,8 @@ window.swaggerSpec={
           "PixelColorants" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "PixelDepth" : {
@@ -3781,7 +3976,8 @@ window.swaggerSpec={
           },
           "ComponentRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "Orientation" : {
             "$ref" : "#/components/schemas/Orientation"
@@ -3791,7 +3987,8 @@ window.swaggerSpec={
           },
           "TransformationContext" : {
             "type" : "string",
-            "enum" : [ "CollateItem", "Component", "StackItem" ]
+            "enum" : [ "CollateItem", "Component", "StackItem" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -3805,7 +4002,8 @@ window.swaggerSpec={
             "type" : "string"
           },
           "ReplacementColorantName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "ColorantName", "ReplacementColorantName" ]
@@ -3835,7 +4033,8 @@ window.swaggerSpec={
           "Separations" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Size" : {
@@ -3862,34 +4061,40 @@ window.swaggerSpec={
             "format" : "float"
           },
           "DensityStandard" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Illumination" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "IlluminationAngle" : {
             "type" : "integer"
           },
           "InkState" : {
             "type" : "string",
-            "enum" : [ "Dry", "Wet" ]
+            "enum" : [ "Dry", "Wet" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MeasurementAngle" : {
             "type" : "integer"
           },
           "MeasurementFilter" : {
             "type" : "string",
-            "enum" : [ "None", "Pol", "UV" ]
+            "enum" : [ "None", "Pol", "UV" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MeasurementMode" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Observer" : {
             "type" : "integer"
           },
           "SampleBacking" : {
             "type" : "string",
-            "enum" : [ "Black", "Substrate", "White" ]
+            "enum" : [ "Black", "Substrate", "White" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SpectralResolution" : {
             "type" : "number",
@@ -3897,7 +4102,8 @@ window.swaggerSpec={
           },
           "WhiteBase" : {
             "type" : "string",
-            "enum" : [ "Absolute", "Substrate" ]
+            "enum" : [ "Absolute", "Substrate" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -3905,12 +4111,14 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "ChannelType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ChannelUsage" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "DescriptiveName" : {
@@ -3929,7 +4137,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/textElement"
           },
           "CompanyID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "DescriptiveName" : {
             "type" : "string"
@@ -3953,14 +4162,17 @@ window.swaggerSpec={
             "type" : "array",
             "items" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             }
           },
           "ISBN" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Title" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -4019,11 +4231,13 @@ window.swaggerSpec={
           "BinderySignatureIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "BlockName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Box" : {
             "$ref" : "#/components/schemas/rectangle"
@@ -4036,12 +4250,14 @@ window.swaggerSpec={
             "type" : "string"
           },
           "ExternalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Operations" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         },
@@ -4052,7 +4268,8 @@ window.swaggerSpec={
         "properties" : {
           "ColorTransform" : {
             "type" : "string",
-            "enum" : [ "None", "YUV", "Automatic" ]
+            "enum" : [ "None", "YUV", "Automatic" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "HSamples" : {
             "$ref" : "#/components/schemas/IntegerList"
@@ -4090,7 +4307,8 @@ window.swaggerSpec={
             "format" : "float"
           },
           "Separation" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ToleranceBlack" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -4117,7 +4335,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/FloatList"
           },
           "Name" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "ColorList", "Name" ]
@@ -4126,12 +4345,14 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Name" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Separations" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         },
@@ -4148,13 +4369,15 @@ window.swaggerSpec={
           },
           "Direction" : {
             "type" : "string",
-            "enum" : [ "Alternate", "Left", "None", "Right" ]
+            "enum" : [ "Alternate", "Left", "None", "Right" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Offset" : {
             "$ref" : "#/components/schemas/XYPair"
           },
           "Units" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -4163,7 +4386,8 @@ window.swaggerSpec={
         "properties" : {
           "DispositionAction" : {
             "type" : "string",
-            "enum" : [ "Delete", "Archive" ]
+            "enum" : [ "Delete", "Archive" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ExtraDuration" : {
             "type" : "string",
@@ -4190,7 +4414,8 @@ window.swaggerSpec={
           },
           "ItemRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "TotalDimensions" : {
             "$ref" : "#/components/schemas/shape"
@@ -4210,7 +4435,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Name" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Path" : {
             "$ref" : "#/components/schemas/XPath"
@@ -4222,7 +4448,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Usage" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Value" : {
             "type" : "string"
@@ -4241,21 +4468,26 @@ window.swaggerSpec={
           },
           "ComponentRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "FeederSynchronization" : {
             "type" : "string",
-            "enum" : [ "Alternate", "Backup", "Chain", "Primary" ]
+            "enum" : [ "Alternate", "Backup", "Chain", "Primary" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "FeederType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Loading" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Opening" : {
             "type" : "string",
-            "enum" : [ "Back", "Front", "None", "Sucker" ]
+            "enum" : [ "Back", "Front", "None", "Sucker" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Position" : {
             "type" : "integer"
@@ -4298,7 +4530,8 @@ window.swaggerSpec={
             "type" : "string"
           },
           "Encoding" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "FileFormat" : {
             "type" : "string"
@@ -4310,7 +4543,8 @@ window.swaggerSpec={
           "FileTemplate" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "MimeType" : {
@@ -4318,19 +4552,22 @@ window.swaggerSpec={
           },
           "OverwritePolicy" : {
             "type" : "string",
-            "enum" : [ "Overwrite", "RenameNew", "RenameOld", "NewVersion", "OperatorIntervention", "Abort" ]
+            "enum" : [ "Overwrite", "RenameNew", "RenameOld", "NewVersion", "OperatorIntervention", "Abort" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Password" : {
             "type" : "string"
           },
           "ResourceUsage" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SearchDepth" : {
             "type" : "integer"
           },
           "UID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "URL" : {
             "$ref" : "#/components/schemas/URL"
@@ -4352,11 +4589,13 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "ModuleID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ProductionType" : {
             "type" : "string",
-            "enum" : [ "Collect", "NonCollect" ]
+            "enum" : [ "Collect", "NonCollect" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -4365,10 +4604,12 @@ window.swaggerSpec={
         "properties" : {
           "DataType" : {
             "type" : "string",
-            "enum" : [ "xs:string", "xs:int", "xs:float", "xs:NMTOKEN", "xs:boolean", "xs:dateTime", "xs:duration", "NamedFeature" ]
+            "enum" : [ "xs:string", "xs:int", "xs:float", "xs:NMTOKEN", "xs:boolean", "xs:dateTime", "xs:duration", "NamedFeature" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "IDUsage" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "IDValue" : {
             "type" : "string"
@@ -4393,10 +4634,12 @@ window.swaggerSpec={
           },
           "Encoding" : {
             "type" : "string",
-            "enum" : [ "ASCII", "Barcode", "Braille", "RFID" ]
+            "enum" : [ "ASCII", "Barcode", "Braille", "RFID" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "EncodingDetails" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Format" : {
             "$ref" : "#/components/schemas/regExp"
@@ -4409,10 +4652,12 @@ window.swaggerSpec={
           },
           "Purpose" : {
             "type" : "string",
-            "enum" : [ "Label", "Separation", "Verification" ]
+            "enum" : [ "Label", "Separation", "Verification" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PurposeDetails" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Value" : {
             "type" : "string"
@@ -4423,7 +4668,8 @@ window.swaggerSpec={
           "ValueTemplate" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         }
@@ -4432,7 +4678,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Operation" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "OperationDetails" : {
             "type" : "string"
@@ -4454,18 +4701,22 @@ window.swaggerSpec={
           },
           "MediaRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "SheetFormat" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SheetType" : {
             "type" : "string",
-            "enum" : [ "AccountingSheet", "ErrorSheet", "JobSheet", "SeparatorSheet" ]
+            "enum" : [ "AccountingSheet", "ErrorSheet", "JobSheet", "SeparatorSheet" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SheetUsage" : {
             "type" : "string",
-            "enum" : [ "Header", "Interleaved", "InterleavedBefore", "OnError", "Slip", "SlipCopy", "Trailer" ]
+            "enum" : [ "Header", "Interleaved", "InterleavedBefore", "OnError", "Slip", "SlipCopy", "Trailer" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "SheetType", "SheetUsage" ]
@@ -4495,7 +4746,8 @@ window.swaggerSpec={
           },
           "ProgressionOrder" : {
             "type" : "string",
-            "enum" : [ "LRCP", "RLCP", "RPCL", "PCRL", "CPRL" ]
+            "enum" : [ "LRCP", "RLCP", "RPCL", "PCRL", "CPRL" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "TileSize" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -4528,14 +4780,16 @@ window.swaggerSpec={
           },
           "ID" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "Ord" : {
             "type" : "integer"
           },
           "PositionRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "SourceClipPath" : {
             "$ref" : "#/components/schemas/PDFPath"
@@ -4579,7 +4833,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Expr"
           },
           "Name" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ValueFormat" : {
             "type" : "string"
@@ -4587,7 +4842,8 @@ window.swaggerSpec={
           "ValueTemplate" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         },
@@ -4602,14 +4858,17 @@ window.swaggerSpec={
           },
           "CostType" : {
             "type" : "string",
-            "enum" : [ "Chargeable", "NonChargeable" ]
+            "enum" : [ "Chargeable", "NonChargeable" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "WorkType" : {
             "type" : "string",
-            "enum" : [ "Original", "Alteration", "Rework" ]
+            "enum" : [ "Original", "Alteration", "Rework" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "WorkTypeDetails" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -4617,7 +4876,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "BinderySignatureID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Orientation" : {
             "$ref" : "#/components/schemas/Orientation"
@@ -4644,13 +4904,15 @@ window.swaggerSpec={
             "type" : "array",
             "items" : {
               "type" : "string",
-              "enum" : [ "Event", "Information", "Warning", "Error", "Fatal" ]
+              "enum" : [ "Event", "Information", "Warning", "Error", "Fatal" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "MilestoneTypes" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         }
@@ -4670,7 +4932,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "AntiAliasing" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Resolution" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -4691,10 +4954,12 @@ window.swaggerSpec={
             "type" : "string"
           },
           "ProcStepsGroup" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ProcStepsType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "IncludeOCG" ]
@@ -4713,7 +4978,8 @@ window.swaggerSpec={
             "format" : "float"
           },
           "ExternalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Lab" : {
             "$ref" : "#/components/schemas/LabColor"
@@ -4724,7 +4990,8 @@ window.swaggerSpec={
           },
           "PatchUsage" : {
             "type" : "string",
-            "enum" : [ "Color", "Ignore", "Image", "Technical" ]
+            "enum" : [ "Color", "Ignore", "Image", "Technical" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RGB" : {
             "$ref" : "#/components/schemas/sRGBColor"
@@ -4750,7 +5017,8 @@ window.swaggerSpec={
           "PDFXCheck" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "PDFXCompliantPDFOnly" : {
@@ -4764,7 +5032,8 @@ window.swaggerSpec={
           },
           "PDFXTrapped" : {
             "type" : "string",
-            "enum" : [ "Unknown", "false", "true" ]
+            "enum" : [ "Unknown", "false", "true" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PDFXTrimBoxToMediaBoxOffset" : {
             "$ref" : "#/components/schemas/rectangle"
@@ -4777,7 +5046,8 @@ window.swaggerSpec={
           "AlwaysEmbed" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "EmbedAllFonts" : {
@@ -4789,7 +5059,8 @@ window.swaggerSpec={
           "NeverEmbed" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         }
@@ -4861,17 +5132,21 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Anchor"
           },
           "BinderySignatureID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "BlockName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GangElementID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "ID" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "MarginBottom" : {
             "type" : "number",
@@ -4954,10 +5229,12 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Severity"
           },
           "TestClass" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "TestID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -4983,10 +5260,12 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Severity"
           },
           "TestClass" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "TestID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -4997,7 +5276,8 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ProductionPathID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -5022,7 +5302,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/FileSpec"
           },
           "Mode" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Mode" ]
@@ -5051,17 +5332,20 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/rectangle"
           },
           "DefectReason" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "DefectType" : {
             "type" : "array",
             "items" : {
               "type" : "string",
-              "enum" : [ "FinishingDefect", "ImageDefect", "ImageFinishingDefect", "Other", "SheetDefect", "SubstrateDefect" ]
+              "enum" : [ "FinishingDefect", "ImageDefect", "ImageFinishingDefect", "Other", "SheetDefect", "SubstrateDefect" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "DefectTypeDetails" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Face" : {
             "$ref" : "#/components/schemas/Face"
@@ -5083,14 +5367,16 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/XYPair"
           },
           "MarkType" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Rotation" : {
             "type" : "number",
             "format" : "float"
           },
           "Separation" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Size" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -5105,7 +5391,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/XYPair"
           },
           "Reference" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Offset", "Reference" ]
@@ -5115,7 +5402,8 @@ window.swaggerSpec={
         "properties" : {
           "AllowedRotate" : {
             "type" : "string",
-            "enum" : [ "None", "Grain", "MinorGrain", "CrossGrain" ]
+            "enum" : [ "None", "Grain", "MinorGrain", "CrossGrain" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GutterX" : {
             "type" : "number",
@@ -5136,7 +5424,8 @@ window.swaggerSpec={
           "LayoutStyle" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "OrderQuantity" : {
@@ -5144,7 +5433,8 @@ window.swaggerSpec={
           },
           "ShapeDefRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "UseBleed" : {
             "type" : "boolean"
@@ -5185,10 +5475,12 @@ window.swaggerSpec={
           },
           "ScreeningType" : {
             "type" : "string",
-            "enum" : [ "Adaptive", "AM", "ErrorDiffusion", "FM", "HybridAM-FM", "HybridAMline-dot" ]
+            "enum" : [ "Adaptive", "AM", "ErrorDiffusion", "FM", "HybridAM-FM", "HybridAMline-dot" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Separation" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SourceFrequencyMax" : {
             "type" : "number",
@@ -5202,7 +5494,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/SourceObjects"
           },
           "SpotFunction" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -5219,10 +5512,12 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/shape"
           },
           "Name" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Standard" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -5254,14 +5549,16 @@ window.swaggerSpec={
           "BinderySignatureIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "CollapseBleeds" : {
             "type" : "boolean"
           },
           "CustomerID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "DeliveryDate" : {
             "type" : "string",
@@ -5275,29 +5572,34 @@ window.swaggerSpec={
             "format" : "date-time"
           },
           "ExternalID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "FillPriority" : {
             "type" : "integer"
           },
           "GangElementID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GrainDirection" : {
             "$ref" : "#/components/schemas/MediaDirection"
           },
           "GroupCode" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MaxQuantity" : {
             "type" : "integer"
           },
           "MediaRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "MinQuantity" : {
             "type" : "integer"
@@ -5309,12 +5611,14 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/XYPair"
           },
           "OneSheet" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Operations" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "OrderQuantity" : {
@@ -5334,18 +5638,21 @@ window.swaggerSpec={
           },
           "RunListRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "SeparationListBack" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "SeparationListFront" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         },
@@ -5355,7 +5662,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Name" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Tint" : {
             "type" : "number",
@@ -5415,24 +5723,28 @@ window.swaggerSpec={
           },
           "Mask" : {
             "type" : "string",
-            "enum" : [ "BleedBox", "DieCut", "None", "PDL", "SourceBleedBox", "SourceTrimBox", "TrimBox" ]
+            "enum" : [ "BleedBox", "DieCut", "None", "PDL", "SourceBleedBox", "SourceTrimBox", "TrimBox" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MaskBleed" : {
             "type" : "number",
             "format" : "float"
           },
           "MaskSeparation" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Orientation" : {
             "type" : "string",
-            "enum" : [ "Down", "Left", "Right", "Up" ]
+            "enum" : [ "Down", "Left", "Right", "Up" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Sides" : {
             "$ref" : "#/components/schemas/Sides"
           },
           "StationName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "TrimFace" : {
             "type" : "number",
@@ -5457,15 +5769,18 @@ window.swaggerSpec={
           "BinderySignatureIDs" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "ShapeDefRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "StationName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "StationName" ]
@@ -5512,7 +5827,8 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Anchor"
           },
           "Font" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "FontSize" : {
             "type" : "number",
@@ -5523,10 +5839,12 @@ window.swaggerSpec={
           },
           "ID" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "MarkName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Offset" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -5566,7 +5884,8 @@ window.swaggerSpec={
           },
           "TabSetCollationOrder" : {
             "type" : "string",
-            "enum" : [ "Forward", "Reverse" ]
+            "enum" : [ "Forward", "Reverse" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "TabsPerBank" : {
             "type" : "integer"
@@ -5620,7 +5939,8 @@ window.swaggerSpec={
           },
           "ByteOrder" : {
             "type" : "string",
-            "enum" : [ "II", "MM" ]
+            "enum" : [ "II", "MM" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Interleaving" : {
             "type" : "integer"
@@ -5723,7 +6043,8 @@ window.swaggerSpec={
         "properties" : {
           "MarkType" : {
             "type" : "string",
-            "enum" : [ "CrossCutMark", "TopVerticalCutMark", "BottomVerticalCutMark", "LeftHorizontalCutMark", "RightHorizontalCutMark", "LowerLeftCutMark", "UpperLeftCutMark", "LowerRightCutMark", "UpperRightCutMark" ]
+            "enum" : [ "CrossCutMark", "TopVerticalCutMark", "BottomVerticalCutMark", "LeftHorizontalCutMark", "RightHorizontalCutMark", "LowerLeftCutMark", "UpperLeftCutMark", "LowerRightCutMark", "UpperRightCutMark" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Position" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -5736,11 +6057,13 @@ window.swaggerSpec={
         "properties" : {
           "From" : {
             "type" : "string",
-            "enum" : [ "Front", "Left" ]
+            "enum" : [ "Front", "Left" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "To" : {
             "type" : "string",
-            "enum" : [ "Up", "Down" ]
+            "enum" : [ "Up", "Down" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Travel" : {
             "type" : "number",
@@ -5761,18 +6084,21 @@ window.swaggerSpec={
           },
           "GlueRef" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "GlueType" : {
             "type" : "string",
-            "enum" : [ "ColdGlue", "Hotmelt", "Permanent", "PUR", "Removable" ]
+            "enum" : [ "ColdGlue", "Hotmelt", "Permanent", "PUR", "Removable" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "GluingPattern" : {
             "$ref" : "#/components/schemas/FloatList"
           },
           "GluingTechnique" : {
             "type" : "string",
-            "enum" : [ "SpineGluing", "SideGluingFront", "SideGluingBack" ]
+            "enum" : [ "SpineGluing", "SideGluingFront", "SideGluingBack" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "MeltingTemperature" : {
             "type" : "integer"
@@ -5796,7 +6122,8 @@ window.swaggerSpec={
           },
           "CenterReference" : {
             "type" : "string",
-            "enum" : [ "RegistrationMark", "TrailingEdge" ]
+            "enum" : [ "RegistrationMark", "TrailingEdge" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Extent" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -5813,14 +6140,17 @@ window.swaggerSpec={
           },
           "ReferenceEdge" : {
             "type" : "string",
-            "enum" : [ "Bottom", "Left", "Pattern", "Right", "Top" ]
+            "enum" : [ "Bottom", "Left", "Pattern", "Right", "Top" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Reinforcement" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Shape" : {
             "type" : "string",
-            "enum" : [ "Elliptic", "Rectangular", "Round" ]
+            "enum" : [ "Elliptic", "Rectangular", "Round" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -5828,7 +6158,8 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "CombShape" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Diameter" : {
             "type" : "number",
@@ -5850,7 +6181,8 @@ window.swaggerSpec={
             "type" : "boolean"
           },
           "RingShape" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "RivetsExposed" : {
             "type" : "boolean"
@@ -5860,7 +6192,8 @@ window.swaggerSpec={
             "format" : "float"
           },
           "ViewBinder" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -5938,7 +6271,8 @@ window.swaggerSpec={
           },
           "Operation" : {
             "type" : "string",
-            "enum" : [ "Convert", "Tag", "Untag" ]
+            "enum" : [ "Convert", "Tag", "Untag" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PreserveBlack" : {
             "type" : "boolean"
@@ -5956,12 +6290,14 @@ window.swaggerSpec={
           "Separations" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "SourceCS" : {
             "type" : "string",
-            "enum" : [ "All", "CalGray", "Calibrated", "CalRGB", "CIEBased", "CMYK", "DeviceCMYK", "DeviceGray", "DeviceN", "DeviceRGB", "DevIndep", "Gray", "ICCBased", "ICCCMYK", "ICCGray", "ICCLAB", "ICCRGB", "Lab", "RGB", "Separation", "YUV" ]
+            "enum" : [ "All", "CalGray", "Calibrated", "CalRGB", "CIEBased", "CMYK", "DeviceCMYK", "DeviceGray", "DeviceN", "DeviceRGB", "DevIndep", "Gray", "ICCBased", "ICCCMYK", "ICCGray", "ICCLAB", "ICCRGB", "Lab", "RGB", "Separation", "YUV" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "SourceObjects" : {
             "$ref" : "#/components/schemas/SourceObjects"
@@ -6052,11 +6388,13 @@ window.swaggerSpec={
           },
           "IncludeType3Fonts" : {
             "type" : "string",
-            "enum" : [ "IncludeOncePerPage" ]
+            "enum" : [ "IncludeOncePerPage" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "OutputType" : {
             "type" : "string",
-            "enum" : [ "EPS", "PostScript" ]
+            "enum" : [ "EPS", "PostScript" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "PSLevel" : {
             "type" : "integer"
@@ -6108,11 +6446,13 @@ window.swaggerSpec={
           },
           "AutoRotatePages" : {
             "type" : "string",
-            "enum" : [ "None", "All", "PageByPage" ]
+            "enum" : [ "None", "All", "PageByPage" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Binding" : {
             "type" : "string",
-            "enum" : [ "Left", "Right" ]
+            "enum" : [ "Left", "Right" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "CompressPages" : {
             "type" : "boolean"
@@ -6139,7 +6479,8 @@ window.swaggerSpec={
             "type" : "integer"
           },
           "PDFVersion" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         }
       },
@@ -6150,20 +6491,24 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/QueueFilter"
           },
           "GangName" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "NextQueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Operation" : {
             "type" : "string",
-            "enum" : [ "Abort", "Complete", "Hold", "Move", "Remove", "Resume", "SetGang", "Suspend" ]
+            "enum" : [ "Abort", "Complete", "Hold", "Move", "Remove", "Resume", "SetGang", "Suspend" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Position" : {
             "type" : "integer"
           },
           "PrevQueueEntryID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Priority" : {
             "type" : "integer"
@@ -6199,13 +6544,15 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "BinderySignatureID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Copies" : {
             "type" : "integer"
           },
           "JobID" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           }
         },
         "required" : [ "Copies", "JobID" ]
@@ -6223,7 +6570,8 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "CustomerID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "CustomerJobName" : {
               "type" : "string"
@@ -6255,7 +6603,8 @@ window.swaggerSpec={
             },
             "DueLevel" : {
               "type" : "string",
-              "enum" : [ "Trivial", "Penalty", "JobCancelled" ]
+              "enum" : [ "Trivial", "Penalty", "JobCancelled" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "End" : {
               "type" : "string",
@@ -6284,7 +6633,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/language"
             },
             "PersonalID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "SetupDuration" : {
               "type" : "string",
@@ -6298,7 +6648,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/NodeStatus"
             },
             "StatusDetails" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "TotalDuration" : {
               "type" : "string",
@@ -6331,7 +6682,8 @@ window.swaggerSpec={
             },
             "ShapeType" : {
               "type" : "string",
-              "enum" : [ "Path", "Rectangular", "Round", "RoundedRectangle" ]
+              "enum" : [ "Path", "Rectangular", "Round", "RoundedRectangle" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "TeethPerDimension" : {
               "type" : "number",
@@ -6436,7 +6788,8 @@ window.swaggerSpec={
           "properties" : {
             "BoxType" : {
               "type" : "string",
-              "enum" : [ "Box", "Carton", "Envelope", "Tube" ]
+              "enum" : [ "Box", "Carton", "Envelope", "Tube" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "BoxTypeDetails" : {
               "type" : "string"
@@ -6461,7 +6814,8 @@ window.swaggerSpec={
               "format" : "float"
             },
             "Pattern" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Rows" : {
               "type" : "integer"
@@ -6503,7 +6857,8 @@ window.swaggerSpec={
               "format" : "float"
             },
             "CornerType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "CoverWidth" : {
               "type" : "number",
@@ -6647,7 +7002,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Module"
             },
             "CostCenterID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "DescriptiveName" : {
               "type" : "string"
@@ -6655,11 +7011,13 @@ window.swaggerSpec={
             "DeviceClass" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "DeviceID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "DeviceType" : {
               "type" : "string"
@@ -6667,7 +7025,8 @@ window.swaggerSpec={
             "ICSVersions" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "JDFVersions" : {
@@ -6709,7 +7068,8 @@ window.swaggerSpec={
             "URLSchemes" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "XJMFURL" : {
@@ -6729,7 +7089,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Emboss"
             },
             "ModuleID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "Emboss" ]
@@ -6797,11 +7158,13 @@ window.swaggerSpec={
             },
             "InsertLocation" : {
               "type" : "string",
-              "enum" : [ "Back", "FinishedPage", "Front", "Overfold" ]
+              "enum" : [ "Back", "FinishedPage", "Front", "Overfold" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Method" : {
               "type" : "string",
-              "enum" : [ "BindIn", "BlowIn" ]
+              "enum" : [ "BindIn", "BlowIn" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "InsertLocation" ]
@@ -6830,18 +7193,21 @@ window.swaggerSpec={
             },
             "FilmRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "MirrorAround" : {
               "$ref" : "#/components/schemas/EnumDeviceAxis"
             },
             "PaperRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "PlateRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "Polarity" : {
               "$ref" : "#/components/schemas/Polarity"
@@ -6851,7 +7217,8 @@ window.swaggerSpec={
             },
             "ProofPaperRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "Scaling" : {
               "$ref" : "#/components/schemas/XYPair"
@@ -6890,7 +7257,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/FileSpec"
             },
             "Application" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Face" : {
               "$ref" : "#/components/schemas/Face"
@@ -6915,10 +7283,12 @@ window.swaggerSpec={
             },
             "LaminatingMethod" : {
               "type" : "string",
-              "enum" : [ "CompoundFoil", "DispersionGlue", "Fusing" ]
+              "enum" : [ "CompoundFoil", "DispersionGlue", "Fusing" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ModuleID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "NipWidth" : {
               "type" : "number",
@@ -6941,7 +7311,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/IdentificationField"
             },
             "PalletType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Size" : {
               "$ref" : "#/components/schemas/XYPair"
@@ -6974,7 +7345,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/XYPair"
             },
             "Pattern" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -7003,7 +7375,8 @@ window.swaggerSpec={
           },
           "ColorType" : {
             "type" : "string",
-            "enum" : [ "Monochrome", "BasicColor", "MatchedColor" ]
+            "enum" : [ "Monochrome", "BasicColor", "MatchedColor" ],
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Contract" : {
             "type" : "boolean"
@@ -7013,7 +7386,8 @@ window.swaggerSpec={
           },
           "ID" : {
             "type" : "string",
-            "format" : "id"
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "PageIndex" : {
             "$ref" : "#/components/schemas/IntegerRange"
@@ -7035,7 +7409,8 @@ window.swaggerSpec={
             "Separations" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Size" : {
@@ -7056,14 +7431,17 @@ window.swaggerSpec={
             },
             "DeliveryMode" : {
               "type" : "string",
-              "enum" : [ "FullSheet", "RemoveGripperMargin", "SeparateBlanks" ]
+              "enum" : [ "FullSheet", "RemoveGripperMargin", "SeparateBlanks" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "DieLayoutRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "ModuleID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "SheetLay" : {
               "$ref" : "#/components/schemas/SheetLay"
@@ -7079,7 +7457,8 @@ window.swaggerSpec={
           "properties" : {
             "ShrinkingMethod" : {
               "type" : "string",
-              "enum" : [ "ShrinkCool", "ShrinkHot" ]
+              "enum" : [ "ShrinkCool", "ShrinkHot" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Temperature" : {
               "type" : "number",
@@ -7109,7 +7488,8 @@ window.swaggerSpec={
             "Operations" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "SealingTemperature" : {
@@ -7194,7 +7574,8 @@ window.swaggerSpec={
             "OutputBin" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "PreStackAmount" : {
@@ -7202,7 +7583,8 @@ window.swaggerSpec={
             },
             "PreStackMethod" : {
               "type" : "string",
-              "enum" : [ "All", "First", "None" ]
+              "enum" : [ "All", "First", "None" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "StackAmount" : {
               "type" : "integer"
@@ -7227,7 +7609,8 @@ window.swaggerSpec={
           "properties" : {
             "StrappingType" : {
               "type" : "string",
-              "enum" : [ "Single", "Double", "Cross", "DoubleCross" ]
+              "enum" : [ "Single", "Double", "Cross", "DoubleCross" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "StrapPositions" : {
               "$ref" : "#/components/schemas/FloatList"
@@ -7269,7 +7652,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/IdentificationField"
             },
             "ToolType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -7281,11 +7665,13 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ModuleID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ModuleType" : {
               "type" : "string",
-              "enum" : [ "PrintModule", "CoatingModule" ]
+              "enum" : [ "PrintModule", "CoatingModule" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "VarnishArea" : {
               "type" : "string",
@@ -7346,7 +7732,8 @@ window.swaggerSpec={
           "properties" : {
             "WrappingKind" : {
               "type" : "string",
-              "enum" : [ "Band", "LooseWrap", "ShrinkWrap" ]
+              "enum" : [ "Band", "LooseWrap", "ShrinkWrap" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "WrappingKind" ]
@@ -7396,20 +7783,23 @@ window.swaggerSpec={
             },
             "BindingOrder" : {
               "type" : "string",
-              "enum" : [ "None", "Collecting", "Gathering" ]
+              "enum" : [ "None", "Collecting", "Gathering" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "BindingSide" : {
               "$ref" : "#/components/schemas/Edge"
             },
             "BindingType" : {
               "type" : "string",
-              "enum" : [ "AdhesiveNote", "ChannelBinding", "CoilBinding", "CombBinding", "CornerStitch", "EdgeGluing", "HardCover", "LooseBinding", "None", "RingBinding", "SaddleStitch", "SideStitch", "SoftCover", "StripBinding", "Tape", "WireComb" ]
+              "enum" : [ "AdhesiveNote", "ChannelBinding", "CoilBinding", "CombBinding", "CornerStitch", "EdgeGluing", "HardCover", "LooseBinding", "None", "RingBinding", "SaddleStitch", "SideStitch", "SoftCover", "StripBinding", "Tape", "WireComb" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ChildRefs" : {
               "type" : "array",
               "items" : {
                 "type" : "string",
-                "format" : "id"
+                "format" : "id",
+                "pattern" : "^[a-zA-Z_][\\w.-]*$"
               },
               "minItems" : 2
             },
@@ -7449,10 +7839,12 @@ window.swaggerSpec={
             },
             "BindingType" : {
               "type" : "string",
-              "enum" : [ "ChannelBinding", "CoilBinding", "CombBinding", "RingBinding", "StripBinding" ]
+              "enum" : [ "ChannelBinding", "CoilBinding", "CombBinding", "RingBinding", "StripBinding" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "CoverMaterial" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "BindingType" ]
@@ -7484,10 +7876,12 @@ window.swaggerSpec={
             },
             "PrintPreference" : {
               "type" : "string",
-              "enum" : [ "Balanced", "CostEffective", "Fastest", "HighestQuality" ]
+              "enum" : [ "Balanced", "CostEffective", "Fastest", "HighestQuality" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "PrintProcess" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -7524,7 +7918,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/FoldCatalog"
             },
             "FoldingDetails" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Orientation" : {
               "$ref" : "#/components/schemas/Orientation"
@@ -7565,7 +7960,8 @@ window.swaggerSpec={
             },
             "Container" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             }
           },
           "required" : [ "Container" ]
@@ -7592,10 +7988,12 @@ window.swaggerSpec={
             },
             "Temperature" : {
               "type" : "string",
-              "enum" : [ "Hot", "Cold" ]
+              "enum" : [ "Hot", "Cold" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Texture" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Thickness" : {
               "type" : "number",
@@ -7622,7 +8020,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/shape"
             },
             "NamedDimensions" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "NumberUp" : {
               "$ref" : "#/components/schemas/XYPair"
@@ -7667,7 +8066,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Coating"
             },
             "Flute" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "FluteDirection" : {
               "$ref" : "#/components/schemas/MediaDirection"
@@ -7694,7 +8094,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/MediaType"
             },
             "MediaTypeDetails" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Opacity" : {
               "$ref" : "#/components/schemas/EnumOpacity"
@@ -7703,10 +8104,12 @@ window.swaggerSpec={
               "type" : "boolean"
             },
             "StockType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Texture" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Thickness" : {
               "type" : "number",
@@ -7737,19 +8140,22 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "type" : "string",
-                "format" : "id"
+                "format" : "id",
+                "pattern" : "^[a-zA-Z_][\\w.-]*$"
               }
             },
             "ColorsUsedBack" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "ColorsUsedFront" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "MaxPages" : {
@@ -7763,11 +8169,13 @@ window.swaggerSpec={
             },
             "VariableType" : {
               "type" : "string",
-              "enum" : [ "OneLine", "AddressField", "IdentificationField", "Area" ]
+              "enum" : [ "OneLine", "AddressField", "IdentificationField", "Area" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "VariableQuality" : {
               "type" : "string",
-              "enum" : [ "Simple", "Imprint", "Full" ]
+              "enum" : [ "Simple", "Imprint", "Full" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "VariableType" ]
@@ -7825,7 +8233,8 @@ window.swaggerSpec={
             },
             "ApprovalState" : {
               "type" : "string",
-              "enum" : [ "Approved", "ApprovedWithComment", "Rejected" ]
+              "enum" : [ "Approved", "ApprovedWithComment", "Rejected" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ApprovalStateDetails" : {
               "type" : "string"
@@ -7859,12 +8268,14 @@ window.swaggerSpec={
             "BinderySignatureIDs" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Order" : {
               "type" : "string",
-              "enum" : [ "Collecting", "Gathering", "None", "List" ]
+              "enum" : [ "Collecting", "Gathering", "None", "List" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "Order" ]
@@ -7878,7 +8289,8 @@ window.swaggerSpec={
           "properties" : {
             "CompensationProcess" : {
               "type" : "string",
-              "enum" : [ "Printing", "Platemaking" ]
+              "enum" : [ "Printing", "Platemaking" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "CompensationValue" : {
               "type" : "number",
@@ -7899,7 +8311,8 @@ window.swaggerSpec={
             },
             "BearerBars" : {
               "type" : "string",
-              "enum" : [ "None", "TopBottom", "Box", "BoxHMarks" ]
+              "enum" : [ "None", "TopBottom", "Box", "BoxHMarks" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Height" : {
               "type" : "number",
@@ -7911,7 +8324,8 @@ window.swaggerSpec={
             },
             "Masking" : {
               "type" : "string",
-              "enum" : [ "None", "WhiteBox" ]
+              "enum" : [ "None", "WhiteBox" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ModuleHeight" : {
               "type" : "number",
@@ -7941,7 +8355,8 @@ window.swaggerSpec={
               "type" : "boolean"
             },
             "PunchType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -7963,18 +8378,21 @@ window.swaggerSpec={
             },
             "BinderySignatureType" : {
               "type" : "string",
-              "enum" : [ "Fold", "Grid", "Die" ]
+              "enum" : [ "Fold", "Grid", "Die" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "BindingOrientation" : {
               "$ref" : "#/components/schemas/Orientation"
             },
             "Bottling" : {
               "type" : "string",
-              "enum" : [ "All", "Last", "None" ]
+              "enum" : [ "All", "Last", "None" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "DieLayoutRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "FoldCatalog" : {
               "$ref" : "#/components/schemas/FoldCatalog"
@@ -7988,7 +8406,8 @@ window.swaggerSpec={
             },
             "OverfoldSide" : {
               "type" : "string",
-              "enum" : [ "Back", "BackHalf", "Front", "FrontHalf" ]
+              "enum" : [ "Back", "BackHalf", "Front", "FrontHalf" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "SpreadType" : {
               "$ref" : "#/components/schemas/SpreadType"
@@ -8020,7 +8439,8 @@ window.swaggerSpec={
             },
             "BoxFoldingType" : {
               "type" : "string",
-              "enum" : [ "Type00", "Type01", "Type02", "Type03", "Type04", "Type10", "Type11", "Type12", "Type13", "Type15", "Type20" ]
+              "enum" : [ "Type00", "Type01", "Type02", "Type03", "Type04", "Type10", "Type11", "Type12", "Type13", "Type15", "Type20" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "BoxFoldingType" ]
@@ -8058,7 +8478,8 @@ window.swaggerSpec={
             },
             "ColorType" : {
               "type" : "string",
-              "enum" : [ "DieLine", "Normal", "Opaque", "OpaqueIgnore", "Primer", "Transparent" ]
+              "enum" : [ "DieLine", "Normal", "Opaque", "OpaqueIgnore", "Primer", "Transparent" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ColorTypeDetails" : {
               "type" : "string"
@@ -8079,7 +8500,8 @@ window.swaggerSpec={
               "format" : "float"
             },
             "PrintingTechnology" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "PrintStandard" : {
               "type" : "string"
@@ -8111,28 +8533,33 @@ window.swaggerSpec={
             "ColorantConvertProcess" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "ColorantOrder" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "ColorantParams" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "MappingSelection" : {
               "type" : "string",
-              "enum" : [ "UsePDLValues", "UseLocalPrinterValues", "UseProcessColorValues" ]
+              "enum" : [ "UsePDLValues", "UseLocalPrinterValues", "UseProcessColorValues" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ProcessColorModel" : {
               "type" : "string",
-              "enum" : [ "DeviceCMY", "DeviceCMYK", "DeviceGray", "DeviceN", "DeviceRGB", "None" ]
+              "enum" : [ "DeviceCMY", "DeviceCMYK", "DeviceGray", "DeviceN", "DeviceRGB", "None" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -8159,7 +8586,8 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "type" : "string",
-                "format" : "id"
+                "format" : "id",
+                "pattern" : "^[a-zA-Z_][\\w.-]*$"
               }
             },
             "Dimensions" : {
@@ -8171,7 +8599,8 @@ window.swaggerSpec={
             },
             "MediaRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "Overfold" : {
               "type" : "number",
@@ -8181,7 +8610,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Side"
             },
             "ProductType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ProductTypeDetails" : {
               "type" : "string"
@@ -8219,11 +8649,13 @@ window.swaggerSpec={
             "ContactTypeDetails" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "CostCenterID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "UserID" : {
               "type" : "string"
@@ -8261,17 +8693,20 @@ window.swaggerSpec={
             "BinderySignatureIDs" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "ContentStatus" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "ContentType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "HasBleeds" : {
               "type" : "boolean"
@@ -8288,7 +8723,8 @@ window.swaggerSpec={
             "Separations" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "SourceBleedBox" : {
@@ -8317,7 +8753,8 @@ window.swaggerSpec={
             },
             "FountainSolution" : {
               "type" : "string",
-              "enum" : [ "On", "Off" ]
+              "enum" : [ "On", "Off" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ModuleDrying" : {
               "$ref" : "#/components/schemas/EnumDrying"
@@ -8366,11 +8803,13 @@ window.swaggerSpec={
               "format" : "duration"
             },
             "Method" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Ownership" : {
               "type" : "string",
-              "enum" : [ "Destination", "Origin" ]
+              "enum" : [ "Destination", "Origin" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Required" : {
               "type" : "string",
@@ -8385,7 +8824,8 @@ window.swaggerSpec={
             },
             "Transfer" : {
               "type" : "string",
-              "enum" : [ "BuyerToPrinterDeliver", "BuyerToPrinterPickup", "PrinterToBuyerDeliver", "PrinterToBuyerPickup" ]
+              "enum" : [ "BuyerToPrinterDeliver", "BuyerToPrinterPickup", "PrinterToBuyerDeliver", "PrinterToBuyerPickup" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -8417,16 +8857,19 @@ window.swaggerSpec={
             "CutLines" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "DieSide" : {
               "type" : "string",
-              "enum" : [ "Up", "Down" ]
+              "enum" : [ "Up", "Down" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "MediaSide" : {
               "type" : "string",
-              "enum" : [ "Front", "Back" ]
+              "enum" : [ "Front", "Back" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Rotated" : {
               "type" : "boolean"
@@ -8468,21 +8911,24 @@ window.swaggerSpec={
           "properties" : {
             "Collate" : {
               "type" : "string",
-              "enum" : [ "None", "Sheet" ]
+              "enum" : [ "None", "Sheet" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ManualFeed" : {
               "type" : "boolean"
             },
             "PageDelivery" : {
               "type" : "string",
-              "enum" : [ "FanFold", "SameOrderFaceUp", "SameOrderFaceDown", "ReverseOrderFaceUp", "ReverseOrderFaceDown" ]
+              "enum" : [ "FanFold", "SameOrderFaceUp", "SameOrderFaceDown", "ReverseOrderFaceUp", "ReverseOrderFaceDown" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "SheetLay" : {
               "$ref" : "#/components/schemas/SheetLay"
             },
             "Sides" : {
               "type" : "string",
-              "enum" : [ "OneSidedFront", "OneSidedBack", "TwoSided", "Unprinted" ]
+              "enum" : [ "OneSidedFront", "OneSidedBack", "TwoSided", "Unprinted" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -8498,17 +8944,20 @@ window.swaggerSpec={
             },
             "MediaRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "PlateType" : {
               "type" : "string",
-              "enum" : [ "Exposed", "Dummy" ]
+              "enum" : [ "Exposed", "Dummy" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Polarity" : {
               "$ref" : "#/components/schemas/Polarity"
             },
             "PunchType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Resolution" : {
               "$ref" : "#/components/schemas/XYPair"
@@ -8539,7 +8988,8 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "PreferredFont" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "UseDefaultFont" : {
               "type" : "boolean"
@@ -8650,7 +9100,8 @@ window.swaggerSpec={
             },
             "FilmRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "InnermostShingling" : {
               "type" : "number",
@@ -8668,15 +9119,18 @@ window.swaggerSpec={
             },
             "PaperRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "PlateRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "ProofPaperRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "SheetLay" : {
               "$ref" : "#/components/schemas/SheetLay"
@@ -8703,12 +9157,14 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "type" : "string",
-                "format" : "id"
+                "format" : "id",
+                "pattern" : "^[a-zA-Z_][\\w.-]*$"
               }
             },
             "ShapeDefRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             }
           }
         } ]
@@ -8733,7 +9189,8 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "LaborType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "LaborType" ]
@@ -8779,7 +9236,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Coating"
             },
             "BackCoatingDetail" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "BackGlossValue" : {
               "type" : "number",
@@ -8810,7 +9268,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Coating"
             },
             "CoatingDetail" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "CoreWeight" : {
               "type" : "number",
@@ -8820,7 +9279,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/XYPair"
             },
             "Flute" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "FluteDirection" : {
               "$ref" : "#/components/schemas/MediaDirection"
@@ -8866,11 +9326,13 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/MediaType"
             },
             "MediaTypeDetails" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "MediaUnit" : {
               "type" : "string",
-              "enum" : [ "Continuous", "Roll", "Sheet" ]
+              "enum" : [ "Continuous", "Roll", "Sheet" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Opacity" : {
               "$ref" : "#/components/schemas/EnumOpacity"
@@ -8889,13 +9351,15 @@ window.swaggerSpec={
             },
             "PlateTechnology" : {
               "type" : "string",
-              "enum" : [ "FlexoAnalogSolvent", "FlexoAnalogThermal", "FlexoDigitalSolvent", "FlexoDigitalThermal", "FlexoDirectEngraving", "InkJet", "Thermal", "UV", "Visible" ]
+              "enum" : [ "FlexoAnalogSolvent", "FlexoAnalogThermal", "FlexoDigitalSolvent", "FlexoDigitalThermal", "FlexoDirectEngraving", "InkJet", "Thermal", "UV", "Visible" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Polarity" : {
               "$ref" : "#/components/schemas/Polarity"
             },
             "PrintingTechnology" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "RecycledPercentage" : {
               "type" : "number",
@@ -8913,16 +9377,19 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/XYPair"
             },
             "SleeveInterlock" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Spectrum" : {
               "$ref" : "#/components/schemas/TransferFunction"
             },
             "StockType" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Texture" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Thickness" : {
               "type" : "number",
@@ -8955,10 +9422,12 @@ window.swaggerSpec={
               "type" : "string"
             },
             "Type" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "TypeDetails" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "Type" ]
@@ -9040,14 +9509,16 @@ window.swaggerSpec={
             },
             "Compensation" : {
               "type" : "string",
-              "enum" : [ "None", "Film", "Plate", "Press" ]
+              "enum" : [ "None", "Film", "Plate", "Press" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "CTM" : {
               "$ref" : "#/components/schemas/matrix"
             },
             "PreviewFileType" : {
               "type" : "string",
-              "enum" : [ "PNG", "CIP3Multiple", "CIP3Single" ]
+              "enum" : [ "PNG", "CIP3Multiple", "CIP3Single" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -9084,12 +9555,14 @@ window.swaggerSpec={
             },
             "QualityBase" : {
               "type" : "string",
-              "enum" : [ "Absolute", "Standard" ]
+              "enum" : [ "Absolute", "Standard" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "QualityControlMethods" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "SampleInterval" : {
@@ -9099,7 +9572,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Score"
             },
             "SourceDeviceID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "TimeInterval" : {
               "type" : "string",
@@ -9149,7 +9623,8 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "type" : "string",
-                "enum" : [ "Master", "Standard" ]
+                "enum" : [ "Master", "Standard" ],
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Passed" : {
@@ -9161,7 +9636,8 @@ window.swaggerSpec={
             "QualityControlMethods" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Sample" : {
@@ -9171,7 +9647,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Score"
             },
             "SourceDeviceID" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Start" : {
               "type" : "string",
@@ -9193,19 +9670,22 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/XYPair"
             },
             "MarkName" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "MarkType" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "MarkUsage" : {
               "type" : "array",
               "items" : {
                 "type" : "string",
-                "enum" : [ "Color", "PaperPath", "Tile" ]
+                "enum" : [ "Color", "PaperPath", "Tile" ],
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Rotation" : {
@@ -9215,7 +9695,8 @@ window.swaggerSpec={
             "Separations" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Size" : {
@@ -9249,7 +9730,8 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "type" : "string",
-                "format" : "id"
+                "format" : "id",
+                "pattern" : "^[a-zA-Z_][\\w.-]*$"
               }
             },
             "Docs" : {
@@ -9275,7 +9757,8 @@ window.swaggerSpec={
             },
             "OrdType" : {
               "type" : "string",
-              "enum" : [ "Content", "Insert", "Reservation" ]
+              "enum" : [ "Content", "Insert", "Reservation" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Pages" : {
               "$ref" : "#/components/schemas/IntegerRange"
@@ -9332,7 +9815,8 @@ window.swaggerSpec={
             "CutLines" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Dimensions" : {
@@ -9349,7 +9833,8 @@ window.swaggerSpec={
             },
             "MediaRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "MediaSide" : {
               "$ref" : "#/components/schemas/Side"
@@ -9390,7 +9875,8 @@ window.swaggerSpec={
             },
             "Policy" : {
               "type" : "string",
-              "enum" : [ "All", "Collect", "Optimized" ]
+              "enum" : [ "All", "Collect", "Optimized" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "GangElement" ]
@@ -9420,12 +9906,14 @@ window.swaggerSpec={
             "CounterTypes" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Scope" : {
               "type" : "string",
-              "enum" : [ "Lifetime", "PowerOn", "Job" ]
+              "enum" : [ "Lifetime", "PowerOn", "Job" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "required" : [ "Scope" ]
@@ -9456,13 +9944,15 @@ window.swaggerSpec={
           "Coatings" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "ColorsUsed" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           },
           "Coverage" : {
@@ -9470,7 +9960,8 @@ window.swaggerSpec={
             "format" : "float"
           },
           "PrintStandard" : {
-            "type" : "string"
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "Surface" : {
             "$ref" : "#/components/schemas/Side"
@@ -9503,7 +9994,8 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/FoldCatalog"
             },
             "FoldingDetails" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "SheetLay" : {
               "$ref" : "#/components/schemas/SheetLay"
@@ -9549,14 +10041,16 @@ window.swaggerSpec={
             },
             "StitchOrigin" : {
               "type" : "string",
-              "enum" : [ "TrimBoxCenter", "TrimBoxJogSide", "UntrimmedJogSide" ]
+              "enum" : [ "TrimBoxCenter", "TrimBoxJogSide", "UntrimmedJogSide" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "StitchPositions" : {
               "$ref" : "#/components/schemas/FloatList"
             },
             "StitchType" : {
               "type" : "string",
-              "enum" : [ "Corner", "Saddle", "Side" ]
+              "enum" : [ "Corner", "Saddle", "Side" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "StitchWidth" : {
               "type" : "number",
@@ -9564,7 +10058,8 @@ window.swaggerSpec={
             },
             "TightBacking" : {
               "type" : "string",
-              "enum" : [ "Round", "RoundBacked", "Flat", "FlatBacked" ]
+              "enum" : [ "Round", "RoundBacked", "Flat", "FlatBacked" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "WireGauge" : {
               "type" : "number",
@@ -9594,7 +10089,8 @@ window.swaggerSpec={
             },
             "SewingPattern" : {
               "type" : "string",
-              "enum" : [ "CombinedStaggered", "Normal", "Side", "Staggered" ]
+              "enum" : [ "CombinedStaggered", "Normal", "Side", "Staggered" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "ThreadThickness" : {
               "type" : "number",
@@ -9615,7 +10111,8 @@ window.swaggerSpec={
             },
             "TrimCover" : {
               "type" : "string",
-              "enum" : [ "Back", "Both", "Front", "Neither" ]
+              "enum" : [ "Back", "Both", "Front", "Neither" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "TrimmingOffset" : {
               "type" : "number",
@@ -9669,7 +10166,8 @@ window.swaggerSpec={
             },
             "ICCProfileUsage" : {
               "type" : "string",
-              "enum" : [ "UsePDL", "UseSupplied" ]
+              "enum" : [ "UsePDL", "UseSupplied" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             }
           }
         } ]
@@ -9689,7 +10187,8 @@ window.swaggerSpec={
             "InkType" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "SpecificYield" : {
@@ -9760,7 +10259,8 @@ window.swaggerSpec={
           "properties" : {
             "AspectRatio" : {
               "type" : "string",
-              "enum" : [ "CenterMax", "CenterMin", "Crop", "Expand", "Ignore" ]
+              "enum" : [ "CenterMax", "CenterMin", "Crop", "Expand", "Ignore" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Resolution" : {
               "$ref" : "#/components/schemas/XYPair"
@@ -9791,7 +10291,8 @@ window.swaggerSpec={
             },
             "BandOrdering" : {
               "type" : "string",
-              "enum" : [ "BandMajor", "ColorMajor" ]
+              "enum" : [ "BandMajor", "ColorMajor" ],
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "BandWidth" : {
               "type" : "integer"
@@ -9869,11 +10370,13 @@ window.swaggerSpec={
             "ColorantOrder" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "type" : "string",
+                "pattern" : "^[a-zA-Z0-9._\\-:]*$"
               }
             },
             "Name" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "PrintQuality" : {
               "$ref" : "#/components/schemas/PrintQuality"
@@ -9896,7 +10399,8 @@ window.swaggerSpec={
               "format" : "float"
             },
             "Fixation" : {
-              "type" : "string"
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "Length" : {
               "type" : "number",
@@ -9919,25 +10423,29 @@ window.swaggerSpec={
             },
             "FilmRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "MirrorAround" : {
               "$ref" : "#/components/schemas/EnumDeviceAxis"
             },
             "PaperRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "PlateRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "Polarity" : {
               "$ref" : "#/components/schemas/Polarity"
             },
             "ProofPaperRef" : {
               "type" : "string",
-              "format" : "id"
+              "format" : "id",
+              "pattern" : "^[a-zA-Z_][\\w.-]*$"
             },
             "Scaling" : {
               "$ref" : "#/components/schemas/XYPair"
@@ -10453,7 +10961,8 @@ window.swaggerSpec={
       },
       "PrintQuality" : {
         "type" : "string",
-        "enum" : [ "High", "Normal", "Draft" ]
+        "enum" : [ "High", "Normal", "Draft" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "rectangle" : {
         "minItems" : 4,
@@ -10531,123 +11040,153 @@ window.swaggerSpec={
       },
       "MediaType" : {
         "type" : "string",
-        "enum" : [ "Blanket", "CorrugatedBoard", "Disc", "EmbossingFoil", "Film", "Foil", "GravureCylinder", "ImagingCylinder", "LaminatingFoil", "MountingTape", "Other", "Paper", "Plate", "Screen", "SelfAdhesive", "ShrinkFoil", "Sleeve", "Textile", "Transparency", "Vinyl" ]
+        "enum" : [ "Blanket", "CorrugatedBoard", "Disc", "EmbossingFoil", "Film", "Foil", "GravureCylinder", "ImagingCylinder", "LaminatingFoil", "MountingTape", "Other", "Paper", "Plate", "Screen", "SelfAdhesive", "ShrinkFoil", "Sleeve", "Textile", "Transparency", "Vinyl" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "Activation" : {
         "type" : "string",
-        "enum" : [ "Informative", "Held", "Active", "PendingReturn", "Removed" ]
+        "enum" : [ "Informative", "Held", "Active", "PendingReturn", "Removed" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "BundleType" : {
         "type" : "string",
-        "enum" : [ "BoundSet", "Box", "Carton", "CollectedStack", "CompensatedStack", "Product", "Pallet", "Roll", "Sheet", "Stack", "StrappedStack", "StrappedCompensatedStack", "WrappedBundle" ]
+        "enum" : [ "BoundSet", "Box", "Carton", "CollectedStack", "CompensatedStack", "Product", "Pallet", "Roll", "Sheet", "Stack", "StrappedStack", "StrappedCompensatedStack", "WrappedBundle" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "Side" : {
         "type" : "string",
-        "enum" : [ "Back", "Front" ]
+        "enum" : [ "Back", "Front" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "NodeStatus" : {
         "type" : "string",
-        "enum" : [ "Aborted", "Cleanup", "Completed", "InProgress", "Setup", "Stopped", "Suspended", "Waiting" ]
+        "enum" : [ "Aborted", "Cleanup", "Completed", "InProgress", "Setup", "Stopped", "Suspended", "Waiting" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumChannelMode" : {
         "type" : "string",
-        "enum" : [ "FireAndForget", "Reliable" ]
+        "enum" : [ "FireAndForget", "Reliable" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "Scope" : {
         "type" : "string",
-        "enum" : [ "Allowed", "Estimate", "Job", "Present" ]
+        "enum" : [ "Allowed", "Estimate", "Job", "Present" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumGangPolicy" : {
         "type" : "string",
-        "enum" : [ "Gang", "GangAndForce", "NoGang" ]
+        "enum" : [ "Gang", "GangAndForce", "NoGang" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "Edge" : {
         "type" : "string",
-        "enum" : [ "Bottom", "Left", "Right", "Top" ]
+        "enum" : [ "Bottom", "Left", "Right", "Top" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "Face" : {
         "type" : "string",
-        "enum" : [ "Back", "Bottom", "Front", "Left", "Right", "Top" ]
+        "enum" : [ "Back", "Bottom", "Front", "Left", "Right", "Top" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumGlue" : {
         "type" : "string",
-        "enum" : [ "ColdGlue", "Hotmelt", "PUR" ]
+        "enum" : [ "ColdGlue", "Hotmelt", "PUR" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "TightBacking" : {
         "type" : "string",
-        "enum" : [ "Round", "RoundBacked", "Flat", "FlatBacked" ]
+        "enum" : [ "Round", "RoundBacked", "Flat", "FlatBacked" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumEmbossDirection" : {
         "type" : "string",
-        "enum" : [ "Both", "Depressed", "Flat", "Raised" ]
+        "enum" : [ "Both", "Depressed", "Flat", "Raised" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "Sides" : {
         "type" : "string",
-        "enum" : [ "OneSided", "OneSidedBack", "TwoSidedHeadToFoot", "TwoSidedHeadToHead" ]
+        "enum" : [ "OneSided", "OneSidedBack", "TwoSidedHeadToFoot", "TwoSidedHeadToHead" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "MediaDirection" : {
         "type" : "string",
-        "enum" : [ "Any", "SameDirection", "XDirection", "YDirection" ]
+        "enum" : [ "Any", "SameDirection", "XDirection", "YDirection" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumOpacity" : {
         "type" : "string",
-        "enum" : [ "Opaque", "Translucent", "Transparent" ]
+        "enum" : [ "Opaque", "Translucent", "Transparent" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumPreflightAction" : {
         "type" : "string",
-        "enum" : [ "Abort", "Continue", "Repair" ]
+        "enum" : [ "Abort", "Continue", "Repair" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumDeviceAxis" : {
         "type" : "string",
-        "enum" : [ "None", "FeedDirection", "MediaWidth", "Both" ]
+        "enum" : [ "None", "FeedDirection", "MediaWidth", "Both" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "Polarity" : {
         "type" : "string",
-        "enum" : [ "Negative", "Positive" ]
+        "enum" : [ "Negative", "Positive" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumAutomation" : {
         "type" : "string",
-        "enum" : [ "Dynamic", "Static" ]
+        "enum" : [ "Dynamic", "Static" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "PositionPolicy" : {
         "type" : "string",
-        "enum" : [ "Exact", "Free" ]
+        "enum" : [ "Exact", "Free" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumDrying" : {
         "type" : "string",
-        "enum" : [ "Heatset", "IR", "Off", "On", "UV" ]
+        "enum" : [ "Heatset", "IR", "Off", "On", "UV" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "SheetLay" : {
         "type" : "string",
-        "enum" : [ "Center", "Left", "Right" ]
+        "enum" : [ "Center", "Left", "Right" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "RenderingIntent" : {
         "type" : "string",
-        "enum" : [ "AbsoluteColorimetric", "ColorSpaceDependent", "Perceptual", "RelativeColorimetric", "Saturation" ]
+        "enum" : [ "AbsoluteColorimetric", "ColorSpaceDependent", "Perceptual", "RelativeColorimetric", "Saturation" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumIncludeResources" : {
         "type" : "string",
-        "enum" : [ "IncludeNever", "IncludeOncePerDoc", "IncludeOncePerPage" ]
+        "enum" : [ "IncludeNever", "IncludeOncePerDoc", "IncludeOncePerPage" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "ISOPaperSubstrate" : {
         "type" : "string",
-        "enum" : [ "PS1", "PS2", "PS3", "PS4", "PS5", "PS6", "PS7", "PS8", "LWCPlus", "LWCStandard", "NewsPlus", "SCPlus", "SCStandard", "SNP" ]
+        "enum" : [ "PS1", "PS2", "PS3", "PS4", "PS5", "PS6", "PS7", "PS8", "LWCPlus", "LWCStandard", "NewsPlus", "SCPlus", "SCStandard", "SNP" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EmbossType" : {
         "type" : "string",
-        "enum" : [ "BlindEmbossing", "Braille", "EmbossedFinish", "FoilEmbossing", "FoilStamping" ]
+        "enum" : [ "BlindEmbossing", "Braille", "EmbossedFinish", "FoilEmbossing", "FoilStamping" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumFitPolicy" : {
         "type" : "string",
-        "enum" : [ "NoRepeat", "RepeatToFill", "RepeatUnclipped", "StretchToFit", "UndistortedScaleToFit" ]
+        "enum" : [ "NoRepeat", "RepeatToFill", "RepeatUnclipped", "StretchToFit", "UndistortedScaleToFit" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumFeedQuality" : {
         "type" : "string",
-        "enum" : [ "NotActive", "Check", "Waste", "StopNoWaste", "StopWaste" ]
+        "enum" : [ "NotActive", "Check", "Waste", "StopNoWaste", "StopWaste" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "EnumTopBottom" : {
         "type" : "string",
-        "enum" : [ "Top", "Bottom" ]
+        "enum" : [ "Top", "Bottom" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "Anchor" : {
         "type" : "string",
@@ -10681,7 +11220,8 @@ window.swaggerSpec={
       },
       "Severity" : {
         "type" : "string",
-        "enum" : [ "Event", "Information", "Warning", "Error", "Fatal" ]
+        "enum" : [ "Event", "Information", "Warning", "Error", "Fatal" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "DeviceStatus" : {
         "type" : "string",
@@ -10689,15 +11229,18 @@ window.swaggerSpec={
       },
       "UpdateGranularity" : {
         "type" : "string",
-        "enum" : [ "All", "ChangesOnly" ]
+        "enum" : [ "All", "ChangesOnly" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "StapleShape" : {
         "type" : "string",
-        "enum" : [ "Butted", "ClinchOut", "Crown", "Eyelet", "Overlap" ]
+        "enum" : [ "Butted", "ClinchOut", "Crown", "Eyelet", "Overlap" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       },
       "SpreadType" : {
         "type" : "string",
-        "enum" : [ "SinglePage", "Spread" ]
+        "enum" : [ "SinglePage", "Spread" ],
+        "pattern" : "^[a-zA-Z0-9._\\-:]*$"
       }
     }
   }
