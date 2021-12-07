@@ -5,3 +5,4 @@ schemas:
       Bar:
         type: string
         enum: [ 'V1', 'V2' ]
+        pattern: "^[a-zA-Z0-9._\\-:]*$"

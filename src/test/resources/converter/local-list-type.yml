@@ -8,3 +8,4 @@ schemas:
           $ref: '#/components/schemas/Enumeration'
   Enumeration:
     type: string
+    pattern: "^[a-zA-Z0-9._\\-:]*$"

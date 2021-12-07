@@ -97,7 +97,7 @@ class SampleValidationTest {
                 "/" + requestPath.joinToString("/"),
                 Request.Method.POST
             )
-            .header("Content-Type", "application/json")
+            .header("Content-Type", "application/vnd.cip4-xjmf+json")
             .body(Body.from(Files.newInputStream(from)))
             .build()
 
