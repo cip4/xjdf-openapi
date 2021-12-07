@@ -70,16 +70,16 @@ class TypeTranslator {
             "xs:hexBinary" -> Schema(type = "string") // TODO: find better mapping
             "xs:int" -> Schema(type = "integer")
             "xs:dateTime" -> Schema(type = "string", format = "date-time")
-            "xs:ID" -> Schema(type = "string", format = "id")
-            "xs:IDREF" -> Schema(type = "string", format = "id")
+            "xs:ID" -> Schema(type = "string", format = "id", pattern = "^[a-zA-Z_][\\w.-]*$")
+            "xs:IDREF" -> Schema(type = "string", format = "id", pattern = "^[a-zA-Z_][\\w.-]*$")
             "xs:IDREFS" -> Schema(type = "array", items = translate("xs:IDREF"))
             "xs:long" -> Schema(type = "integer", format = "int64")
             "xs:float" -> Schema(type = "number", format = "float")
             "xs:boolean" -> Schema(type = "boolean")
-            "xs:NMTOKEN" -> Schema(type = "string") // TODO: check that this mapping is okay
+            "xs:NMTOKEN" -> Schema(type = "string", pattern = "^[a-zA-Z0-9._\\-:]*$")
             "xs:NMTOKENS" -> Schema(type = "array", items = translate("xs:NMTOKEN"))
             "xs:duration" -> Schema(type = "string", format = "duration")
-            "xs:anyURI" -> Schema(type = "string", format = "uri") // TODO: find better mapping
+            "xs:anyURI" -> Schema(type = "string", format = "uri")
             else -> Schema.ref(xsdName)
         }
     }
