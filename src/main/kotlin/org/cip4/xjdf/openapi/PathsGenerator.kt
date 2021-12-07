@@ -74,7 +74,7 @@ class PathsGenerator {
                             required = true,
                             content = mapOf(
                                 Pair(
-                                    "application/json",
+                                    "application/vnd.cip4-xjmf+json",
                                     MediaType(
                                         strippedXjmf("CommandSubmitQueueEntry")
                                     )
@@ -171,7 +171,7 @@ class PathsGenerator {
             Response(
                 content = mapOf(
                     Pair(
-                        "application/json",
+                        "application/vnd.cip4-xjmf+json",
                         MediaType(
                             strippedXjmf(responseType)
                         )
@@ -203,7 +203,7 @@ class PathsGenerator {
         required = true,
         content = mapOf(
             Pair(
-                "application/json",
+                "application/vnd.cip4-xjmf+json",
                 MediaType(
                     strippedXjmf(requestType)
                 )
