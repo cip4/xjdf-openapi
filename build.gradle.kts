@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 /*
  * The CIP4 Software License, Version 1.0
  *
@@ -79,6 +81,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
     testImplementation("com.google.jimfs:jimfs:1.2")
     swaggerUI("org.webjars:swagger-ui:3.10.0")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks {
@@ -110,4 +113,12 @@ task("execute", JavaExec::class) {
     group = "myCustomTasks"
     main = "org.cip4.xjdf.openapi.MainKt"
     classpath = sourceSets["main"].runtimeClasspath
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }
