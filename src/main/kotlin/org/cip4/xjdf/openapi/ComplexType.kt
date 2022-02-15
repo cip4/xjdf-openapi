@@ -60,6 +60,7 @@
 
 package org.cip4.xjdf.openapi
 
+import org.cip4.xjdf.openapi.model.Discriminator
 import org.cip4.xjdf.openapi.model.NamedSchema
 import org.cip4.xjdf.openapi.model.Reference
 import org.cip4.xjdf.openapi.model.Schema
@@ -169,7 +170,7 @@ class ComplexType(
                 val reference = choices.item(it).attributes.getNamedItem("ref").nodeValue
                 Reference("#/components/schemas/$reference")
             },
-            discriminator = "Name"
+            discriminator = Discriminator("Name")
         )
     }
 }
