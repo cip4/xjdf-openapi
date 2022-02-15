@@ -74,6 +74,7 @@ data class Schema(
     var maximum: Int? = null,
     var pattern: String? = null,
     var oneOf: List<Reference>? = null,
+    var discriminator: String? = null,
     var allOf: List<Schema>? = null,
     var minItems: Int? = null,
     var maxItems: Int? = null,

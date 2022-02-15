@@ -61,6 +61,7 @@
 package org.cip4.xjdf.openapi
 
 import org.cip4.xjdf.openapi.model.NamedSchema
+import org.cip4.xjdf.openapi.model.Reference
 import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.NodeList
 import java.util.*
@@ -84,6 +85,9 @@ class ComplexType(
             type = "object",
             properties = properties.ifEmpty { null }
         )
+
+        applyChoicePolymorphism(schema)
+
         val required = localElements.filter { it.isRequired }.map { it.name } +
                 attributes.filter { it.isRequired }.map { it.name }
         if (required.isNotEmpty()) {
@@ -106,8 +110,30 @@ class ComplexType(
         val elementNodes = context.evaluateNodeList(
             "(. | xs:complexContent/xs:extension)/xs:sequence/xs:element",
         ) as NodeList
+        return getChoiceElements() +
+                (0 until elementNodes.length).map {
+                    LocalElement(elementNodes.item(it), context.descendant(elementNodes.item(it)))
+                }
+    }
+
+    private fun getChoiceElements(): List<LocalElement> {
+        val choice = context.evaluateNode(
+            "(. | xs:complexContent/xs:extension)/xs:sequence/xs:choice",
+        ) ?: return listOf()
+
+        val maxOccurs = choice.attributes.getNamedItem("maxOccurs")
+        val elementNodes = context.descendant(choice).evaluateNodeList(
+            "xs:element",
+        ) as NodeList
+        val minOccurs = choice.ownerDocument.createAttribute("minOccurs")
+        minOccurs.nodeValue = "0"
         return (0 until elementNodes.length).map {
-            LocalElement(elementNodes.item(it), context.descendant(elementNodes.item(it)))
+            val elementNode = elementNodes.item(it)
+            elementNode.attributes.setNamedItem(minOccurs.cloneNode(false))
+            if (maxOccurs != null) {
+                elementNode.attributes.setNamedItem(maxOccurs.cloneNode(false))
+            }
+            LocalElement(elementNode, context.descendant(elementNode))
         }
     }
 
@@ -122,4 +148,28 @@ class ComplexType(
 
     private fun inheritingFrom(): String? =
         context.evaluateNode("xs:complexContent/xs:extension/@base")?.nodeValue
+
+    private fun applyChoicePolymorphism(schema: Schema) {
+        val choice = context.evaluateNode("xs:choice") ?: return
+
+        if (choice.attributes.getNamedItem("minOccurs").nodeValue != "0") {
+            throw RuntimeException("Handling of xs:choice/@minOccurs != 0 is not implemented.")
+        }
+        if (choice.attributes.getNamedItem("maxOccurs").nodeValue != "unbounded") {
+            throw RuntimeException("Handling of xs:choice/@maxOccurs != unbounded is not implemented.")
+        }
+
+        schema.type = "array"
+
+        val choiceContext = context.descendant(choice)
+        val choices = choiceContext.evaluateNodeList("xs:element") as NodeList
+
+        schema.items = Schema(
+            oneOf = (0 until choices.length).map {
+                val reference = choices.item(it).attributes.getNamedItem("ref").nodeValue
+                Reference("#/components/schemas/$reference")
+            },
+            discriminator = "Name"
+        )
+    }
 }
