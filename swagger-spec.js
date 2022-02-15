@@ -1803,6 +1803,9 @@ window.swaggerSpec={
       "XJMF" : {
         "type" : "object",
         "properties" : {
+          "Message" : {
+            "$ref" : "#/components/schemas/Message"
+          },
           "Header" : {
             "$ref" : "#/components/schemas/Header"
           },
@@ -2482,7 +2485,23 @@ window.swaggerSpec={
         "required" : [ "Subscription", "ChannelID", "MessageType" ]
       },
       "AuditPool" : {
-        "type" : "object"
+        "type" : "array",
+        "items" : {
+          "oneOf" : [ {
+            "$ref" : "#/components/schemas/AuditCreated"
+          }, {
+            "$ref" : "#/components/schemas/AuditNotification"
+          }, {
+            "$ref" : "#/components/schemas/AuditProcessRun"
+          }, {
+            "$ref" : "#/components/schemas/AuditResource"
+          }, {
+            "$ref" : "#/components/schemas/AuditStatus"
+          } ],
+          "discriminator" : {
+            "propertyName" : "Name"
+          }
+        }
       },
       "Band" : {
         "type" : "object",
@@ -4757,6 +4776,12 @@ window.swaggerSpec={
       "PlacedObject" : {
         "type" : "object",
         "properties" : {
+          "ContentObject" : {
+            "$ref" : "#/components/schemas/ContentObject"
+          },
+          "MarkObject" : {
+            "$ref" : "#/components/schemas/MarkObject"
+          },
           "PageActivation" : {
             "$ref" : "#/components/schemas/PageActivation"
           },
@@ -4824,7 +4849,17 @@ window.swaggerSpec={
         }
       },
       "MediaLayers" : {
-        "type" : "object"
+        "type" : "array",
+        "items" : {
+          "oneOf" : [ {
+            "$ref" : "#/components/schemas/Glue"
+          }, {
+            "$ref" : "#/components/schemas/Media"
+          } ],
+          "discriminator" : {
+            "propertyName" : "Name"
+          }
+        }
       },
       "MetadataMap" : {
         "type" : "object",
@@ -6945,6 +6980,15 @@ window.swaggerSpec={
         }, {
           "type" : "object",
           "properties" : {
+            "Cut" : {
+              "$ref" : "#/components/schemas/Cut"
+            },
+            "CutBlock" : {
+              "$ref" : "#/components/schemas/CutBlock"
+            },
+            "FileSpec" : {
+              "$ref" : "#/components/schemas/FileSpec"
+            },
             "SheetLay" : {
               "$ref" : "#/components/schemas/SheetLay"
             }
@@ -8431,6 +8475,12 @@ window.swaggerSpec={
         }, {
           "type" : "object",
           "properties" : {
+            "BoxFoldAction" : {
+              "$ref" : "#/components/schemas/BoxFoldAction"
+            },
+            "Glue" : {
+              "$ref" : "#/components/schemas/Glue"
+            },
             "BlankDimensionsX" : {
               "$ref" : "#/components/schemas/FloatList"
             },
