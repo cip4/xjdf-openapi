@@ -1323,13 +1323,22 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/AmountPool"
           },
           "Comment" : {
-            "$ref" : "#/components/schemas/Comment"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Comment"
+            }
           },
           "GeneralID" : {
-            "$ref" : "#/components/schemas/GeneralID"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GeneralID"
+            }
           },
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "SpecificResource" : {
             "$ref" : "#/components/schemas/SpecificResource"
@@ -1413,7 +1422,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "PartAmount" : {
-            "$ref" : "#/components/schemas/PartAmount"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PartAmount"
+            },
+            "minItems" : 1
           }
         },
         "required" : [ "PartAmount" ]
@@ -1422,10 +1435,16 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "PartWaste" : {
-            "$ref" : "#/components/schemas/PartWaste"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PartWaste"
+            }
           },
           "Amount" : {
             "type" : "number",
@@ -1470,13 +1489,22 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Comment" : {
-            "$ref" : "#/components/schemas/Comment"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Comment"
+            }
           },
           "GeneralID" : {
-            "$ref" : "#/components/schemas/GeneralID"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GeneralID"
+            }
           },
           "Intent" : {
-            "$ref" : "#/components/schemas/Intent"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Intent"
+            }
           },
           "Amount" : {
             "type" : "integer"
@@ -1522,7 +1550,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Product" : {
-            "$ref" : "#/components/schemas/Product"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Product"
+            },
+            "minItems" : 1
           }
         },
         "required" : [ "Product" ]
@@ -1559,16 +1591,25 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/AuditPool"
           },
           "Comment" : {
-            "$ref" : "#/components/schemas/Comment"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Comment"
+            }
           },
           "GeneralID" : {
-            "$ref" : "#/components/schemas/GeneralID"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GeneralID"
+            }
           },
           "ProductList" : {
             "$ref" : "#/components/schemas/ProductList"
           },
           "ResourceSet" : {
-            "$ref" : "#/components/schemas/ResourceSet"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResourceSet"
+            }
           },
           "Category" : {
             "type" : "string",
@@ -1628,16 +1669,28 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Comment" : {
-            "$ref" : "#/components/schemas/Comment"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Comment"
+            }
           },
           "Dependent" : {
-            "$ref" : "#/components/schemas/Dependent"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Dependent"
+            }
           },
           "GeneralID" : {
-            "$ref" : "#/components/schemas/GeneralID"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GeneralID"
+            }
           },
           "Resource" : {
-            "$ref" : "#/components/schemas/Resource"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Resource"
+            }
           },
           "CombinedProcessIndex" : {
             "$ref" : "#/components/schemas/IntegerList"
@@ -1687,19 +1740,29 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Activity" : {
-            "$ref" : "#/components/schemas/Activity"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Activity"
+            }
           },
           "Event" : {
-            "$ref" : "#/components/schemas/Event"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Event"
+            }
           },
           "FileSpec" : {
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/FileSpec"
-            }
+            },
+            "maxItems" : 2
           },
           "JobPhase" : {
-            "$ref" : "#/components/schemas/JobPhase"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/JobPhase"
+            }
           },
           "CounterUnit" : {
             "type" : "string",
@@ -1804,7 +1867,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Message" : {
-            "$ref" : "#/components/schemas/Message"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Message"
+            }
           },
           "Header" : {
             "$ref" : "#/components/schemas/Header"
@@ -1819,16 +1885,25 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Activity" : {
-            "$ref" : "#/components/schemas/Activity"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Activity"
+            }
           },
           "GangSource" : {
-            "$ref" : "#/components/schemas/GangSource"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GangSource"
+            }
           },
           "MISDetails" : {
             "$ref" : "#/components/schemas/MISDetails"
           },
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "Amount" : {
             "type" : "number",
@@ -2050,7 +2125,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "QueueEntry" : {
-            "$ref" : "#/components/schemas/QueueEntry"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/QueueEntry"
+            }
           },
           "MaxQueueSize" : {
             "type" : "integer"
@@ -2070,10 +2148,16 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/FileSpec"
           },
           "GangSource" : {
-            "$ref" : "#/components/schemas/GangSource"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GangSource"
+            }
           },
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "Activation" : {
             "$ref" : "#/components/schemas/Activation"
@@ -2134,10 +2218,16 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "GangSource" : {
-            "$ref" : "#/components/schemas/GangSource"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GangSource"
+            }
           },
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "FirstEntry" : {
             "type" : "string",
@@ -2231,7 +2321,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "Activation" : {
             "$ref" : "#/components/schemas/Activation"
@@ -2268,7 +2361,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Event" : {
-            "$ref" : "#/components/schemas/Event"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Event"
+            }
           },
           "MISDetails" : {
             "$ref" : "#/components/schemas/MISDetails"
@@ -2327,7 +2423,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "ExternalID" : {
             "type" : "string",
@@ -2518,7 +2617,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "BundleItem" : {
-            "$ref" : "#/components/schemas/BundleItem"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/BundleItem"
+            }
           },
           "Amount" : {
             "type" : "integer"
@@ -2552,7 +2654,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Condition" : {
-            "$ref" : "#/components/schemas/Condition"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Condition"
+            },
+            "minItems" : 1
           },
           "Side" : {
             "$ref" : "#/components/schemas/Side"
@@ -2580,7 +2686,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            },
+            "minItems" : 1
           },
           "PartContext" : {
             "type" : "string",
@@ -2743,7 +2853,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "RegisterRibbon" : {
-            "$ref" : "#/components/schemas/RegisterRibbon"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RegisterRibbon"
+            }
           },
           "BlockThreadSewing" : {
             "type" : "boolean"
@@ -2820,7 +2933,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Icon" : {
-            "$ref" : "#/components/schemas/Icon"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Icon"
+            },
+            "minItems" : 1
           }
         },
         "required" : [ "Icon" ]
@@ -2927,16 +3044,28 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "ColorControlStrip" : {
-            "$ref" : "#/components/schemas/ColorControlStrip"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ColorControlStrip"
+            }
           },
           "CutMark" : {
-            "$ref" : "#/components/schemas/CutMark"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CutMark"
+            }
           },
           "RegisterMark" : {
-            "$ref" : "#/components/schemas/RegisterMark"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }
           },
           "ScavengerArea" : {
-            "$ref" : "#/components/schemas/ScavengerArea"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScavengerArea"
+            }
           },
           "ContentRef" : {
             "type" : "string",
@@ -2949,7 +3078,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "MarkColor" : {
-            "$ref" : "#/components/schemas/MarkColor"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/MarkColor"
+            },
+            "minItems" : 1
           },
           "KnockoutBleed" : {
             "type" : "number",
@@ -3001,7 +3134,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Comment" : {
-            "$ref" : "#/components/schemas/Comment"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Comment"
+            }
           },
           "Event" : {
             "$ref" : "#/components/schemas/Event"
@@ -3010,7 +3146,10 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Milestone"
           },
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "Class" : {
             "$ref" : "#/components/schemas/Severity"
@@ -3038,7 +3177,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Condition" : {
-            "$ref" : "#/components/schemas/Condition"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Condition"
+            },
+            "minItems" : 1
           }
         },
         "required" : [ "Condition" ]
@@ -3047,7 +3190,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Condition" : {
-            "$ref" : "#/components/schemas/Condition"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Condition"
+            },
+            "minItems" : 1
           }
         },
         "required" : [ "Condition" ]
@@ -3162,7 +3309,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "OCGControl" : {
-            "$ref" : "#/components/schemas/OCGControl"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OCGControl"
+            }
           },
           "ReferenceXObjParams" : {
             "$ref" : "#/components/schemas/ReferenceXObjParams"
@@ -3239,7 +3389,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Part" : {
-            "$ref" : "#/components/schemas/Part"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Part"
+            }
           },
           "Duration" : {
             "type" : "string",
@@ -3407,7 +3560,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "IdentificationField" : {
-            "$ref" : "#/components/schemas/IdentificationField"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/IdentificationField"
+            }
           },
           "DescriptiveName" : {
             "type" : "string"
@@ -3660,7 +3816,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "AddressLine" : {
-            "$ref" : "#/components/schemas/AddressLine"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/AddressLine"
+            }
           },
           "AddressUsage" : {
             "type" : "string",
@@ -3782,7 +3941,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "AssemblySection" : {
-            "$ref" : "#/components/schemas/AssemblySection"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/AssemblySection"
+            }
           },
           "BinderySignatureID" : {
             "type" : "string",
@@ -4031,16 +4193,25 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "CIELABMeasuringField" : {
-            "$ref" : "#/components/schemas/CIELABMeasuringField"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CIELABMeasuringField"
+            }
           },
           "ColorMeasurementConditions" : {
             "$ref" : "#/components/schemas/ColorMeasurementConditions"
           },
           "DensityMeasuringField" : {
-            "$ref" : "#/components/schemas/DensityMeasuringField"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DensityMeasuringField"
+            }
           },
           "Patch" : {
-            "$ref" : "#/components/schemas/Patch"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Patch"
+            }
           },
           "Center" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -4153,7 +4324,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "OrganizationalUnit" : {
-            "$ref" : "#/components/schemas/textElement"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/textElement"
+            }
           },
           "CompanyID" : {
             "type" : "string",
@@ -4175,7 +4349,10 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Comment"
           },
           "GeneralID" : {
-            "$ref" : "#/components/schemas/GeneralID"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GeneralID"
+            }
           },
           "ContactRefs" : {
             "type" : "array",
@@ -4202,13 +4379,22 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "CutBlock" : {
-            "$ref" : "#/components/schemas/CutBlock"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CutBlock"
+            }
           },
           "Device" : {
-            "$ref" : "#/components/schemas/Device"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Device"
+            }
           },
           "Media" : {
-            "$ref" : "#/components/schemas/Media"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Media"
+            }
           },
           "MarginBottom" : {
             "type" : "number",
@@ -4381,7 +4567,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "InsertSheet" : {
-            "$ref" : "#/components/schemas/InsertSheet"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/InsertSheet"
+            }
           },
           "Amount" : {
             "type" : "integer"
@@ -4543,7 +4732,10 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Disposition"
           },
           "NetworkHeader" : {
-            "$ref" : "#/components/schemas/NetworkHeader"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/NetworkHeader"
+            }
           },
           "CheckSum" : {
             "type" : "string"
@@ -4646,7 +4838,10 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/ExtraValues"
           },
           "MetadataMap" : {
-            "$ref" : "#/components/schemas/MetadataMap"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/MetadataMap"
+            }
           },
           "BoundingBox" : {
             "$ref" : "#/components/schemas/rectangle"
@@ -4713,7 +4908,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "StripMark" : {
-            "$ref" : "#/components/schemas/StripMark"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/StripMark"
+            }
           },
           "IsWaste" : {
             "type" : "boolean"
@@ -4832,7 +5030,11 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Condition" : {
-            "$ref" : "#/components/schemas/Condition"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Condition"
+            },
+            "minItems" : 1
           }
         },
         "required" : [ "Condition" ]
@@ -4865,7 +5067,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Expr" : {
-            "$ref" : "#/components/schemas/Expr"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Expr"
+            }
           },
           "Name" : {
             "type" : "string",
@@ -5003,7 +5208,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "SeparationTint" : {
-            "$ref" : "#/components/schemas/SeparationTint"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SeparationTint"
+            }
           },
           "Center" : {
             "$ref" : "#/components/schemas/XYPair"
@@ -5252,7 +5460,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "GeneralID" : {
-            "$ref" : "#/components/schemas/GeneralID"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GeneralID"
+            }
           },
           "Action" : {
             "$ref" : "#/components/schemas/EnumPreflightAction"
@@ -5280,7 +5491,10 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/Comment"
           },
           "GeneralID" : {
-            "$ref" : "#/components/schemas/GeneralID"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GeneralID"
+            }
           },
           "Action" : {
             "$ref" : "#/components/schemas/EnumPreflightAction"
@@ -5334,7 +5548,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "FileSpec" : {
-            "$ref" : "#/components/schemas/FileSpec"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/FileSpec"
+            }
           },
           "Mode" : {
             "type" : "string",
@@ -5347,7 +5564,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Defect" : {
-            "$ref" : "#/components/schemas/Defect"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Defect"
+            }
           },
           "FileSpec" : {
             "$ref" : "#/components/schemas/FileSpec"
@@ -5541,7 +5761,10 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/FileSpec"
           },
           "ShapeDimension" : {
-            "$ref" : "#/components/schemas/ShapeDimension"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ShapeDimension"
+            }
           },
           "InnerDimensions" : {
             "$ref" : "#/components/schemas/shape"
@@ -5573,13 +5796,19 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "GeneralID" : {
-            "$ref" : "#/components/schemas/GeneralID"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GeneralID"
+            }
           },
           "Media" : {
             "$ref" : "#/components/schemas/Media"
           },
           "RunList" : {
-            "$ref" : "#/components/schemas/RunList"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RunList"
+            }
           },
           "BinderySignatureIDs" : {
             "type" : "array",
@@ -5723,7 +5952,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "CellCondition" : {
-            "$ref" : "#/components/schemas/CellCondition"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CellCondition"
+            }
           },
           "BackPages" : {
             "$ref" : "#/components/schemas/IntegerList"
@@ -5827,16 +6059,28 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/BarcodeReproParams"
           },
           "FillMark" : {
-            "$ref" : "#/components/schemas/FillMark"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/FillMark"
+            }
           },
           "ColorControlStrip" : {
-            "$ref" : "#/components/schemas/ColorControlStrip"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ColorControlStrip"
+            }
           },
           "CutMark" : {
-            "$ref" : "#/components/schemas/CutMark"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CutMark"
+            }
           },
           "IdentificationField" : {
-            "$ref" : "#/components/schemas/IdentificationField"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/IdentificationField"
+            }
           },
           "JobField" : {
             "$ref" : "#/components/schemas/JobField"
@@ -5845,10 +6089,16 @@ window.swaggerSpec={
             "$ref" : "#/components/schemas/RefAnchor"
           },
           "RegisterMark" : {
-            "$ref" : "#/components/schemas/RegisterMark"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }
           },
           "ScavengerArea" : {
-            "$ref" : "#/components/schemas/ScavengerArea"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScavengerArea"
+            }
           },
           "AbsoluteHeight" : {
             "type" : "number",
@@ -5967,10 +6217,16 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "TIFFEmbeddedFile" : {
-            "$ref" : "#/components/schemas/TIFFEmbeddedFile"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/TIFFEmbeddedFile"
+            }
           },
           "TIFFtag" : {
-            "$ref" : "#/components/schemas/TIFFtag"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/TIFFtag"
+            }
           },
           "ByteOrder" : {
             "type" : "string",
@@ -6299,7 +6555,8 @@ window.swaggerSpec={
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/FileSpec"
-            }
+            },
+            "maxItems" : 3
           },
           "ScreenSelector" : {
             "$ref" : "#/components/schemas/ScreenSelector"
@@ -6627,7 +6884,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "GangSource" : {
-              "$ref" : "#/components/schemas/GangSource"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/GangSource"
+              }
             },
             "MISDetails" : {
               "$ref" : "#/components/schemas/MISDetails"
@@ -6799,7 +7059,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "RegisterRibbon" : {
-              "$ref" : "#/components/schemas/RegisterRibbon"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/RegisterRibbon"
+              }
             },
             "Backing" : {
               "type" : "number",
@@ -6872,7 +7135,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "BundleItem" : {
-              "$ref" : "#/components/schemas/BundleItem"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BundleItem"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "BundleItem" ]
@@ -6929,7 +7196,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Glue" : {
-              "$ref" : "#/components/schemas/Glue"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Glue"
+              }
             },
             "CaseRadius" : {
               "type" : "number",
@@ -6953,10 +7223,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Glue" : {
-              "$ref" : "#/components/schemas/Glue"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Glue"
+              }
             },
             "Score" : {
-              "$ref" : "#/components/schemas/Score"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Score"
+              }
             }
           }
         } ]
@@ -6968,7 +7244,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Crease" : {
-              "$ref" : "#/components/schemas/Crease"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Crease"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "Crease" ]
@@ -6981,10 +7261,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Cut" : {
-              "$ref" : "#/components/schemas/Cut"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Cut"
+              }
             },
             "CutBlock" : {
-              "$ref" : "#/components/schemas/CutBlock"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/CutBlock"
+              }
             },
             "FileSpec" : {
               "$ref" : "#/components/schemas/FileSpec"
@@ -7034,16 +7320,23 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "$ref" : "#/components/schemas/FileSpec"
-              }
+              },
+              "maxItems" : 2
             },
             "IconList" : {
               "$ref" : "#/components/schemas/IconList"
             },
             "IdentificationField" : {
-              "$ref" : "#/components/schemas/IdentificationField"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/IdentificationField"
+              }
             },
             "Module" : {
-              "$ref" : "#/components/schemas/Module"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Module"
+              }
             },
             "CostCenterID" : {
               "type" : "string",
@@ -7130,7 +7423,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Emboss" : {
-              "$ref" : "#/components/schemas/Emboss"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Emboss"
+              },
+              "minItems" : 1
             },
             "ModuleID" : {
               "type" : "string",
@@ -7160,7 +7457,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Glue" : {
-              "$ref" : "#/components/schemas/Glue"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Glue"
+              }
             },
             "GluingProductionID" : {
               "type" : "string"
@@ -7175,7 +7475,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Glue" : {
-              "$ref" : "#/components/schemas/Glue"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Glue"
+              }
             },
             "Length" : {
               "type" : "number",
@@ -7195,7 +7498,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Glue" : {
-              "$ref" : "#/components/schemas/Glue"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Glue"
+              }
             },
             "FinishedPage" : {
               "type" : "integer"
@@ -7227,7 +7533,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/InterpretingDetails"
             },
             "ObjectResolution" : {
-              "$ref" : "#/components/schemas/ObjectResolution"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ObjectResolution"
+              }
             },
             "PDFInterpretingParams" : {
               "$ref" : "#/components/schemas/PDFInterpretingParams"
@@ -7352,7 +7661,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "IdentificationField" : {
-              "$ref" : "#/components/schemas/IdentificationField"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/IdentificationField"
+              }
             },
             "PalletType" : {
               "type" : "string",
@@ -7402,7 +7714,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Perforate" : {
-              "$ref" : "#/components/schemas/Perforate"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Perforate"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "Perforate" ]
@@ -7471,7 +7787,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Shape" : {
-              "$ref" : "#/components/schemas/Shape"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Shape"
+              }
             },
             "DeliveryMode" : {
               "type" : "string",
@@ -7557,7 +7876,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Glue" : {
-              "$ref" : "#/components/schemas/Glue"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Glue"
+              }
             },
             "HorizontalExcess" : {
               "type" : "number",
@@ -7693,7 +8015,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "IdentificationField" : {
-              "$ref" : "#/components/schemas/IdentificationField"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/IdentificationField"
+              }
             },
             "ToolType" : {
               "type" : "string",
@@ -7754,7 +8079,8 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "$ref" : "#/components/schemas/FileSpec"
-              }
+              },
+              "maxItems" : 4
             },
             "Accepted" : {
               "type" : "integer"
@@ -7873,7 +8199,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/CombBindingDetails"
             },
             "HolePattern" : {
-              "$ref" : "#/components/schemas/HolePattern"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/HolePattern"
+              }
             },
             "RingBindingDetails" : {
               "$ref" : "#/components/schemas/RingBindingDetails"
@@ -7904,7 +8233,8 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "$ref" : "#/components/schemas/SurfaceColor"
-              }
+              },
+              "maxItems" : 2
             }
           }
         } ]
@@ -7916,7 +8246,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Certification" : {
-              "$ref" : "#/components/schemas/Certification"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Certification"
+              }
             },
             "PrintPreference" : {
               "type" : "string",
@@ -7937,7 +8270,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "EmbossingItem" : {
-              "$ref" : "#/components/schemas/EmbossingItem"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/EmbossingItem"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "EmbossingItem" ]
@@ -7950,13 +8287,22 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Crease" : {
-              "$ref" : "#/components/schemas/Crease"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Crease"
+              }
             },
             "Fold" : {
-              "$ref" : "#/components/schemas/Fold"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Fold"
+              }
             },
             "Perforate" : {
-              "$ref" : "#/components/schemas/Perforate"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Perforate"
+              }
             },
             "FoldCatalog" : {
               "$ref" : "#/components/schemas/FoldCatalog"
@@ -7978,7 +8324,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "HolePattern" : {
-              "$ref" : "#/components/schemas/HolePattern"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/HolePattern"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "HolePattern" ]
@@ -7991,16 +8341,28 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "AssemblyItem" : {
-              "$ref" : "#/components/schemas/AssemblyItem"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/AssemblyItem"
+              }
             },
             "BindIn" : {
-              "$ref" : "#/components/schemas/BindIn"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BindIn"
+              }
             },
             "BlowIn" : {
-              "$ref" : "#/components/schemas/BlowIn"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BlowIn"
+              }
             },
             "StickOn" : {
-              "$ref" : "#/components/schemas/StickOn"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/StickOn"
+              }
             },
             "Container" : {
               "type" : "string",
@@ -8092,7 +8454,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Certification" : {
-              "$ref" : "#/components/schemas/Certification"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Certification"
+              }
             },
             "BackCoating" : {
               "$ref" : "#/components/schemas/Coating"
@@ -8232,10 +8597,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "PreflightItem" : {
-              "$ref" : "#/components/schemas/PreflightItem"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/PreflightItem"
+              }
             },
             "ProofItem" : {
-              "$ref" : "#/components/schemas/ProofItem"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ProofItem"
+              }
             }
           }
         } ]
@@ -8247,7 +8618,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ShapeCut" : {
-              "$ref" : "#/components/schemas/ShapeCut"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ShapeCut"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "ShapeCut" ]
@@ -8294,7 +8669,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ApprovalPerson" : {
-              "$ref" : "#/components/schemas/ApprovalPerson"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ApprovalPerson"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "ApprovalPerson" ]
@@ -8307,7 +8686,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "AssemblySection" : {
-              "$ref" : "#/components/schemas/AssemblySection"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/AssemblySection"
+              }
             },
             "BinderySignatureIDs" : {
               "type" : "array",
@@ -8351,7 +8733,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "BarcodeCompParams" : {
-              "$ref" : "#/components/schemas/BarcodeCompParams"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BarcodeCompParams"
+              }
             },
             "BearerBars" : {
               "type" : "string",
@@ -8412,10 +8797,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "MultiPageFold" : {
-              "$ref" : "#/components/schemas/MultiPageFold"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/MultiPageFold"
+              }
             },
             "SignatureCell" : {
-              "$ref" : "#/components/schemas/SignatureCell"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/SignatureCell"
+              }
             },
             "BinderySignatureSize" : {
               "$ref" : "#/components/schemas/XYPair"
@@ -8476,10 +8867,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "BoxFoldAction" : {
-              "$ref" : "#/components/schemas/BoxFoldAction"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BoxFoldAction"
+              }
             },
             "Glue" : {
-              "$ref" : "#/components/schemas/Glue"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Glue"
+              }
             },
             "BlankDimensionsX" : {
               "$ref" : "#/components/schemas/FloatList"
@@ -8506,7 +8903,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/ColorMeasurementConditions"
             },
             "DeviceNColor" : {
-              "$ref" : "#/components/schemas/DeviceNColor"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/DeviceNColor"
+              }
             },
             "ActualColorName" : {
               "type" : "string"
@@ -8575,7 +8975,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ColorantAlias" : {
-              "$ref" : "#/components/schemas/ColorantAlias"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ColorantAlias"
+              }
             },
             "DeviceNSpace" : {
               "$ref" : "#/components/schemas/DeviceNSpace"
@@ -8621,7 +9024,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "IdentificationField" : {
-              "$ref" : "#/components/schemas/IdentificationField"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/IdentificationField"
+              }
             },
             "Automation" : {
               "$ref" : "#/components/schemas/EnumAutomation"
@@ -8688,7 +9094,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Address"
             },
             "ComChannel" : {
-              "$ref" : "#/components/schemas/ComChannel"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ComChannel"
+              }
             },
             "Company" : {
               "$ref" : "#/components/schemas/Company"
@@ -8726,16 +9135,25 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/ContentMetadata"
             },
             "FileSpec" : {
-              "$ref" : "#/components/schemas/FileSpec"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/FileSpec"
+              }
             },
             "ImageCompression" : {
               "$ref" : "#/components/schemas/ImageCompression"
             },
             "OCGControl" : {
-              "$ref" : "#/components/schemas/OCGControl"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/OCGControl"
+              }
             },
             "PositionObj" : {
-              "$ref" : "#/components/schemas/PositionObj"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/PositionObj"
+              }
             },
             "ScreenSelector" : {
               "$ref" : "#/components/schemas/ScreenSelector"
@@ -8833,13 +9251,17 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "DropItem" : {
-              "$ref" : "#/components/schemas/DropItem"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/DropItem"
+              }
             },
             "FileSpec" : {
               "type" : "array",
               "items" : {
                 "$ref" : "#/components/schemas/FileSpec"
-              }
+              },
+              "maxItems" : 3
             },
             "BuyerAccount" : {
               "type" : "string"
@@ -8887,19 +9309,31 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Device" : {
-              "$ref" : "#/components/schemas/Device"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Device"
+              }
             },
             "FileSpec" : {
-              "$ref" : "#/components/schemas/FileSpec"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/FileSpec"
+              }
             },
             "Media" : {
               "$ref" : "#/components/schemas/Media"
             },
             "RuleLength" : {
-              "$ref" : "#/components/schemas/RuleLength"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/RuleLength"
+              }
             },
             "Station" : {
-              "$ref" : "#/components/schemas/Station"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Station"
+              }
             },
             "CutBox" : {
               "$ref" : "#/components/schemas/rectangle"
@@ -8938,10 +9372,18 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ConvertingConfig" : {
-              "$ref" : "#/components/schemas/ConvertingConfig"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ConvertingConfig"
+              },
+              "minItems" : 1
             },
             "RepeatDesc" : {
-              "$ref" : "#/components/schemas/RepeatDesc"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/RepeatDesc"
+              },
+              "minItems" : 1
             },
             "Estimate" : {
               "type" : "boolean"
@@ -8990,7 +9432,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "IdentificationField" : {
-              "$ref" : "#/components/schemas/IdentificationField"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/IdentificationField"
+              }
             },
             "MediaRef" : {
               "type" : "string",
@@ -9023,10 +9468,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "CollatingItem" : {
-              "$ref" : "#/components/schemas/CollatingItem"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/CollatingItem"
+              }
             },
             "Feeder" : {
-              "$ref" : "#/components/schemas/Feeder"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Feeder"
+              }
             }
           }
         } ]
@@ -9058,7 +9509,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ImageCompression" : {
-              "$ref" : "#/components/schemas/ImageCompression"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ImageCompression"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "ImageCompression" ]
@@ -9071,7 +9526,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ImageEnhancementOp" : {
-              "$ref" : "#/components/schemas/ImageEnhancementOp"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ImageEnhancementOp"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "ImageEnhancementOp" ]
@@ -9119,7 +9578,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Device" : {
-              "$ref" : "#/components/schemas/Device"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Device"
+              }
             },
             "FileSpec" : {
               "$ref" : "#/components/schemas/FileSpec"
@@ -9128,16 +9590,25 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/FitPolicy"
             },
             "PlacedObject" : {
-              "$ref" : "#/components/schemas/PlacedObject"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/PlacedObject"
+              }
             },
             "Position" : {
-              "$ref" : "#/components/schemas/Position"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Position"
+              }
             },
             "SheetActivation" : {
               "$ref" : "#/components/schemas/SheetActivation"
             },
             "StripMark" : {
-              "$ref" : "#/components/schemas/StripMark"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/StripMark"
+              }
             },
             "Anchor" : {
               "$ref" : "#/components/schemas/Anchor"
@@ -9226,7 +9697,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ShiftPoint" : {
-              "$ref" : "#/components/schemas/ShiftPoint"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ShiftPoint"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "ShiftPoint" ]
@@ -9253,16 +9728,25 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Certification" : {
-              "$ref" : "#/components/schemas/Certification"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Certification"
+              }
             },
             "ColorMeasurementConditions" : {
               "$ref" : "#/components/schemas/ColorMeasurementConditions"
             },
             "HolePattern" : {
-              "$ref" : "#/components/schemas/HolePattern"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/HolePattern"
+              }
             },
             "IdentificationField" : {
-              "$ref" : "#/components/schemas/IdentificationField"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/IdentificationField"
+              }
             },
             "MediaLayers" : {
               "$ref" : "#/components/schemas/MediaLayers"
@@ -9460,10 +9944,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Certification" : {
-              "$ref" : "#/components/schemas/Certification"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Certification"
+              }
             },
             "IdentificationField" : {
-              "$ref" : "#/components/schemas/IdentificationField"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/IdentificationField"
+              }
             },
             "Color" : {
               "$ref" : "#/components/schemas/NamedColor"
@@ -9522,7 +10012,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/FileSpec"
             },
             "PreflightTest" : {
-              "$ref" : "#/components/schemas/PreflightTest"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/PreflightTest"
+              }
             }
           }
         } ]
@@ -9537,7 +10030,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/FileSpec"
             },
             "PreflightCheck" : {
-              "$ref" : "#/components/schemas/PreflightCheck"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/PreflightCheck"
+              }
             },
             "ErrorCount" : {
               "type" : "integer"
@@ -9592,7 +10088,8 @@ window.swaggerSpec={
               "type" : "array",
               "items" : {
                 "$ref" : "#/components/schemas/FileSpec"
-              }
+              },
+              "maxItems" : 2
             },
             "RegistrationQuality" : {
               "$ref" : "#/components/schemas/RegistrationQuality"
@@ -9639,7 +10136,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "BindingQualityMeasurement" : {
-              "$ref" : "#/components/schemas/BindingQualityMeasurement"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BindingQualityMeasurement"
+              }
             },
             "BindingQuality" : {
               "$ref" : "#/components/schemas/BindingQuality"
@@ -9714,7 +10214,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "MarkElement" : {
-              "$ref" : "#/components/schemas/MarkElement"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/MarkElement"
+              }
             },
             "Center" : {
               "$ref" : "#/components/schemas/XYPair"
@@ -9768,7 +10271,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/FileSpec"
             },
             "MetadataMap" : {
-              "$ref" : "#/components/schemas/MetadataMap"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/MetadataMap"
+              }
             },
             "Automation" : {
               "$ref" : "#/components/schemas/EnumAutomation"
@@ -9850,10 +10356,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "FileSpec" : {
-              "$ref" : "#/components/schemas/FileSpec"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/FileSpec"
+              }
             },
             "Shape" : {
-              "$ref" : "#/components/schemas/Shape"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Shape"
+              }
             },
             "Area" : {
               "type" : "number",
@@ -9903,7 +10415,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ObjectModel" : {
-              "$ref" : "#/components/schemas/ObjectModel"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ObjectModel"
+              }
             },
             "ShapeTemplate" : {
               "$ref" : "#/components/schemas/ShapeTemplate"
@@ -9918,10 +10433,17 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ConvertingConfig" : {
-              "$ref" : "#/components/schemas/ConvertingConfig"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ConvertingConfig"
+              }
             },
             "GangElement" : {
-              "$ref" : "#/components/schemas/GangElement"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/GangElement"
+              },
+              "minItems" : 1
             },
             "Policy" : {
               "type" : "string",
@@ -9989,7 +10511,10 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "Certification" : {
-            "$ref" : "#/components/schemas/Certification"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Certification"
+            }
           },
           "Coatings" : {
             "type" : "array",
@@ -10029,16 +10554,28 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/FileSpec"
             },
             "Crease" : {
-              "$ref" : "#/components/schemas/Crease"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Crease"
+              }
             },
             "Cut" : {
-              "$ref" : "#/components/schemas/Cut"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Cut"
+              }
             },
             "Fold" : {
-              "$ref" : "#/components/schemas/Fold"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Fold"
+              }
             },
             "Perforate" : {
-              "$ref" : "#/components/schemas/Perforate"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Perforate"
+              }
             },
             "FoldCatalog" : {
               "$ref" : "#/components/schemas/FoldCatalog"
@@ -10060,7 +10597,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "HolePattern" : {
-              "$ref" : "#/components/schemas/HolePattern"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/HolePattern"
+              },
+              "minItems" : 1
             }
           },
           "required" : [ "HolePattern" ]
@@ -10182,7 +10723,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "FolderProduction" : {
-              "$ref" : "#/components/schemas/FolderProduction"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/FolderProduction"
+              }
             },
             "ProductionPath" : {
               "$ref" : "#/components/schemas/ProductionPath"
@@ -10197,7 +10741,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ColorCorrectionOp" : {
-              "$ref" : "#/components/schemas/ColorCorrectionOp"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ColorCorrectionOp"
+              }
             }
           }
         } ]
@@ -10209,7 +10756,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ColorSpaceConversionOp" : {
-              "$ref" : "#/components/schemas/ColorSpaceConversionOp"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ColorSpaceConversionOp"
+              }
             },
             "FileSpec" : {
               "$ref" : "#/components/schemas/FileSpec"
@@ -10229,10 +10779,16 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Certification" : {
-              "$ref" : "#/components/schemas/Certification"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Certification"
+              }
             },
             "IdentificationField" : {
-              "$ref" : "#/components/schemas/IdentificationField"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/IdentificationField"
+              }
             },
             "InkType" : {
               "type" : "array",
@@ -10331,7 +10887,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/AutomatedOverPrintParams"
             },
             "ObjectResolution" : {
-              "$ref" : "#/components/schemas/ObjectResolution"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ObjectResolution"
+              }
             },
             "TIFFFormatParams" : {
               "$ref" : "#/components/schemas/TIFFFormatParams"
@@ -10366,7 +10925,11 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ScreenSelector" : {
-              "$ref" : "#/components/schemas/ScreenSelector"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ScreenSelector"
+              },
+              "minItems" : 1
             },
             "IgnoreSourceFile" : {
               "type" : "boolean"
@@ -10526,7 +11089,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "QueueEntry" : {
-              "$ref" : "#/components/schemas/QueueEntry"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/QueueEntry"
+              }
             }
           }
         } ]
@@ -10570,7 +11136,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "GangInfo" : {
-              "$ref" : "#/components/schemas/GangInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/GangInfo"
+              }
             }
           }
         } ]
@@ -10582,7 +11151,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "GangInfo" : {
-              "$ref" : "#/components/schemas/GangInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/GangInfo"
+              }
             }
           }
         } ]
@@ -10606,7 +11178,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Device" : {
-              "$ref" : "#/components/schemas/Device"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Device"
+              }
             }
           }
         } ]
@@ -10618,7 +11193,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "Device" : {
-              "$ref" : "#/components/schemas/Device"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Device"
+              }
             }
           }
         } ]
@@ -10637,7 +11215,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "MessageService" : {
-              "$ref" : "#/components/schemas/MessageService"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/MessageService"
+              }
             }
           }
         } ]
@@ -10661,7 +11242,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "SubscriptionInfo" : {
-              "$ref" : "#/components/schemas/SubscriptionInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/SubscriptionInfo"
+              }
             }
           }
         } ]
@@ -10673,7 +11257,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "SubscriptionInfo" : {
-              "$ref" : "#/components/schemas/SubscriptionInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/SubscriptionInfo"
+              }
             }
           }
         } ]
@@ -10819,7 +11406,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ResourceInfo" : {
-              "$ref" : "#/components/schemas/ResourceInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ResourceInfo"
+              }
             }
           }
         } ]
@@ -10831,7 +11421,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "ResourceInfo" : {
-              "$ref" : "#/components/schemas/ResourceInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/ResourceInfo"
+              }
             }
           }
         } ]
@@ -10953,7 +11546,10 @@ window.swaggerSpec={
           "type" : "object",
           "properties" : {
             "SubscriptionInfo" : {
-              "$ref" : "#/components/schemas/SubscriptionInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/SubscriptionInfo"
+              }
             }
           }
         } ]
