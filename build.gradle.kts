@@ -109,8 +109,8 @@ tasks.withType<org.hidetake.gradle.swagger.generator.GenerateSwaggerUI> {
     dependsOn("execute")
 }
 
-task("execute", JavaExec::class) {
-    group = "myCustomTasks"
+task("generateOpenApiSpec", JavaExec::class) {
+    group = "build"
     main = "org.cip4.xjdf.openapi.MainKt"
     classpath = sourceSets["main"].runtimeClasspath
 }
