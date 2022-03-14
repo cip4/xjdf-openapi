@@ -71,22 +71,20 @@ class LocalElement(
 ) {
 
     val isRequired: Boolean
-        get() = minOccurs > 0
+        get() = minOccurs != 0
 
-    private val minOccurs: Int
+    private val minOccurs: Int?
         get() = node.attributes.getNamedItem("minOccurs")?.nodeValue
             ?.let { Integer.parseInt(it) }
-            ?: 1
 
-    private val maxOccurs: Int
+    private val maxOccurs: Int?
         get() = node.attributes.getNamedItem("maxOccurs")?.nodeValue
             ?.let {
                 when (it) {
-                    "unbounded" -> null
+                    "unbounded" -> Int.MAX_VALUE
                     else -> Integer.parseInt(it)
                 }
             }
-            ?: 1
 
     internal val name: String
         get() = node.attributes.getNamedItem("name")?.nodeValue
@@ -100,8 +98,14 @@ class LocalElement(
 
     fun getModel(): NamedSchema {
         var schema = ref ?: type ?: Schema()
-        if (maxOccurs > 1) {
+        if ((maxOccurs ?: 1) > 1) {
             schema = listOf(schema)
+            if (minOccurs != 0) {
+                schema.minItems = minOccurs
+            }
+            if (maxOccurs != Int.MAX_VALUE) {
+                schema.maxItems = maxOccurs
+            }
         }
         return NamedSchema(name, schema)
     }
