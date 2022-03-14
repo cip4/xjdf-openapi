@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 /*
  * The CIP4 Software License, Version 1.0
  *
@@ -60,9 +58,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  * Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
  */
 
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
-    kotlin("jvm") version "1.4.32"
-    kotlin("plugin.serialization") version "1.4.32"
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
     id("org.hidetake.swagger.generator") version "2.18.2"
 }
 
@@ -85,13 +85,13 @@ dependencies {
 }
 
 tasks {
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    withType<KotlinCompile> {
         kotlinOptions.jvmTarget = "1.8"
     }
 }
 
 tasks.test {
-    dependsOn("execute")
+    dependsOn("generateOpenApiSpec")
     useJUnitPlatform()
     testLogging {
         events("passed", "skipped", "failed")
@@ -106,7 +106,7 @@ swaggerSources {
 }
 
 tasks.withType<org.hidetake.gradle.swagger.generator.GenerateSwaggerUI> {
-    dependsOn("execute")
+    dependsOn("generateOpenApiSpec")
 }
 
 task("generateOpenApiSpec", JavaExec::class) {

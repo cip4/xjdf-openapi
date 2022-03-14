@@ -6,6 +6,7 @@ schemas:
         type: array
         items:
           $ref: '#/components/schemas/Bar'
+        maxItems: 10
   Bar:
     type: object
     properties:
