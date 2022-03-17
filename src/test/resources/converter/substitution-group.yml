@@ -1,0 +1,28 @@
+schemas:
+  ReferencingType:
+    type: object
+    properties:
+      BaseElement:
+        oneOf:
+          - $ref: "#/components/schemas/SubstitutionType1"
+          - $ref: "#/components/schemas/SubstitutionType2"
+        discriminator:
+          propertyName: "Name"
+    required:
+      - BaseElement
+  BaseType:
+    type: object
+  SubstitutionType1:
+    type: object
+    properties:
+      e1:
+        type: integer
+    required:
+      - e1
+  SubstitutionType2:
+    type: object
+    properties:
+      e2:
+        type: string
+    required:
+      - e2

@@ -60,6 +60,7 @@
 
 package org.cip4.xjdf.openapi
 
+import org.cip4.xjdf.openapi.model.Discriminator
 import org.cip4.xjdf.openapi.model.NamedSchema
 import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.Node
@@ -67,7 +68,6 @@ import org.w3c.dom.Node
 class LocalElement(
     private val node: Node,
     private val context: Context
-
 ) {
 
     val isRequired: Boolean
@@ -93,11 +93,11 @@ class LocalElement(
     private val type: Schema?
         get() = node.attributes.getNamedItem("type")?.nodeValue?.let { context.nameTranslator.translate(it) }
 
-    private val ref: Schema?
-        get() = node.attributes.getNamedItem("ref")?.nodeValue?.let { Schema.ref(it) }
+    private val ref: String?
+        get() = node.attributes.getNamedItem("ref")?.nodeValue
 
     fun getModel(): NamedSchema {
-        var schema = ref ?: type ?: Schema()
+        var schema = deriveType()
         if ((maxOccurs ?: 1) > 1) {
             schema = listOf(schema)
             if (minOccurs != 0) {
@@ -114,6 +114,17 @@ class LocalElement(
         return Schema(
             type = "array",
             items = schema
+        )
+    }
+
+    private fun deriveType(): Schema {
+        if (ref == null) {
+            return type ?: Schema()
+        }
+        val substitutes = context.getSubstitutes(ref!!) ?: return Schema.ref(ref!!)
+        return Schema(
+            oneOf = substitutes,
+            discriminator = Discriminator("Name")
         )
     }
 

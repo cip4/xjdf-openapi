@@ -60,6 +60,7 @@
 
 package org.cip4.xjdf.openapi
 
+import org.cip4.xjdf.openapi.model.Reference
 import org.w3c.dom.Node
 import org.w3c.dom.NodeList
 import javax.xml.xpath.XPath
@@ -68,12 +69,32 @@ import javax.xml.xpath.XPathConstants
 class Context(
     val xPath: XPath,
     val nameTranslator: TypeTranslator,
-    val node: Node
+    val node: Node,
+    private val substitutionMap: MutableMap<String, MutableList<Reference>> = HashMap()
 ) {
 
-    internal fun evaluateNode(xPathExpr: String) = xPath.evaluate(xPathExpr, node, XPathConstants.NODE) as Node?
-    internal fun evaluateNodeList(xPathExpr: String) = xPath.evaluate(xPathExpr, node, XPathConstants.NODESET) as NodeList?
+    private var substitutionMapInitialized = false
 
-    internal fun descendant(descendant: Node) = Context(xPath, nameTranslator, descendant)
+    internal fun evaluateNode(xPathExpr: String) = xPath.evaluate(xPathExpr, node, XPathConstants.NODE) as Node?
+    internal fun evaluateNodeList(xPathExpr: String) =
+        xPath.evaluate(xPathExpr, node, XPathConstants.NODESET) as NodeList?
+
+    internal fun descendant(descendant: Node) = Context(xPath, nameTranslator, descendant, substitutionMap)
+
+    fun getSubstitutes(elementName: String): List<Reference>? {
+        if (!substitutionMapInitialized) {
+            substitutionMapInitialized = true
+            val nodes = xPath.evaluate("//xs:element[@substitutionGroup]", node.ownerDocument, XPathConstants.NODESET) as NodeList
+            (0 until nodes.length).forEach {
+                val substitutionGroup = nodes.item(it).attributes.getNamedItem("substitutionGroup").nodeValue
+                val type = nodes.item(it).attributes.getNamedItem("type").nodeValue
+                if (!substitutionMap.containsKey(substitutionGroup)) {
+                    substitutionMap[substitutionGroup] = mutableListOf()
+                }
+                substitutionMap[substitutionGroup]!!.add(Reference("#/components/schemas/$type"))
+            }
+        }
+        return substitutionMap[elementName]
+    }
 
 }
