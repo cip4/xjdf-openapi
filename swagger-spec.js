@@ -1341,7 +1341,1040 @@ window.swaggerSpec={
             }
           },
           "SpecificResource" : {
-            "$ref" : "#/components/schemas/SpecificResource"
+            "oneOf" : [ {
+              "$ref" : "#/components/schemas/CustomerInfo"
+            }, {
+              "$ref" : "#/components/schemas/NodeInfo"
+            }, {
+              "$ref" : "#/components/schemas/Shape"
+            }, {
+              "$ref" : "#/components/schemas/BlockPreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/BoxPackingParams"
+            }, {
+              "$ref" : "#/components/schemas/Bundle"
+            }, {
+              "$ref" : "#/components/schemas/CaseMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/CasingInParams"
+            }, {
+              "$ref" : "#/components/schemas/CoverApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/CreasingParams"
+            }, {
+              "$ref" : "#/components/schemas/CuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/DevelopingParams"
+            }, {
+              "$ref" : "#/components/schemas/Device"
+            }, {
+              "$ref" : "#/components/schemas/EmbossingParams"
+            }, {
+              "$ref" : "#/components/schemas/EndSheetGluingParams"
+            }, {
+              "$ref" : "#/components/schemas/GluingParams"
+            }, {
+              "$ref" : "#/components/schemas/HeadBandApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/InsertingParams"
+            }, {
+              "$ref" : "#/components/schemas/InterpretingParams"
+            }, {
+              "$ref" : "#/components/schemas/JacketingParams"
+            }, {
+              "$ref" : "#/components/schemas/LabelingParams"
+            }, {
+              "$ref" : "#/components/schemas/LaminatingParams"
+            }, {
+              "$ref" : "#/components/schemas/Pallet"
+            }, {
+              "$ref" : "#/components/schemas/PalletizingParams"
+            }, {
+              "$ref" : "#/components/schemas/PerforatingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScavengerArea"
+            }, {
+              "$ref" : "#/components/schemas/ShapeCuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/ShrinkingParams"
+            }, {
+              "$ref" : "#/components/schemas/SpinePreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/SpineTapingParams"
+            }, {
+              "$ref" : "#/components/schemas/StackingParams"
+            }, {
+              "$ref" : "#/components/schemas/StrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSealingParams"
+            }, {
+              "$ref" : "#/components/schemas/Tool"
+            }, {
+              "$ref" : "#/components/schemas/VarnishingParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/WrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/LooseBindingParams"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalDetails"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalParams"
+            }, {
+              "$ref" : "#/components/schemas/Assembly"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeCompParams"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeReproParams"
+            }, {
+              "$ref" : "#/components/schemas/BendingParams"
+            }, {
+              "$ref" : "#/components/schemas/BinderySignature"
+            }, {
+              "$ref" : "#/components/schemas/BoxFoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/Color"
+            }, {
+              "$ref" : "#/components/schemas/ColorantControl"
+            }, {
+              "$ref" : "#/components/schemas/Component"
+            }, {
+              "$ref" : "#/components/schemas/Contact"
+            }, {
+              "$ref" : "#/components/schemas/Content"
+            }, {
+              "$ref" : "#/components/schemas/ConventionalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/DeliveryParams"
+            }, {
+              "$ref" : "#/components/schemas/DieLayout"
+            }, {
+              "$ref" : "#/components/schemas/DieLayoutProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/DigitalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/ExposedMedia"
+            }, {
+              "$ref" : "#/components/schemas/FeedingParams"
+            }, {
+              "$ref" : "#/components/schemas/FontPolicy"
+            }, {
+              "$ref" : "#/components/schemas/ImageCompressionParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageEnhancementParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageSetterParams"
+            }, {
+              "$ref" : "#/components/schemas/Layout"
+            }, {
+              "$ref" : "#/components/schemas/LayoutElementProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/LayoutShift"
+            }, {
+              "$ref" : "#/components/schemas/ManualLaborParams"
+            }, {
+              "$ref" : "#/components/schemas/Media"
+            }, {
+              "$ref" : "#/components/schemas/MiscConsumable"
+            }, {
+              "$ref" : "#/components/schemas/PackingParams"
+            }, {
+              "$ref" : "#/components/schemas/PDLCreationParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightReport"
+            }, {
+              "$ref" : "#/components/schemas/Preview"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlParams"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlResult"
+            }, {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }, {
+              "$ref" : "#/components/schemas/RunList"
+            }, {
+              "$ref" : "#/components/schemas/SeparationControlParams"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDef"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDefProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/SheetOptimizingParams"
+            }, {
+              "$ref" : "#/components/schemas/TransferCurve"
+            }, {
+              "$ref" : "#/components/schemas/UsageCounter"
+            }, {
+              "$ref" : "#/components/schemas/BundlingParams"
+            }, {
+              "$ref" : "#/components/schemas/FoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/HoleMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/StitchingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSewingParams"
+            }, {
+              "$ref" : "#/components/schemas/TrimmingParams"
+            }, {
+              "$ref" : "#/components/schemas/WebInlineFinishingParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorCorrectionParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorSpaceConversionParams"
+            }, {
+              "$ref" : "#/components/schemas/Ink"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneCalculationParams"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneProfile"
+            }, {
+              "$ref" : "#/components/schemas/PreviewGenerationParams"
+            }, {
+              "$ref" : "#/components/schemas/RenderingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScreeningParams"
+            }, {
+              "$ref" : "#/components/schemas/TrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/PrintCondition"
+            }, {
+              "$ref" : "#/components/schemas/WindingParams"
+            }, {
+              "$ref" : "#/components/schemas/RasterReadingParams"
+            }, {
+              "$ref" : "#/components/schemas/CustomerInfo"
+            }, {
+              "$ref" : "#/components/schemas/NodeInfo"
+            }, {
+              "$ref" : "#/components/schemas/Shape"
+            }, {
+              "$ref" : "#/components/schemas/BlockPreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/BoxPackingParams"
+            }, {
+              "$ref" : "#/components/schemas/Bundle"
+            }, {
+              "$ref" : "#/components/schemas/CaseMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/CasingInParams"
+            }, {
+              "$ref" : "#/components/schemas/CoverApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/CreasingParams"
+            }, {
+              "$ref" : "#/components/schemas/CuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/DevelopingParams"
+            }, {
+              "$ref" : "#/components/schemas/Device"
+            }, {
+              "$ref" : "#/components/schemas/EmbossingParams"
+            }, {
+              "$ref" : "#/components/schemas/EndSheetGluingParams"
+            }, {
+              "$ref" : "#/components/schemas/GluingParams"
+            }, {
+              "$ref" : "#/components/schemas/HeadBandApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/InsertingParams"
+            }, {
+              "$ref" : "#/components/schemas/InterpretingParams"
+            }, {
+              "$ref" : "#/components/schemas/JacketingParams"
+            }, {
+              "$ref" : "#/components/schemas/LabelingParams"
+            }, {
+              "$ref" : "#/components/schemas/LaminatingParams"
+            }, {
+              "$ref" : "#/components/schemas/Pallet"
+            }, {
+              "$ref" : "#/components/schemas/PalletizingParams"
+            }, {
+              "$ref" : "#/components/schemas/PerforatingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScavengerArea"
+            }, {
+              "$ref" : "#/components/schemas/ShapeCuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/ShrinkingParams"
+            }, {
+              "$ref" : "#/components/schemas/SpinePreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/SpineTapingParams"
+            }, {
+              "$ref" : "#/components/schemas/StackingParams"
+            }, {
+              "$ref" : "#/components/schemas/StrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSealingParams"
+            }, {
+              "$ref" : "#/components/schemas/Tool"
+            }, {
+              "$ref" : "#/components/schemas/VarnishingParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/WrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/LooseBindingParams"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalDetails"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalParams"
+            }, {
+              "$ref" : "#/components/schemas/Assembly"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeCompParams"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeReproParams"
+            }, {
+              "$ref" : "#/components/schemas/BendingParams"
+            }, {
+              "$ref" : "#/components/schemas/BinderySignature"
+            }, {
+              "$ref" : "#/components/schemas/BoxFoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/Color"
+            }, {
+              "$ref" : "#/components/schemas/ColorantControl"
+            }, {
+              "$ref" : "#/components/schemas/Component"
+            }, {
+              "$ref" : "#/components/schemas/Contact"
+            }, {
+              "$ref" : "#/components/schemas/Content"
+            }, {
+              "$ref" : "#/components/schemas/ConventionalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/DeliveryParams"
+            }, {
+              "$ref" : "#/components/schemas/DieLayout"
+            }, {
+              "$ref" : "#/components/schemas/DieLayoutProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/DigitalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/ExposedMedia"
+            }, {
+              "$ref" : "#/components/schemas/FeedingParams"
+            }, {
+              "$ref" : "#/components/schemas/FontPolicy"
+            }, {
+              "$ref" : "#/components/schemas/ImageCompressionParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageEnhancementParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageSetterParams"
+            }, {
+              "$ref" : "#/components/schemas/Layout"
+            }, {
+              "$ref" : "#/components/schemas/LayoutElementProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/LayoutShift"
+            }, {
+              "$ref" : "#/components/schemas/ManualLaborParams"
+            }, {
+              "$ref" : "#/components/schemas/Media"
+            }, {
+              "$ref" : "#/components/schemas/MiscConsumable"
+            }, {
+              "$ref" : "#/components/schemas/PackingParams"
+            }, {
+              "$ref" : "#/components/schemas/PDLCreationParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightReport"
+            }, {
+              "$ref" : "#/components/schemas/Preview"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlParams"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlResult"
+            }, {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }, {
+              "$ref" : "#/components/schemas/RunList"
+            }, {
+              "$ref" : "#/components/schemas/SeparationControlParams"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDef"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDefProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/SheetOptimizingParams"
+            }, {
+              "$ref" : "#/components/schemas/TransferCurve"
+            }, {
+              "$ref" : "#/components/schemas/UsageCounter"
+            }, {
+              "$ref" : "#/components/schemas/BundlingParams"
+            }, {
+              "$ref" : "#/components/schemas/FoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/HoleMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/StitchingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSewingParams"
+            }, {
+              "$ref" : "#/components/schemas/TrimmingParams"
+            }, {
+              "$ref" : "#/components/schemas/WebInlineFinishingParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorCorrectionParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorSpaceConversionParams"
+            }, {
+              "$ref" : "#/components/schemas/Ink"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneCalculationParams"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneProfile"
+            }, {
+              "$ref" : "#/components/schemas/PreviewGenerationParams"
+            }, {
+              "$ref" : "#/components/schemas/RenderingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScreeningParams"
+            }, {
+              "$ref" : "#/components/schemas/TrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/PrintCondition"
+            }, {
+              "$ref" : "#/components/schemas/WindingParams"
+            }, {
+              "$ref" : "#/components/schemas/RasterReadingParams"
+            }, {
+              "$ref" : "#/components/schemas/CustomerInfo"
+            }, {
+              "$ref" : "#/components/schemas/NodeInfo"
+            }, {
+              "$ref" : "#/components/schemas/Shape"
+            }, {
+              "$ref" : "#/components/schemas/BlockPreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/BoxPackingParams"
+            }, {
+              "$ref" : "#/components/schemas/Bundle"
+            }, {
+              "$ref" : "#/components/schemas/CaseMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/CasingInParams"
+            }, {
+              "$ref" : "#/components/schemas/CoverApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/CreasingParams"
+            }, {
+              "$ref" : "#/components/schemas/CuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/DevelopingParams"
+            }, {
+              "$ref" : "#/components/schemas/Device"
+            }, {
+              "$ref" : "#/components/schemas/EmbossingParams"
+            }, {
+              "$ref" : "#/components/schemas/EndSheetGluingParams"
+            }, {
+              "$ref" : "#/components/schemas/GluingParams"
+            }, {
+              "$ref" : "#/components/schemas/HeadBandApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/InsertingParams"
+            }, {
+              "$ref" : "#/components/schemas/InterpretingParams"
+            }, {
+              "$ref" : "#/components/schemas/JacketingParams"
+            }, {
+              "$ref" : "#/components/schemas/LabelingParams"
+            }, {
+              "$ref" : "#/components/schemas/LaminatingParams"
+            }, {
+              "$ref" : "#/components/schemas/Pallet"
+            }, {
+              "$ref" : "#/components/schemas/PalletizingParams"
+            }, {
+              "$ref" : "#/components/schemas/PerforatingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScavengerArea"
+            }, {
+              "$ref" : "#/components/schemas/ShapeCuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/ShrinkingParams"
+            }, {
+              "$ref" : "#/components/schemas/SpinePreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/SpineTapingParams"
+            }, {
+              "$ref" : "#/components/schemas/StackingParams"
+            }, {
+              "$ref" : "#/components/schemas/StrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSealingParams"
+            }, {
+              "$ref" : "#/components/schemas/Tool"
+            }, {
+              "$ref" : "#/components/schemas/VarnishingParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/WrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/LooseBindingParams"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalDetails"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalParams"
+            }, {
+              "$ref" : "#/components/schemas/Assembly"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeCompParams"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeReproParams"
+            }, {
+              "$ref" : "#/components/schemas/BendingParams"
+            }, {
+              "$ref" : "#/components/schemas/BinderySignature"
+            }, {
+              "$ref" : "#/components/schemas/BoxFoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/Color"
+            }, {
+              "$ref" : "#/components/schemas/ColorantControl"
+            }, {
+              "$ref" : "#/components/schemas/Component"
+            }, {
+              "$ref" : "#/components/schemas/Contact"
+            }, {
+              "$ref" : "#/components/schemas/Content"
+            }, {
+              "$ref" : "#/components/schemas/ConventionalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/DeliveryParams"
+            }, {
+              "$ref" : "#/components/schemas/DieLayout"
+            }, {
+              "$ref" : "#/components/schemas/DieLayoutProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/DigitalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/ExposedMedia"
+            }, {
+              "$ref" : "#/components/schemas/FeedingParams"
+            }, {
+              "$ref" : "#/components/schemas/FontPolicy"
+            }, {
+              "$ref" : "#/components/schemas/ImageCompressionParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageEnhancementParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageSetterParams"
+            }, {
+              "$ref" : "#/components/schemas/Layout"
+            }, {
+              "$ref" : "#/components/schemas/LayoutElementProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/LayoutShift"
+            }, {
+              "$ref" : "#/components/schemas/ManualLaborParams"
+            }, {
+              "$ref" : "#/components/schemas/Media"
+            }, {
+              "$ref" : "#/components/schemas/MiscConsumable"
+            }, {
+              "$ref" : "#/components/schemas/PackingParams"
+            }, {
+              "$ref" : "#/components/schemas/PDLCreationParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightReport"
+            }, {
+              "$ref" : "#/components/schemas/Preview"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlParams"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlResult"
+            }, {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }, {
+              "$ref" : "#/components/schemas/RunList"
+            }, {
+              "$ref" : "#/components/schemas/SeparationControlParams"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDef"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDefProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/SheetOptimizingParams"
+            }, {
+              "$ref" : "#/components/schemas/TransferCurve"
+            }, {
+              "$ref" : "#/components/schemas/UsageCounter"
+            }, {
+              "$ref" : "#/components/schemas/BundlingParams"
+            }, {
+              "$ref" : "#/components/schemas/FoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/HoleMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/StitchingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSewingParams"
+            }, {
+              "$ref" : "#/components/schemas/TrimmingParams"
+            }, {
+              "$ref" : "#/components/schemas/WebInlineFinishingParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorCorrectionParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorSpaceConversionParams"
+            }, {
+              "$ref" : "#/components/schemas/Ink"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneCalculationParams"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneProfile"
+            }, {
+              "$ref" : "#/components/schemas/PreviewGenerationParams"
+            }, {
+              "$ref" : "#/components/schemas/RenderingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScreeningParams"
+            }, {
+              "$ref" : "#/components/schemas/TrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/PrintCondition"
+            }, {
+              "$ref" : "#/components/schemas/WindingParams"
+            }, {
+              "$ref" : "#/components/schemas/RasterReadingParams"
+            }, {
+              "$ref" : "#/components/schemas/CustomerInfo"
+            }, {
+              "$ref" : "#/components/schemas/NodeInfo"
+            }, {
+              "$ref" : "#/components/schemas/Shape"
+            }, {
+              "$ref" : "#/components/schemas/BlockPreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/BoxPackingParams"
+            }, {
+              "$ref" : "#/components/schemas/Bundle"
+            }, {
+              "$ref" : "#/components/schemas/CaseMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/CasingInParams"
+            }, {
+              "$ref" : "#/components/schemas/CoverApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/CreasingParams"
+            }, {
+              "$ref" : "#/components/schemas/CuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/DevelopingParams"
+            }, {
+              "$ref" : "#/components/schemas/Device"
+            }, {
+              "$ref" : "#/components/schemas/EmbossingParams"
+            }, {
+              "$ref" : "#/components/schemas/EndSheetGluingParams"
+            }, {
+              "$ref" : "#/components/schemas/GluingParams"
+            }, {
+              "$ref" : "#/components/schemas/HeadBandApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/InsertingParams"
+            }, {
+              "$ref" : "#/components/schemas/InterpretingParams"
+            }, {
+              "$ref" : "#/components/schemas/JacketingParams"
+            }, {
+              "$ref" : "#/components/schemas/LabelingParams"
+            }, {
+              "$ref" : "#/components/schemas/LaminatingParams"
+            }, {
+              "$ref" : "#/components/schemas/Pallet"
+            }, {
+              "$ref" : "#/components/schemas/PalletizingParams"
+            }, {
+              "$ref" : "#/components/schemas/PerforatingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScavengerArea"
+            }, {
+              "$ref" : "#/components/schemas/ShapeCuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/ShrinkingParams"
+            }, {
+              "$ref" : "#/components/schemas/SpinePreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/SpineTapingParams"
+            }, {
+              "$ref" : "#/components/schemas/StackingParams"
+            }, {
+              "$ref" : "#/components/schemas/StrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSealingParams"
+            }, {
+              "$ref" : "#/components/schemas/Tool"
+            }, {
+              "$ref" : "#/components/schemas/VarnishingParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/WrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/LooseBindingParams"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalDetails"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalParams"
+            }, {
+              "$ref" : "#/components/schemas/Assembly"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeCompParams"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeReproParams"
+            }, {
+              "$ref" : "#/components/schemas/BendingParams"
+            }, {
+              "$ref" : "#/components/schemas/BinderySignature"
+            }, {
+              "$ref" : "#/components/schemas/BoxFoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/Color"
+            }, {
+              "$ref" : "#/components/schemas/ColorantControl"
+            }, {
+              "$ref" : "#/components/schemas/Component"
+            }, {
+              "$ref" : "#/components/schemas/Contact"
+            }, {
+              "$ref" : "#/components/schemas/Content"
+            }, {
+              "$ref" : "#/components/schemas/ConventionalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/DeliveryParams"
+            }, {
+              "$ref" : "#/components/schemas/DieLayout"
+            }, {
+              "$ref" : "#/components/schemas/DieLayoutProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/DigitalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/ExposedMedia"
+            }, {
+              "$ref" : "#/components/schemas/FeedingParams"
+            }, {
+              "$ref" : "#/components/schemas/FontPolicy"
+            }, {
+              "$ref" : "#/components/schemas/ImageCompressionParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageEnhancementParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageSetterParams"
+            }, {
+              "$ref" : "#/components/schemas/Layout"
+            }, {
+              "$ref" : "#/components/schemas/LayoutElementProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/LayoutShift"
+            }, {
+              "$ref" : "#/components/schemas/ManualLaborParams"
+            }, {
+              "$ref" : "#/components/schemas/Media"
+            }, {
+              "$ref" : "#/components/schemas/MiscConsumable"
+            }, {
+              "$ref" : "#/components/schemas/PackingParams"
+            }, {
+              "$ref" : "#/components/schemas/PDLCreationParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightReport"
+            }, {
+              "$ref" : "#/components/schemas/Preview"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlParams"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlResult"
+            }, {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }, {
+              "$ref" : "#/components/schemas/RunList"
+            }, {
+              "$ref" : "#/components/schemas/SeparationControlParams"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDef"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDefProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/SheetOptimizingParams"
+            }, {
+              "$ref" : "#/components/schemas/TransferCurve"
+            }, {
+              "$ref" : "#/components/schemas/UsageCounter"
+            }, {
+              "$ref" : "#/components/schemas/BundlingParams"
+            }, {
+              "$ref" : "#/components/schemas/FoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/HoleMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/StitchingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSewingParams"
+            }, {
+              "$ref" : "#/components/schemas/TrimmingParams"
+            }, {
+              "$ref" : "#/components/schemas/WebInlineFinishingParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorCorrectionParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorSpaceConversionParams"
+            }, {
+              "$ref" : "#/components/schemas/Ink"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneCalculationParams"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneProfile"
+            }, {
+              "$ref" : "#/components/schemas/PreviewGenerationParams"
+            }, {
+              "$ref" : "#/components/schemas/RenderingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScreeningParams"
+            }, {
+              "$ref" : "#/components/schemas/TrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/PrintCondition"
+            }, {
+              "$ref" : "#/components/schemas/WindingParams"
+            }, {
+              "$ref" : "#/components/schemas/RasterReadingParams"
+            }, {
+              "$ref" : "#/components/schemas/CustomerInfo"
+            }, {
+              "$ref" : "#/components/schemas/NodeInfo"
+            }, {
+              "$ref" : "#/components/schemas/Shape"
+            }, {
+              "$ref" : "#/components/schemas/BlockPreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/BoxPackingParams"
+            }, {
+              "$ref" : "#/components/schemas/Bundle"
+            }, {
+              "$ref" : "#/components/schemas/CaseMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/CasingInParams"
+            }, {
+              "$ref" : "#/components/schemas/CoverApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/CreasingParams"
+            }, {
+              "$ref" : "#/components/schemas/CuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/DevelopingParams"
+            }, {
+              "$ref" : "#/components/schemas/Device"
+            }, {
+              "$ref" : "#/components/schemas/EmbossingParams"
+            }, {
+              "$ref" : "#/components/schemas/EndSheetGluingParams"
+            }, {
+              "$ref" : "#/components/schemas/GluingParams"
+            }, {
+              "$ref" : "#/components/schemas/HeadBandApplicationParams"
+            }, {
+              "$ref" : "#/components/schemas/InsertingParams"
+            }, {
+              "$ref" : "#/components/schemas/InterpretingParams"
+            }, {
+              "$ref" : "#/components/schemas/JacketingParams"
+            }, {
+              "$ref" : "#/components/schemas/LabelingParams"
+            }, {
+              "$ref" : "#/components/schemas/LaminatingParams"
+            }, {
+              "$ref" : "#/components/schemas/Pallet"
+            }, {
+              "$ref" : "#/components/schemas/PalletizingParams"
+            }, {
+              "$ref" : "#/components/schemas/PerforatingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScavengerArea"
+            }, {
+              "$ref" : "#/components/schemas/ShapeCuttingParams"
+            }, {
+              "$ref" : "#/components/schemas/ShrinkingParams"
+            }, {
+              "$ref" : "#/components/schemas/SpinePreparationParams"
+            }, {
+              "$ref" : "#/components/schemas/SpineTapingParams"
+            }, {
+              "$ref" : "#/components/schemas/StackingParams"
+            }, {
+              "$ref" : "#/components/schemas/StrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSealingParams"
+            }, {
+              "$ref" : "#/components/schemas/Tool"
+            }, {
+              "$ref" : "#/components/schemas/VarnishingParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/VerificationParams"
+            }, {
+              "$ref" : "#/components/schemas/WrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/LooseBindingParams"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalDetails"
+            }, {
+              "$ref" : "#/components/schemas/ApprovalParams"
+            }, {
+              "$ref" : "#/components/schemas/Assembly"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeCompParams"
+            }, {
+              "$ref" : "#/components/schemas/BarcodeReproParams"
+            }, {
+              "$ref" : "#/components/schemas/BendingParams"
+            }, {
+              "$ref" : "#/components/schemas/BinderySignature"
+            }, {
+              "$ref" : "#/components/schemas/BoxFoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/Color"
+            }, {
+              "$ref" : "#/components/schemas/ColorantControl"
+            }, {
+              "$ref" : "#/components/schemas/Component"
+            }, {
+              "$ref" : "#/components/schemas/Contact"
+            }, {
+              "$ref" : "#/components/schemas/Content"
+            }, {
+              "$ref" : "#/components/schemas/ConventionalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/DeliveryParams"
+            }, {
+              "$ref" : "#/components/schemas/DieLayout"
+            }, {
+              "$ref" : "#/components/schemas/DieLayoutProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/DigitalPrintingParams"
+            }, {
+              "$ref" : "#/components/schemas/ExposedMedia"
+            }, {
+              "$ref" : "#/components/schemas/FeedingParams"
+            }, {
+              "$ref" : "#/components/schemas/FontPolicy"
+            }, {
+              "$ref" : "#/components/schemas/ImageCompressionParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageEnhancementParams"
+            }, {
+              "$ref" : "#/components/schemas/ImageSetterParams"
+            }, {
+              "$ref" : "#/components/schemas/Layout"
+            }, {
+              "$ref" : "#/components/schemas/LayoutElementProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/LayoutShift"
+            }, {
+              "$ref" : "#/components/schemas/ManualLaborParams"
+            }, {
+              "$ref" : "#/components/schemas/Media"
+            }, {
+              "$ref" : "#/components/schemas/MiscConsumable"
+            }, {
+              "$ref" : "#/components/schemas/PackingParams"
+            }, {
+              "$ref" : "#/components/schemas/PDLCreationParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightParams"
+            }, {
+              "$ref" : "#/components/schemas/PreflightReport"
+            }, {
+              "$ref" : "#/components/schemas/Preview"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlParams"
+            }, {
+              "$ref" : "#/components/schemas/QualityControlResult"
+            }, {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }, {
+              "$ref" : "#/components/schemas/RunList"
+            }, {
+              "$ref" : "#/components/schemas/SeparationControlParams"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDef"
+            }, {
+              "$ref" : "#/components/schemas/ShapeDefProductionParams"
+            }, {
+              "$ref" : "#/components/schemas/SheetOptimizingParams"
+            }, {
+              "$ref" : "#/components/schemas/TransferCurve"
+            }, {
+              "$ref" : "#/components/schemas/UsageCounter"
+            }, {
+              "$ref" : "#/components/schemas/BundlingParams"
+            }, {
+              "$ref" : "#/components/schemas/FoldingParams"
+            }, {
+              "$ref" : "#/components/schemas/HoleMakingParams"
+            }, {
+              "$ref" : "#/components/schemas/StitchingParams"
+            }, {
+              "$ref" : "#/components/schemas/ThreadSewingParams"
+            }, {
+              "$ref" : "#/components/schemas/TrimmingParams"
+            }, {
+              "$ref" : "#/components/schemas/WebInlineFinishingParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorCorrectionParams"
+            }, {
+              "$ref" : "#/components/schemas/ColorSpaceConversionParams"
+            }, {
+              "$ref" : "#/components/schemas/Ink"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneCalculationParams"
+            }, {
+              "$ref" : "#/components/schemas/InkZoneProfile"
+            }, {
+              "$ref" : "#/components/schemas/PreviewGenerationParams"
+            }, {
+              "$ref" : "#/components/schemas/RenderingParams"
+            }, {
+              "$ref" : "#/components/schemas/ScreeningParams"
+            }, {
+              "$ref" : "#/components/schemas/TrappingParams"
+            }, {
+              "$ref" : "#/components/schemas/PrintCondition"
+            }, {
+              "$ref" : "#/components/schemas/WindingParams"
+            }, {
+              "$ref" : "#/components/schemas/RasterReadingParams"
+            } ],
+            "discriminator" : {
+              "propertyName" : "Name"
+            }
           },
           "Brand" : {
             "type" : "string"
@@ -1402,7 +2435,40 @@ window.swaggerSpec={
         "type" : "object",
         "properties" : {
           "ProductIntent" : {
-            "$ref" : "#/components/schemas/ProductIntent"
+            "oneOf" : [ {
+              "$ref" : "#/components/schemas/BindingIntent"
+            }, {
+              "$ref" : "#/components/schemas/ColorIntent"
+            }, {
+              "$ref" : "#/components/schemas/ProductionIntent"
+            }, {
+              "$ref" : "#/components/schemas/EmbossingIntent"
+            }, {
+              "$ref" : "#/components/schemas/FoldingIntent"
+            }, {
+              "$ref" : "#/components/schemas/HoleMakingIntent"
+            }, {
+              "$ref" : "#/components/schemas/AssemblingIntent"
+            }, {
+              "$ref" : "#/components/schemas/IntentResource"
+            }, {
+              "$ref" : "#/components/schemas/LaminatingIntent"
+            }, {
+              "$ref" : "#/components/schemas/LayoutIntent"
+            }, {
+              "$ref" : "#/components/schemas/MediaIntent"
+            }, {
+              "$ref" : "#/components/schemas/VariableIntent"
+            }, {
+              "$ref" : "#/components/schemas/ContentCheckIntent"
+            }, {
+              "$ref" : "#/components/schemas/ShapeCuttingIntent"
+            }, {
+              "$ref" : "#/components/schemas/SizeIntent"
+            } ],
+            "discriminator" : {
+              "propertyName" : "Name"
+            }
           },
           "DescriptiveName" : {
             "type" : "string"
@@ -1869,7 +2935,26 @@ window.swaggerSpec={
           "Message" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/Message"
+              "oneOf" : [ {
+                "$ref" : "#/components/schemas/Command"
+              }, {
+                "$ref" : "#/components/schemas/Query"
+              }, {
+                "$ref" : "#/components/schemas/Response"
+              }, {
+                "$ref" : "#/components/schemas/Signal"
+              }, {
+                "$ref" : "#/components/schemas/Command"
+              }, {
+                "$ref" : "#/components/schemas/Query"
+              }, {
+                "$ref" : "#/components/schemas/Response"
+              }, {
+                "$ref" : "#/components/schemas/Signal"
+              } ],
+              "discriminator" : {
+                "propertyName" : "Name"
+              }
             }
           },
           "Header" : {
