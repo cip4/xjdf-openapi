@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<XJDF xmlns="http://www.CIP4.org/JDFSchema_2_0"
+  JobID="PaperAudit" Types="ConventionalPrinting">
+  <AuditPool>
+    <AuditCreated>
+      <Header AgentName="Writer" AgentVersion="V_2.0"
+        DeviceID="TestSender" Time="2020-03-01T19:55:57+01:00"/>
+    </AuditCreated>
+    <AuditResource>
+      <Header AgentName="Writer" AgentVersion="V_2.0"
+        DeviceID="TestSender" Time="2020-03-01T19:55:57+01:00"/>
+      <ResourceInfo>
+        <ResourceSet Name="Component" Usage="Input">
+          <Resource>
+            <AmountPool>
+              <PartAmount Amount="400" Waste="21"/>
+            </AmountPool>
+            <Part SheetName="S1"/>
+            <Component/>
+          </Resource>
+        </ResourceSet>
+      </ResourceInfo>
+    </AuditResource>
+    <AuditResource>
+      <Header AgentName="Writer" AgentVersion="V_2.0"
+        DeviceID="TestSender" Time="2020-03-01T19:55:57+01:00"/>
+      <ResourceInfo>
+        <ResourceSet Name="Media">
+          <Resource>
+            <Media MediaType="Paper" Weight="90"/>
+          </Resource>
+        </ResourceSet>
+      </ResourceInfo>
+    </AuditResource>
+  </AuditPool>
+  <!-- END SNIPPET -->
+  <ResourceSet Name="NodeInfo" Usage="Input">
+    <Resource>
+      <NodeInfo/>
+    </Resource>
+  </ResourceSet>
+  <!-- START SNIPPET -->
+  <ResourceSet Name="Media">
+    <Resource ID="r_000007">
+      <Part SheetName="S1"/>
+      <Media MediaType="Paper" Weight="80"/>
+    </Resource>
+  </ResourceSet>
+  <ResourceSet Name="Component" Usage="Input">
+    <Resource>
+      <AmountPool>
+        <PartAmount Amount="400"/>
+      </AmountPool>
+      <Part SheetName="S1"/>
+      <Component MediaRef="r_000007"/>
+    </Resource>
+  </ResourceSet>
+</XJDF>
+<!-- END SNIPPET -->

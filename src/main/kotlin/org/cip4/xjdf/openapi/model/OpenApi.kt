@@ -67,6 +67,7 @@ import kotlinx.serialization.Serializable
 @SerialName("OpenApi")
 data class OpenApi(
     val openapi: String,
+    val `$schema`: String,
     val info: Info,
     val paths: Map<String, PathItem>,
     var components: Components = Components()

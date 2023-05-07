@@ -119,7 +119,8 @@ class OpenApiConverter(sourceXsd: InputStream) {
     fun convertModel(): OpenApi {
         val pg = PathsGenerator()
         val openApi = OpenApi(
-            openapi = "3.0.0",
+            openapi = "3.1.0",
+            `$schema` = "https://spec.openapis.org/oas/3.1/dialect/base",
             info = info(),
             paths = pg.paths()
         )

@@ -82,6 +82,9 @@ dependencies {
     testImplementation("com.google.jimfs:jimfs:1.2")
     swaggerUI("org.webjars:swagger-ui:3.10.0")
     implementation(kotlin("stdlib-jdk8"))
+    implementation("org.cip4.lib.jdf:JDFLibJ-JSON:1.1.015")
+    implementation("org.cip4.lib.jdf:JDFLibJ:2.1.7.+")
+    implementation ("com.googlecode.json-simple:json-simple:1.1.1")
 }
 
 tasks {
