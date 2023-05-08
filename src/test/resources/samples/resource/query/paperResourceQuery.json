@@ -12,9 +12,7 @@
     },
     "ResourceQuParams": {
       "Scope": "Allowed",
-      "ResourceName": [
-        "Media"
-      ]
+      "ResourceName": "Media"
     }
   }
 }
