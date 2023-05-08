@@ -115,59 +115,105 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
     fun convertModel(): Schema {
         val nameTranslator = TypeTranslator("#/\$defs/")
         val schemas = Schemas()
-        val xjdfSchema = convertTopLevelElement("XJDF", nameTranslator, schemas).schema
+        val xjdfSchema = convertNamedElement("XJDF", nameTranslator, schemas).schema
         xjdfSchema.`$schema` = "https://json-schema.org/draft/2020-12/schema"
         xjdfSchema.`$defs` = schemas
         return xjdfSchema
     }
 
-    private fun convertReferencedSimpleTypes(node: Node, nameTranslator: TypeTranslator, schemas: Schemas) {
+    private fun convertReferencedTypes(node: Node, nameTranslator: TypeTranslator, schemas: Schemas) {
         val types = xPath.evaluate(
-            ".//xs:attribute/@type",
+            ".//@type",
             node,
             XPathConstants.NODESET
         ) as NodeList
 
         for (i in 0 until types.length) {
             val typeName = types.item(i).nodeValue
-            convertTopLevelSimpleType(typeName, nameTranslator, schemas)
+            convertNamedType(typeName, nameTranslator, schemas)
         }
     }
 
-    private fun convertTopLevelSimpleType(typeName: String, nameTranslator: TypeTranslator, schemas: Schemas) {
+    private fun convertNamedType(typeName: String, nameTranslator: TypeTranslator, schemas: Schemas) {
         if (schemas.containsKey(typeName)
             || typeName.startsWith("xs:")
         ) {
-            return;
+            return
         }
-        val element = xPath.evaluate(
-            "/xs:schema/xs:simpleType[@name='$typeName']",
+        val typeNode = xPath.evaluate(
+            "/xs:schema/xs:simpleType[@name='$typeName'] | /xs:schema/xs:complexType[@name='$typeName']",
             doc,
             XPathConstants.NODE
         ) as Node
 
-        val simpleType = SimpleType.Factory.create(
-            element,
-            Context(xPath, nameTranslator, element)
-        )
-        schemas[simpleType.name!!] = simpleType.getModel()
+        if (typeNode.localName == "simpleType") {
+            convertSimpleType(typeNode, nameTranslator, schemas)
+        } else {
+            convertComplexType(typeNode, nameTranslator, schemas)
+        }
     }
 
-    private fun convertTopLevelElement(
-        nodeName: String,
+    private fun convertSimpleType(typeNode: Node, nameTranslator: TypeTranslator, schemas: Schemas) {
+        val schema = SimpleType.Factory.create(
+            typeNode,
+            Context(xPath, nameTranslator, typeNode)
+        ).getModel()
+        schemas[schema.name] = schema.schema
+
+        convertExtendedTypes(typeNode, nameTranslator, schemas)
+    }
+
+    private fun convertComplexType(typeNode: Node, nameTranslator: TypeTranslator, schemas: Schemas) {
+        val schema = ComplexType(Context(xPath, nameTranslator, typeNode)).getModel()
+        schemas[schema.name] = schema.schema
+
+        convertReferencedElements(typeNode, nameTranslator, schemas)
+        convertReferencedTypes(typeNode, nameTranslator, schemas)
+        convertChildTypes(schema.name, nameTranslator, schemas)
+        convertExtendedTypes(typeNode, nameTranslator, schemas)
+    }
+
+    private fun convertNamedElement(
+        elementName: String,
         nameTranslator: TypeTranslator,
         schemas: Schemas
-    ): NamedSchema {
+    ): Model {
         val element = xPath.evaluate(
-            "/xs:schema/xs:element[@name='$nodeName']",
+            "/xs:schema/xs:element[@name='$elementName']",
             doc,
             XPathConstants.NODE
         ) as Node
 
-        val namedSchema = TopLevelElement(Context(xPath, nameTranslator, element)).getModel(nameTranslator)
+        val model = NamedElement(Context(xPath, nameTranslator, element)).getModel()
         convertReferencedElements(element, nameTranslator, schemas)
-        convertReferencedSimpleTypes(element, nameTranslator, schemas)
-        return namedSchema
+        convertReferencedTypes(element, nameTranslator, schemas)
+        convertChildTypes(model.name, nameTranslator, schemas)
+        convertExtendedTypes(element, nameTranslator, schemas)
+
+        if (element.attributes.getNamedItem("type") != null) {
+            convertNamedType(elementName, nameTranslator, schemas)
+        }
+
+        return model
+    }
+
+    private fun convertExtendedTypes(
+        element: Node,
+        nameTranslator: TypeTranslator,
+        schemas: Schemas
+    ) {
+        val elements = xPath.evaluate(
+            ".//@base",
+            element,
+            XPathConstants.NODESET
+        ) as NodeList
+
+        for (i in 0 until elements.length) {
+            val baseType = elements.item(i).nodeValue!!
+            if (!schemas.containsKey(baseType) && !baseType.startsWith("xs:")) {
+                convertNamedType(baseType, nameTranslator, schemas)
+            }
+        }
     }
 
     private fun convertReferencedElements(node: Node, nameTranslator: TypeTranslator, schemas: Schemas) {
@@ -180,13 +226,15 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
         for (i in 0 until elements.length) {
             val elementName = elements.item(i).nodeValue
             if (!schemas.containsKey(elementName)) {
-                val model = convertTopLevelElement(elementName, nameTranslator, schemas)
+                // prevent endless loop by pre-registering the schema
+                schemas[elementName] = Schema()
+                val model = convertNamedElement(elementName, nameTranslator, schemas)
                 schemas[model.name] = model.schema
             }
         }
     }
 
-    private fun convertTopLevelComplexTypes(baseType: String, nameTranslator: TypeTranslator, schemas: Schemas) {
+    private fun convertChildTypes(baseType: String, nameTranslator: TypeTranslator, schemas: Schemas) {
         val elements = xPath.evaluate(
             "/xs:schema/xs:complexType[xs:complexContent/xs:extension/@base='$baseType']",
             doc,
@@ -194,17 +242,8 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
         ) as NodeList
 
         for (i in 0 until elements.length) {
-            val model = ComplexType(Context(xPath, nameTranslator, elements.item(i))).getModel(nameTranslator)
-            schemas[model.name] = model.schema
+            convertComplexType(elements.item(i), nameTranslator, schemas)
         }
-    }
-
-    fun info(): Info {
-        return Info(
-            "CLOUD-XJDF",
-            "The json flavour of XJDF",
-            "0.0.1"
-        )
     }
 
 }

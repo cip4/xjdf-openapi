@@ -60,6 +60,7 @@
 
 package org.cip4.xjdf.openapi
 
+import org.cip4.xjdf.openapi.model.Model
 import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.Node
 import org.w3c.dom.NodeList
@@ -91,7 +92,7 @@ class SimpleTypeRestriction(
         override fun create(node: Node, context: Context) = SimpleTypeRestriction(node, context)
     }
 
-    override fun getModel(): Schema {
+    override fun getModel(): Model {
         val schema = base
         restrictionFloat("xs:minInclusive")?.let { min ->
             schema.minimum = min
@@ -112,7 +113,7 @@ class SimpleTypeRestriction(
         restrictionString("xs:pattern")?.let { pattern ->
             schema.pattern = pattern
         }
-        return schema
+        return Model(this.name, schema)
     }
 
     private fun restrictionInt(name: String): Int? {

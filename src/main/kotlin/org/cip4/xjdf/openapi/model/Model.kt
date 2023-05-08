@@ -58,27 +58,13 @@
  * Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
  */
 
-package org.cip4.xjdf.openapi
+package org.cip4.xjdf.openapi.model
 
-import org.cip4.xjdf.openapi.model.NamedSchema
-import org.cip4.xjdf.openapi.model.Schema
+import kotlinx.serialization.Serializable
+import java.util.UUID
 
-class TopLevelElement(
-    private val context: Context,
-) : Modelable {
-
-    private val name: String
-        get() = context.node.attributes.getNamedItem("name").nodeValue
-
-    override fun getModel(nameTranslator: TypeTranslator): NamedSchema {
-        val localType = context.evaluateNode(
-            "xs:complexType",
-        )
-        val schema = if (localType == null) {
-            Schema()
-        } else {
-            ComplexType(context.descendant(localType)).getModel(nameTranslator).schema
-        }
-        return NamedSchema(name, schema)
-    }
-}
+@Serializable
+data class Model(
+    val name: String, //= "R" + UUID.randomUUID().toString(),
+    val schema: Schema
+) : YmlModel

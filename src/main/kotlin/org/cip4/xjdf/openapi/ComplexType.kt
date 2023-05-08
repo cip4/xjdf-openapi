@@ -61,8 +61,7 @@
 package org.cip4.xjdf.openapi
 
 import org.cip4.xjdf.openapi.model.Discriminator
-import org.cip4.xjdf.openapi.model.NamedSchema
-import org.cip4.xjdf.openapi.model.Reference
+import org.cip4.xjdf.openapi.model.Model
 import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.NodeList
 import java.util.*
@@ -75,11 +74,11 @@ class ComplexType(
         get() = context.node.attributes.getNamedItem("name")?.nodeValue
             ?: UUID.randomUUID().toString()
 
-    override fun getModel(nameTranslator: TypeTranslator): NamedSchema {
+    override fun getModel(): Model {
         // TODO: When a class references an abstract class, we need to reference all implementing classes instead.
         val localElements = getLocalElements()
         val attributes = getAttributes()
-        val properties = (localElements.map { it.getModel(nameTranslator) } +
+        val properties = (localElements.map { it.getModel() } +
                 attributes.map { it.getModel() }).associate { it.name to it.schema }
 
         var schema = Schema(
@@ -87,7 +86,7 @@ class ComplexType(
             properties = properties.ifEmpty { null }
         )
 
-        applyChoicePolymorphism(schema, nameTranslator)
+        applyChoicePolymorphism(schema, context.nameTranslator)
 
         val required = localElements.filter { it.isRequired }.map { it.name } +
                 attributes.filter { it.isRequired }.map { it.name }
@@ -98,13 +97,13 @@ class ComplexType(
         inheritingFrom()?.let { parent ->
             schema = Schema(
                 allOf = listOf(
-                    nameTranslator.translate(parent),
+                    context.nameTranslator.translate(parent),
                     schema
                 )
             )
         }
 
-        return NamedSchema(name, schema)
+        return Model(name, schema)
     }
 
     private fun getLocalElements(): List<LocalElement> {

@@ -60,6 +60,7 @@
 
 package org.cip4.xjdf.openapi
 
+import org.cip4.xjdf.openapi.model.Model
 import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.Node
 import javax.xml.xpath.XPath
@@ -71,6 +72,8 @@ class AttributeReferencedType(
 
     private val type: Schema
         get() = context.nameTranslator.translate(node.attributes.getNamedItem("type").nodeValue)
+    private val name: String
+        get() = node.attributes.getNamedItem("name").nodeValue
 
     companion object Factory : AttributeType.Factory<AttributeReferencedType> {
         override fun supports(candidate: Node, xPath: XPath): Boolean =
@@ -80,8 +83,8 @@ class AttributeReferencedType(
             AttributeReferencedType(node, context)
     }
 
-    override fun getModel(): Schema {
-        return type
+    override fun getModel(): Model {
+        return Model(name, type)
     }
 
 }

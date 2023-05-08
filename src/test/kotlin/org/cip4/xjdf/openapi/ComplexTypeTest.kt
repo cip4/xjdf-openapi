@@ -60,7 +60,7 @@
 
 package org.cip4.xjdf.openapi
 
-import org.cip4.xjdf.openapi.model.NamedSchema
+import org.cip4.xjdf.openapi.model.Model
 import org.cip4.xjdf.openapi.model.Schema
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -90,9 +90,9 @@ internal class ComplexTypeTest {
                 xPath.evaluate("/xs:schema/xs:complexType[@name='AbstractType']", doc, XPathConstants.NODE) as Node
             )
         )
-        val model = tle.getModel(nameTranslator)
+        val model = tle.getModel()
         assertEquals(
-            NamedSchema(
+            Model(
                 "AbstractType",
                 Schema(
                     type = "object"
@@ -117,9 +117,9 @@ internal class ComplexTypeTest {
                 xPath.evaluate("/xs:schema/xs:complexType[@name='Impl1Type']", doc, XPathConstants.NODE) as Node
             )
         )
-        val model = tle.getModel(nameTranslator)
+        val model = tle.getModel()
         assertEquals(
-            NamedSchema(
+            Model(
                 "Impl1Type",
                 Schema(
                     allOf = listOf(

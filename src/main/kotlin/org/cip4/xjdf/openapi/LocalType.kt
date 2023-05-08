@@ -60,7 +60,7 @@
 
 package org.cip4.xjdf.openapi
 
-import org.cip4.xjdf.openapi.model.Schema
+import org.cip4.xjdf.openapi.model.Model
 import org.w3c.dom.Node
 import org.w3c.dom.NodeList
 import javax.xml.xpath.XPath
@@ -69,7 +69,7 @@ import javax.xml.xpath.XPathConstants
 class LocalType(
     private val node: Node,
     private val context: Context
-) : AttributeType() {
+) : Modelable, AttributeType() {
 
     val simpleType: Node
         get() = context.xPath.evaluate(
@@ -89,7 +89,8 @@ class LocalType(
         override fun create(node: Node, context: Context) = LocalType(node, context)
     }
 
-    override fun getModel(): Schema {
+    override fun getModel(): Model {
         return SimpleType.Factory.create(simpleType, context).getModel()
     }
+
 }

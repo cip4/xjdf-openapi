@@ -60,6 +60,7 @@
 
 package org.cip4.xjdf.openapi
 
+import org.cip4.xjdf.openapi.model.Model
 import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.Node
 import org.w3c.dom.NodeList
@@ -92,8 +93,8 @@ class SimpleTypeList(
             SimpleTypeList(node, context)
     }
 
-    override fun getModel(): Schema {
-        return Schema(type = "array", items = itemType)
+    override fun getModel(): Model {
+        return Model(this.name,  Schema(type = "array", items = itemType))
     }
 
 }

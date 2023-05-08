@@ -142,7 +142,7 @@ class OpenApiConverter(sourceXsd: InputStream) {
                 elements.item(i),
                 Context(xPath, nameTranslator, elements.item(i))
             )
-            schemas[simpleType.name!!] = simpleType.getModel()
+            schemas[simpleType.name!!] = simpleType.getModel().schema
         }
     }
 
@@ -154,7 +154,7 @@ class OpenApiConverter(sourceXsd: InputStream) {
         ) as NodeList
 
         for (i in 0 until elements.length) {
-            val model = TopLevelElement(Context(xPath, nameTranslator, elements.item(i))).getModel(nameTranslator)
+            val model = NamedElement(Context(xPath, nameTranslator, elements.item(i))).getModel()
             schemas[model.name] = model.schema
         }
     }
@@ -168,7 +168,7 @@ class OpenApiConverter(sourceXsd: InputStream) {
         ) as NodeList
 
         for (i in 0 until elements.length) {
-            val model = ComplexType(Context(xPath, nameTranslator, elements.item(i))).getModel(nameTranslator)
+            val model = ComplexType(Context(xPath, nameTranslator, elements.item(i))).getModel()
             schemas[model.name] = model.schema
         }
     }

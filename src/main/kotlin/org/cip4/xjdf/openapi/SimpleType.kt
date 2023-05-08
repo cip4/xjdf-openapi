@@ -60,18 +60,20 @@
 
 package org.cip4.xjdf.openapi
 
-import org.cip4.xjdf.openapi.model.Schema
+import org.cip4.xjdf.openapi.model.Model
 import org.w3c.dom.Node
+import java.util.UUID
 import javax.xml.xpath.XPath
 
 abstract class SimpleType(
     val node: Node
-) {
+) : Modelable {
 
-    val name: String?
+    val name: String
         get() = node.attributes.getNamedItem("name")?.nodeValue
+            ?: ("S" + UUID.randomUUID().toString())
 
-    abstract fun getModel(): Schema
+    abstract override fun getModel(): Model
 
     interface Factory<T : SimpleType> {
         fun supports(candidate: Node, xPath: XPath): Boolean
