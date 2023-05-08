@@ -85,11 +85,12 @@ dependencies {
     implementation("org.cip4.lib.jdf:JDFLibJ-JSON:1.1.015")
     implementation("org.cip4.lib.jdf:JDFLibJ:2.1.7.+")
     implementation ("com.googlecode.json-simple:json-simple:1.1.1")
+    implementation("com.networknt:json-schema-validator:1.0.81")
 }
 
 tasks {
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "17"
     }
 }
 
@@ -119,9 +120,9 @@ task("generateOpenApiSpec", JavaExec::class) {
 }
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions {
-    jvmTarget = "1.8"
+    jvmTarget = "17"
 }
 val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
-    jvmTarget = "1.8"
+    jvmTarget = "17"
 }
