@@ -61,8 +61,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.10"
-    kotlin("plugin.serialization") version "1.6.10"
+    kotlin("jvm") version "1.8.21"
+    kotlin("plugin.serialization") version "1.8.21"
     id("org.hidetake.swagger.generator") version "2.18.2"
 }
 
@@ -73,8 +73,8 @@ repositories {
 
 dependencies {
     implementation("org.junit.jupiter:junit-jupiter:5.4.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
-    implementation("com.charleskorn.kaml:kaml:0.30.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    implementation("com.charleskorn.kaml:kaml:0.53.0")
     implementation("org.openapi4j:openapi-parser:1.0.7")
     implementation("org.openapi4j:openapi-operation-validator:1.0.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
