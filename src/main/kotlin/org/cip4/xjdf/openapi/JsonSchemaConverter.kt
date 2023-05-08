@@ -66,6 +66,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.encodeToString
 import org.cip4.xjdf.openapi.model.*
 import org.w3c.dom.Document
+import org.w3c.dom.Node
 import org.w3c.dom.NodeList
 import org.xml.sax.InputSource
 import java.io.InputStream
@@ -76,7 +77,7 @@ import javax.xml.xpath.XPathConstants
 import javax.xml.xpath.XPathFactory
 
 @OptIn(ExperimentalSerializationApi::class)
-class OpenApiConverter(sourceXsd: InputStream) {
+class JsonSchemaConverter(sourceXsd: InputStream) {
     private var doc: Document
     var xPath: XPath
 
@@ -96,7 +97,7 @@ class OpenApiConverter(sourceXsd: InputStream) {
         return dBuilder.parse(xmlInput)
     }
 
-    fun convert(outputStream: OutputStream, header: Boolean = false) {
+    fun convert(outputStream: OutputStream) {
         val openApi = convertModel()
 
         val format = Yaml(
@@ -106,63 +107,88 @@ class OpenApiConverter(sourceXsd: InputStream) {
         )
 
         outputStream.writer().use { writer ->
-            if (header) {
-                writer.write(format.encodeToString(openApi))
-            } else {
-                writer.write(format.encodeToString(openApi.components.schemas))
+            writer.write(format.encodeToString(openApi))
+        }
+
+    }
+
+    fun convertModel(): Schema {
+        val nameTranslator = TypeTranslator("#/\$defs/")
+        val schemas = Schemas()
+        val xjdfSchema = convertTopLevelElement("XJDF", nameTranslator, schemas).schema
+        xjdfSchema.`$schema` = "https://json-schema.org/draft/2020-12/schema"
+        xjdfSchema.`$defs` = schemas
+        return xjdfSchema
+    }
+
+    private fun convertReferencedSimpleTypes(node: Node, nameTranslator: TypeTranslator, schemas: Schemas) {
+        val types = xPath.evaluate(
+            ".//xs:attribute/@type",
+            node,
+            XPathConstants.NODESET
+        ) as NodeList
+
+        for (i in 0 until types.length) {
+            val typeName = types.item(i).nodeValue
+            convertTopLevelSimpleType(typeName, nameTranslator, schemas)
+        }
+    }
+
+    private fun convertTopLevelSimpleType(typeName: String, nameTranslator: TypeTranslator, schemas: Schemas) {
+        if (schemas.containsKey(typeName)
+            || typeName.startsWith("xs:")
+        ) {
+            return;
+        }
+        val element = xPath.evaluate(
+            "/xs:schema/xs:simpleType[@name='$typeName']",
+            doc,
+            XPathConstants.NODE
+        ) as Node
+
+        val simpleType = SimpleType.Factory.create(
+            element,
+            Context(xPath, nameTranslator, element)
+        )
+        schemas[simpleType.name!!] = simpleType.getModel()
+    }
+
+    private fun convertTopLevelElement(
+        nodeName: String,
+        nameTranslator: TypeTranslator,
+        schemas: Schemas
+    ): NamedSchema {
+        val element = xPath.evaluate(
+            "/xs:schema/xs:element[@name='$nodeName']",
+            doc,
+            XPathConstants.NODE
+        ) as Node
+
+        val namedSchema = TopLevelElement(Context(xPath, nameTranslator, element)).getModel(nameTranslator)
+        convertReferencedElements(element, nameTranslator, schemas)
+        convertReferencedSimpleTypes(element, nameTranslator, schemas)
+        return namedSchema
+    }
+
+    private fun convertReferencedElements(node: Node, nameTranslator: TypeTranslator, schemas: Schemas) {
+        val elements = xPath.evaluate(
+            ".//xs:element/@ref",
+            node,
+            XPathConstants.NODESET
+        ) as NodeList
+
+        for (i in 0 until elements.length) {
+            val elementName = elements.item(i).nodeValue
+            if (!schemas.containsKey(elementName)) {
+                val model = convertTopLevelElement(elementName, nameTranslator, schemas)
+                schemas[model.name] = model.schema
             }
         }
-
     }
 
-    fun convertModel(): OpenApi {
-        val pg = PathsGenerator()
-        val openApi = OpenApi(
-            openapi = "3.1.0",
-            `$schema` = "https://spec.openapis.org/oas/3.1/dialect/base",
-            info = info(),
-            paths = pg.paths()
-        )
-        val nameTranslator = TypeTranslator("#/components/schemas/")
-        convertTopLevelElements(nameTranslator, openApi.components.schemas)
-        convertTopLevelComplexTypes(nameTranslator, openApi.components.schemas)
-        convertTopLevelSimpleTypes(nameTranslator, openApi.components.schemas)
-        return openApi
-    }
-
-    private fun convertTopLevelSimpleTypes(nameTranslator: TypeTranslator, schemas: Schemas) {
+    private fun convertTopLevelComplexTypes(baseType: String, nameTranslator: TypeTranslator, schemas: Schemas) {
         val elements = xPath.evaluate(
-            "/xs:schema/xs:simpleType",
-            doc,
-            XPathConstants.NODESET
-        ) as NodeList
-
-        for (i in 0 until elements.length) {
-            val simpleType = SimpleType.Factory.create(
-                elements.item(i),
-                Context(xPath, nameTranslator, elements.item(i))
-            )
-            schemas[simpleType.name!!] = simpleType.getModel()
-        }
-    }
-
-    private fun convertTopLevelElements(nameTranslator: TypeTranslator, schemas: Schemas) {
-        val elements = xPath.evaluate(
-            "/xs:schema/xs:element",
-            doc,
-            XPathConstants.NODESET
-        ) as NodeList
-
-        for (i in 0 until elements.length) {
-            val model = TopLevelElement(Context(xPath, nameTranslator, elements.item(i))).getModel(nameTranslator)
-            schemas[model.name] = model.schema
-        }
-    }
-
-
-    private fun convertTopLevelComplexTypes(nameTranslator: TypeTranslator, schemas: Schemas) {
-        val elements = xPath.evaluate(
-            "/xs:schema/xs:complexType",
+            "/xs:schema/xs:complexType[xs:complexContent/xs:extension/@base='$baseType']",
             doc,
             XPathConstants.NODESET
         ) as NodeList

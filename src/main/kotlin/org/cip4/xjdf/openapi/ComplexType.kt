@@ -75,11 +75,11 @@ class ComplexType(
         get() = context.node.attributes.getNamedItem("name")?.nodeValue
             ?: UUID.randomUUID().toString()
 
-    override fun getModel(): NamedSchema {
+    override fun getModel(nameTranslator: TypeTranslator): NamedSchema {
         // TODO: When a class references an abstract class, we need to reference all implementing classes instead.
         val localElements = getLocalElements()
         val attributes = getAttributes()
-        val properties = (localElements.map { it.getModel() } +
+        val properties = (localElements.map { it.getModel(nameTranslator) } +
                 attributes.map { it.getModel() }).associate { it.name to it.schema }
 
         var schema = Schema(
@@ -87,7 +87,7 @@ class ComplexType(
             properties = properties.ifEmpty { null }
         )
 
-        applyChoicePolymorphism(schema)
+        applyChoicePolymorphism(schema, nameTranslator)
 
         val required = localElements.filter { it.isRequired }.map { it.name } +
                 attributes.filter { it.isRequired }.map { it.name }
@@ -98,7 +98,7 @@ class ComplexType(
         inheritingFrom()?.let { parent ->
             schema = Schema(
                 allOf = listOf(
-                    Schema.ref(parent),
+                    nameTranslator.translate(parent),
                     schema
                 )
             )
@@ -150,7 +150,7 @@ class ComplexType(
     private fun inheritingFrom(): String? =
         context.evaluateNode("xs:complexContent/xs:extension/@base")?.nodeValue
 
-    private fun applyChoicePolymorphism(schema: Schema) {
+    private fun applyChoicePolymorphism(schema: Schema, nameTranslator: TypeTranslator) {
         val choice = context.evaluateNode("xs:choice") ?: return
 
         if (choice.attributes.getNamedItem("minOccurs").nodeValue != "0") {
@@ -168,7 +168,7 @@ class ComplexType(
         schema.items = Schema(
             oneOf = (0 until choices.length).map {
                 val reference = choices.item(it).attributes.getNamedItem("ref").nodeValue
-                Reference("#/components/schemas/$reference")
+                nameTranslator.reference(reference)
             },
             discriminator = Discriminator("Name")
         )

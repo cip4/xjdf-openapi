@@ -60,9 +60,12 @@
 
 package org.cip4.xjdf.openapi
 
+import org.cip4.xjdf.openapi.model.Reference
 import org.cip4.xjdf.openapi.model.Schema
 
-class TypeTranslator {
+class TypeTranslator(
+    val componentPath: String
+) {
 
     fun translate(xsdName: String): Schema {
         return when (xsdName) {
@@ -80,8 +83,16 @@ class TypeTranslator {
             "xs:NMTOKENS" -> Schema(type = "array", items = translate("xs:NMTOKEN"))
             "xs:duration" -> Schema(type = "string", format = "duration")
             "xs:anyURI" -> Schema(type = "string", format = "uri")
-            else -> Schema.ref(xsdName)
+            else -> Schema(`$ref` = ref(xsdName))
         }
+    }
+
+    private fun ref(name: String): String {
+        return componentPath.plus(name)
+    }
+
+    fun reference(name: String): Reference {
+        return Reference(ref(name))
     }
 
 }

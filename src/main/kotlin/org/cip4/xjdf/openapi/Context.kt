@@ -81,7 +81,7 @@ class Context(
 
     internal fun descendant(descendant: Node) = Context(xPath, nameTranslator, descendant, substitutionMap)
 
-    fun getSubstitutes(elementName: String): List<Reference>? {
+    fun getSubstitutes(elementName: String, nameTranslator: TypeTranslator): List<Reference>? {
         if (!substitutionMapInitialized) {
             substitutionMapInitialized = true
             val nodes = xPath.evaluate("//xs:element[@substitutionGroup]", node.ownerDocument, XPathConstants.NODESET) as NodeList
@@ -91,7 +91,7 @@ class Context(
                 if (!substitutionMap.containsKey(substitutionGroup)) {
                     substitutionMap[substitutionGroup] = mutableListOf()
                 }
-                substitutionMap[substitutionGroup]!!.add(Reference("#/components/schemas/$type"))
+                substitutionMap[substitutionGroup]!!.add(nameTranslator.reference(type))
             }
         }
         return substitutionMap[elementName]

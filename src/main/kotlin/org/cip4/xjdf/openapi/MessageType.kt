@@ -20,6 +20,7 @@ data class MessageType(
                 "KnownDevices" -> "/known-devices"
                 "ShutDown" -> "/shutdown"
                 "KnownMessages" -> "/known-messages"
+                "Notification" -> "/notification"
                 "Status" -> "/status"
                 "SubmitQueueEntry" -> "/queue-entry/submit"
                 "ReturnQueueEntry" -> "/queue-entry/return"
@@ -30,6 +31,8 @@ data class MessageType(
                 "Resource" -> when(type) {
                     "Command" -> "/resource/command"
                     "Query" -> "/resource/query"
+                    "Signal" -> "/resource/query"
+                    "Response" -> "/resource/query"
                     else -> throw RuntimeException("Could not map '%s' to a message type.".format(elementName))
                 }
                 else -> throw RuntimeException("Could not map '%s' to a message type.".format(elementName))

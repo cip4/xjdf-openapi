@@ -61,21 +61,24 @@
 package org.cip4.xjdf.openapi
 
 import org.cip4.xjdf.openapi.model.NamedSchema
+import org.cip4.xjdf.openapi.model.Schema
 
 class TopLevelElement(
     private val context: Context,
-) {
+) : Modelable {
 
     private val name: String
         get() = context.node.attributes.getNamedItem("name").nodeValue
 
-    fun getModel(): NamedSchema? {
+    override fun getModel(nameTranslator: TypeTranslator): NamedSchema {
         val localType = context.evaluateNode(
             "xs:complexType",
         )
-        return localType?.let {
-            val type = ComplexType(context.descendant(it))
-            NamedSchema(name, type.getModel().schema)
+        val schema = if (localType == null) {
+            Schema()
+        } else {
+            ComplexType(context.descendant(localType)).getModel(nameTranslator).schema
         }
+        return NamedSchema(name, schema)
     }
 }

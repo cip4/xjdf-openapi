@@ -61,20 +61,20 @@
 package org.cip4.xjdf.openapi.model
 
 import com.charleskorn.kaml.Yaml
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 
+@OptIn(ExperimentalSerializationApi::class)
 @Serializable
 data class Components(
-    val schemas: MutableMap<String, Schema> = mutableMapOf()
+    val schemas: Schemas = Schemas()
 ) : YmlModel {
 
-    private fun add(name: String, schema: Schema) {
-        schemas[name] = schema
-    }
 
-    fun add(namedSchema: NamedSchema) {
-        add(namedSchema.name, namedSchema.schema)
+
+    fun contains(name: String): Boolean {
+        return schemas.containsKey(name)
     }
 
     override fun toString(): String {

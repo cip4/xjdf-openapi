@@ -68,7 +68,7 @@ import org.w3c.dom.Node
 class LocalElement(
     private val node: Node,
     private val context: Context
-) {
+): Modelable {
 
     val isRequired: Boolean
         get() = minOccurs != 0
@@ -96,8 +96,8 @@ class LocalElement(
     private val ref: String?
         get() = node.attributes.getNamedItem("ref")?.nodeValue
 
-    fun getModel(): NamedSchema {
-        var schema = deriveType()
+    override fun getModel(nameTranslator: TypeTranslator): NamedSchema {
+        var schema = deriveType(nameTranslator)
         if ((maxOccurs ?: 1) > 1) {
             schema = listOf(schema)
             if (minOccurs != 0) {
@@ -117,11 +117,11 @@ class LocalElement(
         )
     }
 
-    private fun deriveType(): Schema {
+    private fun deriveType(nameTranslator: TypeTranslator): Schema {
         if (ref == null) {
             return type ?: Schema()
         }
-        val substitutes = context.getSubstitutes(ref!!) ?: return Schema.ref(ref!!)
+        val substitutes = context.getSubstitutes(ref!!, nameTranslator) ?: return nameTranslator.translate(ref!!)
         return Schema(
             oneOf = substitutes,
             discriminator = Discriminator("Name")

@@ -64,24 +64,21 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Schema(
+    var `$schema`: String? = null,
     var type: String? = null,
     var properties: Map<String, Schema>? = null,
     var required: List<String>? = null,
     var items: Schema? = null,
     var format: String? = null,
     var enum: List<String>? = null,
-    var minimum: Int? = null,
-    var maximum: Int? = null,
+    var minimum: Float? = null,
+    var maximum: Float? = null,
     var pattern: String? = null,
     var oneOf: List<Reference>? = null,
     var discriminator: Discriminator? = null,
     var allOf: List<Schema>? = null,
     var minItems: Int? = null,
     var maxItems: Int? = null,
-    val `$ref`: String? = null
-) : YmlModel {
-
-    companion object {
-        fun ref(reference: String) = Schema(`$ref` = "#/components/schemas/$reference")
-    }
-}
+    var `$ref`: String? = null,
+    var `$defs`: Schemas = Schemas(),
+) : YmlModel

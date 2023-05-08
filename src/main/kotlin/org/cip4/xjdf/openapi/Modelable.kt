@@ -64,6 +64,6 @@ import org.cip4.xjdf.openapi.model.YmlModel
 
 interface Modelable {
 
-    fun getModel(): YmlModel
+    fun getModel(nameTranslator: TypeTranslator): YmlModel
 
 }

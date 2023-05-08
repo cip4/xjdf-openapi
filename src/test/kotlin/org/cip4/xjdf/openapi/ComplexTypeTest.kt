@@ -73,6 +73,7 @@ import javax.xml.xpath.XPathConstants
 import javax.xml.xpath.XPathFactory
 
 internal class ComplexTypeTest {
+    private val nameTranslator = TypeTranslator("#/defs")
 
     @Test
     internal fun `empty complex type is handled`() {
@@ -85,11 +86,11 @@ internal class ComplexTypeTest {
         val tle = ComplexType(
             Context(
                 xPath,
-                TypeTranslator(),
+                nameTranslator,
                 xPath.evaluate("/xs:schema/xs:complexType[@name='AbstractType']", doc, XPathConstants.NODE) as Node
             )
         )
-        val model = tle.getModel()
+        val model = tle.getModel(nameTranslator)
         assertEquals(
             NamedSchema(
                 "AbstractType",
@@ -112,17 +113,17 @@ internal class ComplexTypeTest {
         val tle = ComplexType(
             Context(
                 xPath,
-                TypeTranslator(),
+                nameTranslator,
                 xPath.evaluate("/xs:schema/xs:complexType[@name='Impl1Type']", doc, XPathConstants.NODE) as Node
             )
         )
-        val model = tle.getModel()
+        val model = tle.getModel(nameTranslator)
         assertEquals(
             NamedSchema(
                 "Impl1Type",
                 Schema(
                     allOf = listOf(
-                        Schema.ref("AbstractType"),
+                        nameTranslator.translate("AbstractType"),
                         Schema(
                             type = "object",
                             properties = mapOf(

@@ -93,10 +93,10 @@ class SimpleTypeRestriction(
 
     override fun getModel(): Schema {
         val schema = base
-        restrictionInt("xs:minInclusive")?.let { min ->
+        restrictionFloat("xs:minInclusive")?.let { min ->
             schema.minimum = min
         }
-        restrictionInt("xs:maxInclusive")?.let { max ->
+        restrictionFloat("xs:maxInclusive")?.let { max ->
             schema.maximum = max
         }
         restrictionInt("xs:minLength")?.let { value ->
@@ -123,6 +123,17 @@ class SimpleTypeRestriction(
         ) as Node?
         return node?.nodeValue?.toInt()
     }
+
+    private fun restrictionFloat(name: String): Float? {
+        val node = context.xPath.evaluate(
+            "xs:restriction/$name/@value",
+            node,
+            XPathConstants.NODE
+        ) as Node?
+        return node?.nodeValue?.toFloat()
+    }
+
+
 
     private fun restrictionString(restrictionName: String): String? {
         // TODO: Fix handling with multiple patterns (like NamedColor)
