@@ -105,19 +105,21 @@ class RoundtripTest {
     @MethodSource("scanForSamples")
     internal fun `sample is valid`(from: Path) {
         val jsonWriter = JSONWriter()
+        jsonWriter.setXJDF(true, true)
         jsonWriter.jsonRoot = JSONWriter.eJSONRoot.schema
         jsonWriter.prefix = JSONWriter.eJSONPrefix.none
-        jsonWriter.isLearnArrays = false
 
         val xjmf = KElement.parseFile(from.toString())
-        val o = jsonWriter.convert(xjmf)
-        val jsonString = prettyPrint(o)
-        val messageType = guessMessageTypeFromXjmf(xjmf)
+        val o = jsonWriter.splitConvert(xjmf)
+        o.forEach {
+            val jsonString = prettyPrint(it)
+            val messageType = guessMessageTypeFromXjmf(xjmf)
 
-        if (messageType.isRequest) {
-            validateRequest(messageType, jsonString)
-        } else {
-            validateResponse(messageType, jsonString)
+            if (messageType.isRequest) {
+                validateRequest(messageType, jsonString)
+            } else {
+                validateResponse(messageType, jsonString)
+            }
         }
     }
 
