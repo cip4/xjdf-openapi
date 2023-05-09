@@ -62,9 +62,10 @@ package org.cip4.xjdf.openapi
 
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
-import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.encodeToString
-import org.cip4.xjdf.openapi.model.*
+import org.cip4.xjdf.openapi.model.Info
+import org.cip4.xjdf.openapi.model.OpenApi
+import org.cip4.xjdf.openapi.model.Schemas
 import org.w3c.dom.Document
 import org.w3c.dom.NodeList
 import org.xml.sax.InputSource
@@ -75,10 +76,9 @@ import javax.xml.xpath.XPath
 import javax.xml.xpath.XPathConstants
 import javax.xml.xpath.XPathFactory
 
-@OptIn(ExperimentalSerializationApi::class)
 class OpenApiConverter(sourceXsd: InputStream) {
-    private var doc: Document
-    var xPath: XPath
+    private val doc: Document
+    private val xPath: XPath
 
     init {
         doc = readXml(sourceXsd)
@@ -96,7 +96,7 @@ class OpenApiConverter(sourceXsd: InputStream) {
         return dBuilder.parse(xmlInput)
     }
 
-    fun convert(outputStream: OutputStream, header: Boolean = false) {
+    fun convert(outputStream: OutputStream) {
         val openApi = convertModel()
 
         val format = Yaml(
@@ -106,16 +106,11 @@ class OpenApiConverter(sourceXsd: InputStream) {
         )
 
         outputStream.writer().use { writer ->
-            if (header) {
-                writer.write(format.encodeToString(openApi))
-            } else {
-                writer.write(format.encodeToString(openApi.components.schemas))
-            }
+            writer.write(format.encodeToString(openApi))
         }
-
     }
 
-    fun convertModel(): OpenApi {
+    private fun convertModel(): OpenApi {
         val pg = PathsGenerator()
         val openApi = OpenApi(
             openapi = "3.1.0",

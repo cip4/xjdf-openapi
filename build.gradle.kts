@@ -86,6 +86,7 @@ dependencies {
     implementation("org.cip4.lib.jdf:JDFLibJ:2.1.7.+")
     implementation ("com.googlecode.json-simple:json-simple:1.1.1")
     implementation("com.networknt:json-schema-validator:1.0.81")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.0")
 }
 
 tasks {
@@ -95,13 +96,11 @@ tasks {
 }
 
 tasks.test {
-    dependsOn("generateOpenApiSpec")
     useJUnitPlatform()
     testLogging {
         events("passed", "skipped", "failed")
     }
 }
-
 
 swaggerSources {
     register("xjdf") {

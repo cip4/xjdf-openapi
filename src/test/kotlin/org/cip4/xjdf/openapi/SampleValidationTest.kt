@@ -63,12 +63,8 @@ package org.cip4.xjdf.openapi
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.networknt.schema.*
-import org.cip4.jdflib.core.KElement
-import org.cip4.lib.jdf.jsonutil.JSONWriter
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
@@ -76,10 +72,7 @@ import org.openapi4j.operation.validator.model.Request
 import org.openapi4j.operation.validator.model.impl.Body
 import org.openapi4j.operation.validator.model.impl.DefaultRequest
 import org.openapi4j.operation.validator.validation.RequestValidator
-import org.openapi4j.parser.OpenApi3Parser
-import org.openapi4j.parser.model.v3.OpenApi3
 import org.openapi4j.schema.validator.ValidationData
-import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -113,7 +106,7 @@ class SampleValidationTest {
     internal fun `xjdf is invalid`(from: Path) {
         val jsonNode: JsonNode?
         from.inputStream().use {
-            jsonNode = mapper.readTree(it);
+            jsonNode = mapper.readTree(it)
         }
         val result = jsonSchemaXjdf.validate(jsonNode)
         println(result.joinToString("\n"))
@@ -123,20 +116,12 @@ class SampleValidationTest {
     companion object {
         lateinit var jsonSchemaXjdf: JsonSchema
         lateinit var validator: RequestValidator
-        lateinit var openApi: OpenApi3
 
         @JvmStatic
         @BeforeAll
-        internal fun setUp(): Unit {
-            openApi = OpenApi3Parser().parse(File("build/resources/main/xjdf.yml"), false)
-            validator = RequestValidator(openApi)
-            val config = SchemaValidatorsConfig()
-            config.isOpenAPI3StyleDiscriminators = true
-            val factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012)
-            jsonSchemaXjdf = factory.getSchema(
-                Paths.get("build/resources/main/xjdf-schema.yml").toUri(),
-                config
-            )
+        internal fun setUp() {
+            validator = RequestValidator(OpenApiSpecSingleton.openapi)
+            jsonSchemaXjdf = JsonSchemaSingleton.schema
         }
 
         @JvmStatic

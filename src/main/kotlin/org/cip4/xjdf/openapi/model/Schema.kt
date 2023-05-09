@@ -67,7 +67,7 @@ import kotlinx.serialization.encodeToString
 
 @Serializable
 data class Schema(
-    var `$schema`: String? = null,
+    @Suppress("PropertyName") var `$schema`: String? = null,
     var type: String? = null,
     var properties: MutableMap<String, Schema>? = mutableMapOf(),
     var required: MutableList<String>? = mutableListOf(),
@@ -85,9 +85,9 @@ data class Schema(
     var minItems: Int? = null,
     var maxItems: Int? = null,
     var const: String? = null,
-    var `$ref`: String? = null,
-    var `$defs`: Schemas = Schemas(),
-) : YmlModel {
+    @Suppress("PropertyName") var `$ref`: String? = null,
+    @Suppress("PropertyName") var `$defs`: Schemas = Schemas(),
+) {
 
     override fun toString(): String {
         return Yaml(

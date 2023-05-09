@@ -67,4 +67,4 @@ data class PathItem(
     val summary: String? = null,
     val get: Operation? = null,
     val post: Operation? = null,
-): PathItemOrReference
+)

@@ -60,11 +60,10 @@
 
 package org.cip4.xjdf.openapi
 
-import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.Node
 import javax.xml.xpath.XPath
 
-abstract class AttributeType : OpenApiParticle<Schema>() {
+abstract class AttributeType : Modelable {
     interface Factory<T : AttributeType> {
 
         fun supports(candidate: Node, xPath: XPath): Boolean

@@ -224,7 +224,7 @@ class ComplexType(
         )
     }
 
-    private fun getDiscriminator(type: String): String? {
+    private fun getDiscriminator(type: String): String {
         return when (type) {
             "AuditCreated" -> "Created"
             "AuditNotification" -> "Notification"
@@ -233,7 +233,7 @@ class ComplexType(
             "AuditStatus" -> "Status"
             "Glue" -> "Glue"
             "Media" -> "Media"
-            else -> null
+            else -> throw RuntimeException("No known discriminator for '$type'")
         }
     }
 }

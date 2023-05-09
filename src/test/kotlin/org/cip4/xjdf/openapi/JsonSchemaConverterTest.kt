@@ -118,7 +118,7 @@ internal class JsonSchemaConverterTest {
         val converter = OpenApiConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd")!!)
 
         Files.newOutputStream(ymlFile).use { stream ->
-            converter.convert(stream, true)
+            converter.convert(stream)
         }
 
         val api = OpenApi3Parser().parse(ymlFile.toUri().toURL(), false)

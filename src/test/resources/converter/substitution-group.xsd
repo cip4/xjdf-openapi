@@ -72,7 +72,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="BaseElement" type="BaseType"/>
+    <xs:element abstract="true" name="BaseElement" type="BaseType"/>
     <xs:complexType name="BaseType">
     </xs:complexType>
 

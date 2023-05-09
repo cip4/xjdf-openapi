@@ -60,7 +60,6 @@
 
 package org.cip4.xjdf.openapi
 
-import org.cip4.xjdf.openapi.model.Discriminator
 import org.cip4.xjdf.openapi.model.Model
 import org.cip4.xjdf.openapi.model.Schema
 import org.w3c.dom.Node

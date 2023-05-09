@@ -33,18 +33,12 @@ data class MessageType(
                     "Query" -> "/resource/query"
                     "Signal" -> "/resource/query"
                     "Response" -> "/resource/query"
-                    else -> throw RuntimeException("Could not map '%s' to a message type.".format(elementName))
+                    else -> throw RuntimeException("Could not map '$elementName' to a message type.")
                 }
-                else -> throw RuntimeException("Could not map '%s' to a message type.".format(elementName))
+                else -> throw RuntimeException("Could not map '$elementName' to a message type.")
             }
             val isRequest = type == "Command" || type == "Query"
             return MessageType(isRequest, Paths.get(path), family)
         }
-
-        private fun request(path: String): Pair<Boolean, Path> {
-            return Pair(true, Paths.get(path))
-        }
-
     }
-
 }

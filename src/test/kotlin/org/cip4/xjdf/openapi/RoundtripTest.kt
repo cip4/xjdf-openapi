@@ -80,10 +80,8 @@ import org.openapi4j.operation.validator.model.impl.Body
 import org.openapi4j.operation.validator.model.impl.DefaultRequest
 import org.openapi4j.operation.validator.model.impl.DefaultResponse
 import org.openapi4j.operation.validator.validation.RequestValidator
-import org.openapi4j.parser.OpenApi3Parser
 import org.openapi4j.parser.model.v3.OpenApi3
 import org.openapi4j.schema.validator.ValidationData
-import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -176,7 +174,7 @@ class RoundtripTest {
         val xjdf = KElement.parseFile(from.toString())
         val json = jsonWriter.convert(xjdf)
         val jsonString = prettyPrint(json)
-        val jsonNode = mapper.readTree(jsonString);
+        val jsonNode = mapper.readTree(jsonString)
         val result = jsonSchemaXjdf.validate(jsonNode)
         assertEquals(emptySet<ValidationMessage>(), result, jsonString)
     }
@@ -206,16 +204,10 @@ class RoundtripTest {
 
         @JvmStatic
         @BeforeAll
-        internal fun setUp(): Unit {
-            openApi = OpenApi3Parser().parse(File("build/resources/main/xjdf.yml"), false)
+        internal fun setUp() {
+            openApi = OpenApiSpecSingleton.openapi
             validator = RequestValidator(openApi)
-            val config = SchemaValidatorsConfig()
-            config.isOpenAPI3StyleDiscriminators = true
-            val factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012)
-            jsonSchemaXjdf = factory.getSchema(
-                Paths.get("build/resources/main/xjdf-schema.yml").toUri(),
-                config
-            )
+            jsonSchemaXjdf = JsonSchemaSingleton.schema
         }
     }
 

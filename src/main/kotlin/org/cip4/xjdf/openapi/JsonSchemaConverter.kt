@@ -62,9 +62,9 @@ package org.cip4.xjdf.openapi
 
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
-import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.encodeToString
-import org.cip4.xjdf.openapi.model.*
+import org.cip4.xjdf.openapi.model.Schema
+import org.cip4.xjdf.openapi.model.Schemas
 import org.w3c.dom.Document
 import org.w3c.dom.Node
 import org.w3c.dom.NodeList
@@ -76,10 +76,9 @@ import javax.xml.xpath.XPath
 import javax.xml.xpath.XPathConstants
 import javax.xml.xpath.XPathFactory
 
-@OptIn(ExperimentalSerializationApi::class)
 class JsonSchemaConverter(sourceXsd: InputStream) {
     private var doc: Document
-    var xPath: XPath
+    val xPath: XPath
 
     init {
         doc = readXml(sourceXsd)
@@ -115,7 +114,9 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
     fun convertModel(root: String = "XJDF"): Schema {
         val nameTranslator = TypeTranslator("#/\$defs/")
         val defs = Schemas()
-        val xjdfSchema = convertNamedElement(root, nameTranslator, defs).schema
+        convertNamedElement(root, nameTranslator, defs)
+        val xjdfSchema = defs[root]!!
+        defs.remove(root)
         xjdfSchema.`$schema` = "https://json-schema.org/draft/2020-12/schema"
         xjdfSchema.`$defs` = defs
         return xjdfSchema
@@ -169,7 +170,6 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
 
         convertReferencedElements(typeNode, nameTranslator, schemas)
         convertReferencedTypes(typeNode, nameTranslator, schemas)
-        convertChildTypes(schema.name, nameTranslator, schemas)
         convertExtendedTypes(typeNode, nameTranslator, schemas)
     }
 
@@ -177,24 +177,28 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
         elementName: String,
         nameTranslator: TypeTranslator,
         schemas: Schemas
-    ): Model {
+    ) {
         val element = xPath.evaluate(
             "/xs:schema/xs:element[@name='$elementName']",
             doc,
             XPathConstants.NODE
         ) as Node
 
-        val model = NamedElement(Context(xPath, nameTranslator, element)).getModel()
-        convertReferencedElements(element, nameTranslator, schemas)
         convertReferencedTypes(element, nameTranslator, schemas)
-        convertChildTypes(model.name, nameTranslator, schemas)
-        convertExtendedTypes(element, nameTranslator, schemas)
 
-        if (element.attributes.getNamedItem("type") != null) {
-            convertNamedType(elementName, nameTranslator, schemas)
+        convertSubstituteElements(elementName, nameTranslator, schemas)
+
+        if (element.attributes.getNamedItem("abstract")?.nodeValue == "true"
+            || element.attributes.getNamedItem("substitutionGroup") != null) {
+            return
         }
 
-        return model
+        NamedElement(Context(xPath, nameTranslator, element)).getModel().let {
+            schemas[it.name] = it.schema
+        }
+        convertReferencedElements(element, nameTranslator, schemas)
+
+        convertExtendedTypes(element, nameTranslator, schemas)
     }
 
     private fun convertExtendedTypes(
@@ -223,24 +227,23 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
         for (i in 0 until elements.length) {
             val elementName = elements.item(i).nodeValue
             if (!schemas.containsKey(elementName)) {
-                // prevent endless loop by pre-registering the schema
-                schemas[elementName] = Schema()
-                val model = convertNamedElement(elementName, nameTranslator, schemas)
-                schemas[model.name] = model.schema
+                convertNamedElement(elementName, nameTranslator, schemas)
             }
         }
     }
 
-    private fun convertChildTypes(baseType: String, nameTranslator: TypeTranslator, schemas: Schemas) {
+    private fun convertSubstituteElements(elementName: String, nameTranslator: TypeTranslator, schemas: Schemas): Boolean {
         val elements = xPath.evaluate(
-            "/xs:schema/xs:complexType[xs:complexContent/xs:extension/@base='$baseType']",
+            "/xs:schema/xs:element[@substitutionGroup='$elementName']/@name",
             doc,
             XPathConstants.NODESET
         ) as NodeList
 
         for (i in 0 until elements.length) {
-            convertComplexType(elements.item(i), nameTranslator, schemas)
+            convertNamedElement(elements.item(i).nodeValue, nameTranslator, schemas)
         }
+
+        return elements.length > 0
     }
 
 }

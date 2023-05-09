@@ -110,7 +110,7 @@ class SimpleTypeRestriction(
         enumeration()?.let { enum ->
             schema.enum = enum
         }
-        restrictionString("xs:pattern")?.let { pattern ->
+        pattern()?.let { pattern ->
             schema.pattern = pattern
         }
         return Model(this.name, schema)
@@ -136,10 +136,10 @@ class SimpleTypeRestriction(
 
 
 
-    private fun restrictionString(restrictionName: String): String? {
+    private fun pattern(): String? {
         // TODO: Fix handling with multiple patterns (like NamedColor)
         val node = context.xPath.evaluate(
-            "xs:restriction/$restrictionName/@value",
+            "xs:restriction/xs:pattern/@value",
             node,
             XPathConstants.NODE
         ) as Node?

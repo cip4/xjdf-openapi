@@ -60,11 +60,7 @@
 
 package org.cip4.xjdf.openapi.model
 
-import kotlinx.serialization.Serializable
-import java.util.UUID
-
-@Serializable
 data class Model(
     val name: String, //= "R" + UUID.randomUUID().toString(),
     val schema: Schema
-) : YmlModel
+)
