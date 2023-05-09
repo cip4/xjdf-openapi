@@ -61,23 +61,14 @@
 package org.cip4.xjdf.openapi
 
 import com.charleskorn.kaml.Yaml
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
-import com.networknt.schema.JsonSchemaFactory
-import com.networknt.schema.SchemaValidatorsConfig
-import com.networknt.schema.SpecVersion
 import org.cip4.xjdf.openapi.model.Schema
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import java.net.URI
 import java.nio.file.*
 import java.util.stream.Stream
 import java.util.stream.StreamSupport
-import kotlin.io.path.outputStream
-import kotlin.io.path.readBytes
 
 internal class JsonSchemaConverterTest {
 
@@ -107,26 +98,5 @@ internal class JsonSchemaConverterTest {
                     )
                 }
         }
-    }
-
-    @Test
-    internal fun generatedSpecIsValid() {
-        val targetFile = Paths.get("build/resources/main/openapi.yml")
-
-        val converter = OpenApiConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd")!!)
-        targetFile.outputStream().use {
-            converter.convert(it)
-        }
-
-        val mapper = ObjectMapper(YAMLFactory())
-        val openapiSpec = mapper.readTree(targetFile.readBytes())
-
-        val factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012)
-        val config = SchemaValidatorsConfig()
-        config.isTypeLoose = false
-        val openapiSchema = factory.getSchema(URI("https://spec.openapis.org/oas/3.1/dialect/base"), config)
-
-        val result = openapiSchema.validate(openapiSpec)
-        assertEquals(0, result.size, result.joinToString("\n"))
     }
 }

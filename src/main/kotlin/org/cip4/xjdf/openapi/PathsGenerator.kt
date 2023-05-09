@@ -62,7 +62,9 @@ package org.cip4.xjdf.openapi
 
 import org.cip4.xjdf.openapi.model.*
 
-class PathsGenerator {
+class PathsGenerator(
+    val typeMap: TypeMap
+) {
 
     fun paths(): Map<String, PathItem> {
         return mapOf(
@@ -91,7 +93,7 @@ class PathsGenerator {
                                                 ),
                                                 Pair(
                                                     "XJDF",
-                                                    Schema(`$ref` = "#/components/schemas/XJDF")
+                                                    typeMap.getReference("XJDF")
                                                 ),
                                                 Pair(
                                                     "attachments",
@@ -140,8 +142,8 @@ class PathsGenerator {
             type = "object",
             properties = mutableMapOf(
                 Pair("Version", Schema(type = "string")),
-                Pair("Header", Schema(`$ref` = "#/components/schemas/Header")),
-                Pair(operation, Schema(`$ref` = "#/components/schemas/$operation"))
+                Pair("Header", typeMap.getReference("Header")),
+                Pair(operation, typeMap.getReference(operation))
             ),
             required = mutableListOf("Header", operation)
         )

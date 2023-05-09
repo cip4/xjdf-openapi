@@ -60,28 +60,15 @@
 
 package org.cip4.xjdf.openapi
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.networknt.schema.*
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.cip4.jdflib.core.KElement
 import org.cip4.lib.jdf.jsonutil.JSONWriter
 import org.json.simple.JSONObject
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.BeforeAll
-import org.junit.jupiter.api.fail
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import org.openapi4j.core.validation.ValidationException
-import org.openapi4j.operation.validator.model.Request
-import org.openapi4j.operation.validator.model.impl.Body
-import org.openapi4j.operation.validator.model.impl.DefaultRequest
-import org.openapi4j.operation.validator.model.impl.DefaultResponse
-import org.openapi4j.operation.validator.validation.RequestValidator
-import org.openapi4j.parser.model.v3.OpenApi3
-import org.openapi4j.schema.validator.ValidationData
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -92,11 +79,10 @@ import java.util.stream.Stream
 class RoundtripTest {
 
     private val json = Json { prettyPrint = true }
-    private val mapper = ObjectMapper()
 
     @ParameterizedTest
     @MethodSource("scanForXjmfSamples")
-    internal fun `sample is valid`(from: Path) {
+    internal fun `invocation is valid`(from: Path) {
         val jsonWriter = JSONWriter()
         jsonWriter.setXJDF(true, true)
         jsonWriter.jsonRoot = JSONWriter.eJSONRoot.schema
@@ -108,11 +94,14 @@ class RoundtripTest {
             val jsonString = prettyPrint(it)
             val messageType = guessMessageTypeFromXjmf(xjmf)
 
-            if (messageType.isRequest) {
-                validateRequest(messageType, jsonString)
-            } else {
-                validateResponse(messageType, jsonString)
+            val schema = when (messageType.type) {
+                MessageType.Type.REQUEST -> SchemaSingleton.getSchemaForRequest(messageType.path.toString())
+                MessageType.Type.RESPONSE -> SchemaSingleton.getSchemaForResponse(messageType.path.toString())
+                MessageType.Type.SIGNAL -> SchemaSingleton.getSchemaForSignal(messageType.path.toString())
+                else -> throw RuntimeException("Unsupported type '$messageType'")
             }
+
+            SchemaSingleton.assertValid(schema, jsonString)
         }
     }
 
@@ -128,56 +117,8 @@ class RoundtripTest {
         val o = jsonWriter.splitConvert(xjmf)
         o.forEach {
             val jsonString = prettyPrint(it)
-            val result = jsonSchemaXjmf.validate(mapper.readTree(jsonString))
-            assertEquals(emptySet<ValidationMessage>(), result, jsonString)
+            SchemaSingleton.assertValid(SchemaSingleton.xjmfSchema, jsonString)
         }
-    }
-
-    private fun validateRequest(messageType: MessageType, jsonString: String) {
-        val request = DefaultRequest
-            .Builder(
-                messageType.path.toString(),
-                Request.Method.POST
-            )
-            .header("Content-Type", "application/vnd.cip4-xjmf+json")
-            .body(Body.from(jsonString))
-            .build()
-
-        val validationData = ValidationData<Void>()
-        try {
-            validator.validate(request, validationData)
-        } catch (e: ValidationException) {
-            fail("JSON not valid:\n".plus(jsonString), e)
-        }
-
-        assertTrue(validationData.isValid)
-    }
-
-    private fun validateResponse(messageType: MessageType, jsonString: String) {
-        val openApiPath = openApi.getPath(messageType.path.toString())
-        val openApiOperation = openApiPath.getOperation("post")!!
-
-        val response = DefaultResponse
-            .Builder(
-                200
-            )
-            .header("Content-Type", "application/vnd.cip4-xjmf+json")
-            .body(Body.from(jsonString))
-            .build()
-
-        val validationData = ValidationData<Void>()
-        try {
-            validator.validate(
-                response,
-                openApiPath,
-                openApiOperation,
-                validationData
-            )
-        } catch (e: ValidationException) {
-            fail("JSON not valid:\n".plus(jsonString), e)
-        }
-
-        assertTrue(validationData.isValid)
     }
 
     @ParameterizedTest
@@ -190,17 +131,11 @@ class RoundtripTest {
 
         val xjdf = KElement.parseFile(from.toString())
         val json = jsonWriter.convert(xjdf)
-        val jsonString = prettyPrint(json)
-        val jsonNode = mapper.readTree(jsonString)
-        val result = jsonSchemaXjdf.validate(jsonNode)
-        assertEquals(emptySet<ValidationMessage>(), result, jsonString)
+        SchemaSingleton.assertValid(SchemaSingleton.xjdfSchema, prettyPrint(json))
     }
 
     companion object {
-        lateinit var jsonSchemaXjdf: JsonSchema
-        lateinit var jsonSchemaXjmf: JsonSchema
-        lateinit var validator: RequestValidator
-        lateinit var openApi: OpenApi3
+        lateinit var openApi: JsonSchema
 
         @JvmStatic
         fun scanForXjmfSamples(): Stream<Arguments> {
@@ -218,15 +153,6 @@ class RoundtripTest {
             return Files.walk(fixtureDir)
                 .filter { path -> path.toString().lowercase(Locale.getDefault()).endsWith(".xjdf") }
                 .map { path -> Arguments.of(path) }
-        }
-
-        @JvmStatic
-        @BeforeAll
-        internal fun setUp() {
-            openApi = OpenApiSpecSingleton.openapi
-            validator = RequestValidator(openApi)
-            jsonSchemaXjdf = JsonSchemaSingleton.xjdfSchema
-            jsonSchemaXjmf = JsonSchemaSingleton.xjmfSchema
         }
     }
 

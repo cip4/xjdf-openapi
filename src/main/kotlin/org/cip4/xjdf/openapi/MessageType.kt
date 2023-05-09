@@ -4,10 +4,15 @@ import java.nio.file.Path
 import java.nio.file.Paths
 
 data class MessageType(
-    val isRequest: Boolean,
+    val type: Type,
     val path: Path,
     val family: String
     ) {
+
+    enum class Type {
+        REQUEST, RESPONSE, SIGNAL
+    }
+
     companion object Factory {
         private val regex = Regex("^(Command|Query|Response|Signal)(.*)$")
         fun fromElement(elementName: String): MessageType {
@@ -37,8 +42,17 @@ data class MessageType(
                 }
                 else -> throw RuntimeException("Could not map '$elementName' to a message type.")
             }
-            val isRequest = type == "Command" || type == "Query"
-            return MessageType(isRequest, Paths.get(path), family)
+            return MessageType(
+                when (type) {
+                    "Command" -> Type.REQUEST
+                    "Query" -> Type.REQUEST
+                    "Response" -> Type.RESPONSE
+                    "Signal" -> Type.SIGNAL
+                    else -> throw RuntimeException("Unknown type '$type'")
+                },
+                Paths.get(path),
+                family
+            )
         }
     }
 }

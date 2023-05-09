@@ -98,7 +98,7 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
     fun convert(
         xjdfOutputStream: OutputStream,
         xjmfOutputStream: OutputStream
-    ) {
+    ) : TypeMap {
         val format = Json {
             encodeDefaults = false
             prettyPrint = true
@@ -116,9 +116,15 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
         }
 
         val xjmfSchema = convertModel("XJMF", xjdfTypes)
+        xjmfSchema.`$id` = "https://schema.cip4.org/jdfschema_2_2/xjmf.json"
         xjmfOutputStream.writer().use { writer ->
             writer.write(format.encodeToString(xjmfSchema))
         }
+
+        return TypeMap(mapOf(
+            Pair("XJDF", xjdfSchema),
+            Pair("XJMF", xjmfSchema)
+        ))
     }
 
     fun convertModel(root: String, referencedTypes: Map<String, String> = mapOf()): Schema {

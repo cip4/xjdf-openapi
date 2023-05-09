@@ -96,8 +96,8 @@ class OpenApiConverter(sourceXsd: InputStream) {
         return dBuilder.parse(xmlInput)
     }
 
-    fun convert(outputStream: OutputStream) {
-        val openApi = convertModel()
+    fun convert(typeMap: TypeMap, outputStream: OutputStream) {
+        val openApi = convertModel(typeMap)
 
         val format = Yaml(
             configuration = YamlConfiguration(
@@ -110,17 +110,13 @@ class OpenApiConverter(sourceXsd: InputStream) {
         }
     }
 
-    private fun convertModel(): OpenApi {
-        val pg = PathsGenerator()
+    private fun convertModel(typeMap: TypeMap): OpenApi {
+        val pg = PathsGenerator(typeMap)
         val openApi = OpenApi(
             openapi = "3.1.0",
             info = info(),
             paths = pg.paths()
         )
-        val nameTranslator = TypeTranslator("#/components/schemas/")
-        convertTopLevelElements(nameTranslator, openApi.components.schemas)
-        convertTopLevelComplexTypes(nameTranslator, openApi.components.schemas)
-        convertTopLevelSimpleTypes(nameTranslator, openApi.components.schemas)
         return openApi
     }
 

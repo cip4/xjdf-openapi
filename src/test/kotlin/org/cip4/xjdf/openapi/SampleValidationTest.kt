@@ -60,25 +60,18 @@
 
 package org.cip4.xjdf.openapi
 
-import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.networknt.schema.*
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import org.openapi4j.operation.validator.model.Request
-import org.openapi4j.operation.validator.model.impl.Body
-import org.openapi4j.operation.validator.model.impl.DefaultRequest
-import org.openapi4j.operation.validator.validation.RequestValidator
-import org.openapi4j.schema.validator.ValidationData
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.*
 import java.util.stream.Stream
-import kotlin.io.path.inputStream
+import kotlin.io.path.readText
 
 class SampleValidationTest {
 
@@ -87,46 +80,21 @@ class SampleValidationTest {
     @ParameterizedTest
     @MethodSource("scanForValidXjmf")
     internal fun `sample is valid`(requestPath: Path, from: Path) {
-        val request = DefaultRequest
-            .Builder(
-                "/" + requestPath.joinToString("/"),
-                Request.Method.POST
-            )
-            .header("Content-Type", "application/vnd.cip4-xjmf+json")
-            .body(Body.from(Files.newInputStream(from)))
-            .build()
-
-        val validationData = ValidationData<Void>()
-        validator.validate(request, validationData)
-        assertTrue(validationData.isValid)
+        val schema = SchemaSingleton.getSchemaForRequest(requestPath.toString())
+        SchemaSingleton.assertValid(schema, from.readText())
     }
 
     @ParameterizedTest
     @MethodSource("scanForInvalidXjdf")
     internal fun `xjdf is invalid`(from: Path) {
-        val jsonNode: JsonNode?
-        from.inputStream().use {
-            jsonNode = mapper.readTree(it)
-        }
-        val result = jsonSchemaXjdf.validate(jsonNode)
-        println(result.joinToString("\n"))
-        assertTrue(result.size > 0)
+        val schema = SchemaSingleton.getSchemaForRequest(from.toString())
+        SchemaSingleton.assertInvalid(schema, from.readText())
     }
 
     companion object {
-        lateinit var jsonSchemaXjdf: JsonSchema
-        lateinit var validator: RequestValidator
-
-        @JvmStatic
-        @BeforeAll
-        internal fun setUp() {
-            validator = RequestValidator(OpenApiSpecSingleton.openapi)
-            jsonSchemaXjdf = JsonSchemaSingleton.xjdfSchema
-        }
-
         @JvmStatic
         fun scanForValidXjmf(): Stream<Arguments> {
-            val fixtureDir = Paths.get(this::class.java.getResource("/samples/").toURI())
+            val fixtureDir = Paths.get(this::class.java.getResource("/samples/")!!.toURI())
 
             return Files.walk(fixtureDir)
                 .filter { path -> path.toString().lowercase(Locale.getDefault()).endsWith(".json") }
@@ -137,9 +105,10 @@ class SampleValidationTest {
                     )
                 }
         }
+
         @JvmStatic
         fun scanForInvalidXjdf(): Stream<Arguments> {
-            val fixtureDir = Paths.get(this::class.java.getResource("/invalid/").toURI())
+            val fixtureDir = Paths.get(this::class.java.getResource("/invalid/")!!.toURI())
 
             return Files.walk(fixtureDir)
                 .filter { path -> path.toString().lowercase(Locale.getDefault()).endsWith(".json") }

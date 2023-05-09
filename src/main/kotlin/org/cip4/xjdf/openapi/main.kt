@@ -63,13 +63,12 @@ package org.cip4.xjdf.openapi
 import java.io.FileOutputStream
 
 fun main() {
-
-   val converter = OpenApiConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd"))
-   converter.convert(FileOutputStream("build/resources/main/xjdf.yml"))
-
-    val jsonConverter = JsonSchemaConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd"))
-    jsonConverter.convert(
+    val jsonConverter = JsonSchemaConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd")!!)
+    val typeMap = jsonConverter.convert(
         FileOutputStream("build/resources/main/xjdf.json"),
         FileOutputStream("build/resources/main/xjmf.json")
     )
+
+    val converter = OpenApiConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd")!!)
+    converter.convert(typeMap, FileOutputStream("build/resources/main/xjdf.yml"))
 }
