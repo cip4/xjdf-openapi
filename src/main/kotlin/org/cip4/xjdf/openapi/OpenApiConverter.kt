@@ -142,7 +142,7 @@ class OpenApiConverter(sourceXsd: InputStream) {
                 elements.item(i),
                 Context(xPath, nameTranslator, elements.item(i))
             )
-            schemas[simpleType.name!!] = simpleType.getModel().schema
+            schemas[simpleType.name] = simpleType.getModel().schema
         }
     }
 

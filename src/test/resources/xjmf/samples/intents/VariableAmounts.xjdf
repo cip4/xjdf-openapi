@@ -15,7 +15,9 @@
     </Product>
     <Product Amount="1000" ID="IDBook" IsRoot="false" ProductType="Book">
       <Intent Name="BindingIntent">
-        <BindingIntent BindingType="HardCover" ChildRefs="IDBookCover IDBody"/>
+        <BindingIntent >
+          <Product/>
+        </BindingIntent>
       </Intent>
     </Product>
     <Product Amount="1" ID="IDBookCover" IsRoot="false" ProductType="Cover"/>

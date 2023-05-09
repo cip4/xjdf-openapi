@@ -64,7 +64,7 @@
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
 
-    <xs:element name="Foo">
+    <xs:element name="Root">
         <xs:complexType>
             <xs:attribute name="Bar" use="optional">
                 <xs:simpleType>

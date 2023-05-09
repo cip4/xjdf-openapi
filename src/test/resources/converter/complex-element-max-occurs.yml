@@ -1,12 +1,12 @@
-schemas:
-  Foo:
-    type: object
-    properties:
-      Bar:
-        type: array
-        items:
-          $ref: '#/components/schemas/Bar'
-        maxItems: 10
+$schema: "https://json-schema.org/draft/2020-12/schema"
+type: object
+properties:
+  Bar:
+    type: array
+    items:
+      $ref: '#/$defs/Bar'
+    maxItems: 10
+$defs:
   Bar:
     type: object
     properties:

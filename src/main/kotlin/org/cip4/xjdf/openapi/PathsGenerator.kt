@@ -84,7 +84,7 @@ class PathsGenerator {
                                     MediaType(
                                         Schema(
                                             type = "object",
-                                            properties = mapOf(
+                                            properties = mutableMapOf(
                                                 Pair(
                                                     "XJMF",
                                                     strippedXjmf("CommandSubmitQueueEntry"),
@@ -104,7 +104,7 @@ class PathsGenerator {
                                                     )
                                                 )
                                             ),
-                                            required = listOf("XJMF")
+                                            required = mutableListOf("XJMF")
                                         )
                                     )
                                 )
@@ -138,12 +138,12 @@ class PathsGenerator {
     private fun strippedXjmf(operation: String): Schema {
         return Schema(
             type = "object",
-            properties = mapOf(
+            properties = mutableMapOf(
                 Pair("Version", Schema(type = "string")),
                 Pair("Header", Schema(`$ref` = "#/components/schemas/Header")),
                 Pair(operation, Schema(`$ref` = "#/components/schemas/$operation"))
             ),
-            required = listOf("Header", operation)
+            required = mutableListOf("Header", operation)
         )
     }
 

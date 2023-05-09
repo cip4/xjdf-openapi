@@ -126,7 +126,7 @@ internal class ComplexTypeTest {
                         nameTranslator.translate("AbstractType"),
                         Schema(
                             type = "object",
-                            properties = mapOf(
+                            properties = mutableMapOf(
                                 Pair("Foo", Schema(type = "string"))
                             )
                         )

@@ -63,36 +63,34 @@ package org.cip4.xjdf.openapi
 import org.cip4.xjdf.openapi.model.Discriminator
 import org.cip4.xjdf.openapi.model.Model
 import org.cip4.xjdf.openapi.model.Schema
+import org.w3c.dom.Node
 import org.w3c.dom.NodeList
 import java.util.*
 
 class ComplexType(
-    private val context: Context
+    private val context: Context,
+    private val elementName: String? = null,
 ) : Modelable {
 
     private val name: String
         get() = context.node.attributes.getNamedItem("name")?.nodeValue
+            ?: elementName
             ?: UUID.randomUUID().toString()
 
     override fun getModel(): Model {
         // TODO: When a class references an abstract class, we need to reference all implementing classes instead.
-        val localElements = getLocalElements()
         val attributes = getAttributes()
-        val properties = (localElements.map { it.getModel() } +
-                attributes.map { it.getModel() }).associate { it.name to it.schema }
+        val properties = attributes.map { it.getModel() }.associate { it.name to it.schema }
 
         var schema = Schema(
             type = "object",
-            properties = properties.ifEmpty { null }
+            properties = properties.toMutableMap()
         )
+        addLocalElements(schema)
 
         applyChoicePolymorphism(schema, context.nameTranslator)
 
-        val required = localElements.filter { it.isRequired }.map { it.name } +
-                attributes.filter { it.isRequired }.map { it.name }
-        if (required.isNotEmpty()) {
-            schema.required = required
-        }
+        schema.required!! += attributes.filter { it.isRequired }.map { it.name }
 
         inheritingFrom()?.let { parent ->
             schema = Schema(
@@ -106,14 +104,53 @@ class ComplexType(
         return Model(name, schema)
     }
 
-    private fun getLocalElements(): List<LocalElement> {
+    private fun addLocalElements(schema: Schema) {
         val elementNodes = context.evaluateNodeList(
             "(. | xs:complexContent/xs:extension)/xs:sequence/xs:element",
         ) as NodeList
-        return getChoiceElements() +
-                (0 until elementNodes.length).map {
-                    LocalElement(elementNodes.item(it), context.descendant(elementNodes.item(it)))
-                }
+        getChoiceElements().forEach { addPropertyToSchema(it, schema) }
+        (0 until elementNodes.length).forEach {
+            val element = elementNodes.item(it)
+            val substitution = getSubstitution(element)
+            if (substitution != null) {
+                schema.properties!! += substitution.properties!!
+                schema.oneOf!! += substitution.oneOf!!
+            } else {
+                addPropertyToSchema(
+                    LocalElement(element, context.descendant(element)),
+                    schema
+                )
+            }
+        }
+    }
+
+    private fun addPropertyToSchema(element: LocalElement, schema: Schema) {
+        val model = element.getModel()
+        schema.properties!![model.name] = model.schema
+        if (element.isRequired) {
+            schema.required!! += model.name
+        }
+    }
+
+    private fun getSubstitution(node: Node): Schema? {
+        val ref = node.attributes.getNamedItem("ref")?.nodeValue ?: return null
+        val substitutes = context.getSubstitutes(ref, context.nameTranslator) ?: return null
+
+        val oneOf = substitutes.keys.map { Schema(required = mutableListOf(it)) }.toMutableList()
+
+        val optional = node.attributes.getNamedItem("minOccurs")?.nodeValue == "0"
+        if (optional) {
+            oneOf += Schema(
+                not = Schema(
+                    anyOf = substitutes.keys.map { Schema(required = mutableListOf(it)) }.toMutableList()
+                )
+            )
+        }
+
+        return Schema(
+            properties = substitutes.toMutableMap(),
+            oneOf = oneOf
+        )
     }
 
     private fun getChoiceElements(): List<LocalElement> {
@@ -167,9 +204,36 @@ class ComplexType(
         schema.items = Schema(
             oneOf = (0 until choices.length).map {
                 val reference = choices.item(it).attributes.getNamedItem("ref").nodeValue
-                nameTranslator.reference(reference)
-            },
+                Schema(
+                    allOf = listOf(
+                        nameTranslator.translate(reference),
+                        Schema(
+                            properties = mutableMapOf(
+                                Pair(
+                                    "Name",
+                                    Schema(
+                                        const = getDiscriminator(reference)
+                                    )
+                                )
+                            ),
+                        )
+                    )
+                )
+            }.toMutableList(),
             discriminator = Discriminator("Name")
         )
+    }
+
+    private fun getDiscriminator(type: String): String? {
+        return when (type) {
+            "AuditCreated" -> "Created"
+            "AuditNotification" -> "Notification"
+            "AuditProcessRun" -> "ProcessRun"
+            "AuditResource" -> "Resource"
+            "AuditStatus" -> "Status"
+            "Glue" -> "Glue"
+            "Media" -> "Media"
+            else -> null
+        }
     }
 }

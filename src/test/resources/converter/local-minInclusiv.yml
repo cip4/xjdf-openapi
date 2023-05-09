@@ -1,7 +1,6 @@
-schemas:
-  Foo:
-    type: object
-    properties:
-      Bar:
-        type: integer
-        minimum: 2
+$schema: "https://json-schema.org/draft/2020-12/schema"
+type: object
+properties:
+  Bar:
+    type: integer
+    minimum: 2

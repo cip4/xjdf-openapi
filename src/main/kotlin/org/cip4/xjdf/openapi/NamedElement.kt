@@ -77,8 +77,9 @@ class NamedElement(
         val schema = if (localType == null) {
             Schema()
         } else {
-            ComplexType(context.descendant(localType)).getModel().schema
+            ComplexType(context.descendant(localType), name).getModel().schema
         }
         return Model(name, schema)
     }
+
 }

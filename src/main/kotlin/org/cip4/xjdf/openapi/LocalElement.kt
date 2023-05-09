@@ -68,7 +68,7 @@ import org.w3c.dom.Node
 class LocalElement(
     private val node: Node,
     private val context: Context
-): Modelable {
+) : Modelable {
 
     val isRequired: Boolean
         get() = minOccurs != 0
@@ -118,14 +118,11 @@ class LocalElement(
     }
 
     private fun deriveType(): Schema {
-        if (ref == null) {
-            return type ?: Schema()
+        return if (ref != null) {
+            context.nameTranslator.translate(ref!!)
+        } else {
+            type ?: Schema()
         }
-        val substitutes = context.getSubstitutes(ref!!, context.nameTranslator) ?: return context.nameTranslator.translate(ref!!)
-        return Schema(
-            oneOf = substitutes,
-            discriminator = Discriminator("Name")
-        )
     }
 
 }

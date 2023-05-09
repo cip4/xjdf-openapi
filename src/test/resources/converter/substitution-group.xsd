@@ -64,7 +64,7 @@
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
 
-    <xs:element name="ReferencingType">
+    <xs:element name="Root">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="BaseElement"/>

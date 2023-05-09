@@ -60,25 +60,40 @@
 
 package org.cip4.xjdf.openapi.model
 
+import com.charleskorn.kaml.Yaml
+import com.charleskorn.kaml.YamlConfiguration
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.encodeToString
 
 @Serializable
 data class Schema(
     var `$schema`: String? = null,
     var type: String? = null,
-    var properties: Map<String, Schema>? = null,
-    var required: List<String>? = null,
+    var properties: MutableMap<String, Schema>? = mutableMapOf(),
+    var required: MutableList<String>? = mutableListOf(),
     var items: Schema? = null,
     var format: String? = null,
     var enum: List<String>? = null,
     var minimum: Float? = null,
     var maximum: Float? = null,
     var pattern: String? = null,
-    var oneOf: List<Reference>? = null,
+    var oneOf: MutableList<Schema>? = mutableListOf(),
     var discriminator: Discriminator? = null,
     var allOf: List<Schema>? = null,
+    var anyOf: List<Schema>? = null,
+    var not: Schema? = null,
     var minItems: Int? = null,
     var maxItems: Int? = null,
+    var const: String? = null,
     var `$ref`: String? = null,
     var `$defs`: Schemas = Schemas(),
-) : YmlModel
+) : YmlModel {
+
+    override fun toString(): String {
+        return Yaml(
+            configuration = YamlConfiguration(
+                encodeDefaults = false
+            )
+        ).encodeToString(this)
+    }
+}

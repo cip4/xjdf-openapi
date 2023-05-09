@@ -1,15 +1,16 @@
-schemas:
-  ReferencingType:
-    type: object
-    properties:
-      BaseElement:
-        oneOf:
-          - $ref: "#/components/schemas/SubstitutionType1"
-          - $ref: "#/components/schemas/SubstitutionType2"
-        discriminator:
-          propertyName: "Name"
-    required:
-      - BaseElement
+$schema: "https://json-schema.org/draft/2020-12/schema"
+type: object
+properties:
+  SubstitutionType1:
+    $ref: "#/$defs/SubstitutionType1"
+  SubstitutionType2:
+    $ref: "#/$defs/SubstitutionType2"
+oneOf:
+  - required:
+    - SubstitutionType1
+  - required:
+    - SubstitutionType2
+$defs:
   BaseType:
     type: object
   SubstitutionType1:

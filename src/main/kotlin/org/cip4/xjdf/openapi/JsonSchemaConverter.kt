@@ -112,18 +112,18 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
 
     }
 
-    fun convertModel(): Schema {
+    fun convertModel(root: String = "XJDF"): Schema {
         val nameTranslator = TypeTranslator("#/\$defs/")
-        val schemas = Schemas()
-        val xjdfSchema = convertNamedElement("XJDF", nameTranslator, schemas).schema
+        val defs = Schemas()
+        val xjdfSchema = convertNamedElement(root, nameTranslator, defs).schema
         xjdfSchema.`$schema` = "https://json-schema.org/draft/2020-12/schema"
-        xjdfSchema.`$defs` = schemas
+        xjdfSchema.`$defs` = defs
         return xjdfSchema
     }
 
     private fun convertReferencedTypes(node: Node, nameTranslator: TypeTranslator, schemas: Schemas) {
         val types = xPath.evaluate(
-            ".//@type",
+            ".//@type | .//@itemType",
             node,
             XPathConstants.NODESET
         ) as NodeList
@@ -209,10 +209,7 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
         ) as NodeList
 
         for (i in 0 until elements.length) {
-            val baseType = elements.item(i).nodeValue!!
-            if (!schemas.containsKey(baseType) && !baseType.startsWith("xs:")) {
-                convertNamedType(baseType, nameTranslator, schemas)
-            }
+            convertNamedType(elements.item(i).nodeValue!!, nameTranslator, schemas)
         }
     }
 
