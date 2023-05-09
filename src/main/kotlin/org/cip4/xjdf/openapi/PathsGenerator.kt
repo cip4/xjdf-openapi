@@ -176,8 +176,9 @@ class PathsGenerator {
                             strippedXjmf(responseType)
                         )
                     )
-                )
+                ),
                 // TODO: Add required description
+                description = ""
             )
         )
     )

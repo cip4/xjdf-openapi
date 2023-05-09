@@ -61,21 +61,23 @@
 package org.cip4.xjdf.openapi
 
 import com.charleskorn.kaml.Yaml
-import com.google.common.jimfs.Configuration
-import com.google.common.jimfs.Jimfs
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
+import com.networknt.schema.JsonSchemaFactory
+import com.networknt.schema.SchemaValidatorsConfig
+import com.networknt.schema.SpecVersion
 import org.cip4.xjdf.openapi.model.Schema
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import org.openapi4j.parser.OpenApi3Parser
-import java.nio.file.FileSystem
-import java.nio.file.Files
-import java.nio.file.Path
-import java.nio.file.Paths
+import java.net.URI
+import java.nio.file.*
 import java.util.stream.Stream
 import java.util.stream.StreamSupport
+import kotlin.io.path.outputStream
+import kotlin.io.path.readBytes
 
 internal class JsonSchemaConverterTest {
 
@@ -96,7 +98,7 @@ internal class JsonSchemaConverterTest {
     companion object {
         @JvmStatic
         fun scanForFixtures(): Stream<Arguments> {
-            val fixtureDir = Paths.get(this::class.java.getResource("/converter/").toURI())
+            val fixtureDir = Paths.get(this::class.java.getResource("/converter/")!!.toURI())
             return StreamSupport.stream(Files.newDirectoryStream(fixtureDir, "*.xsd").spliterator(), false)
                 .map { path ->
                     Arguments.of(
@@ -109,21 +111,22 @@ internal class JsonSchemaConverterTest {
 
     @Test
     internal fun generatedSpecIsValid() {
-        val fs: FileSystem = Jimfs.newFileSystem(Configuration.unix())
-        val foo: Path = fs.getPath("/foo")
-        Files.createDirectory(foo)
-
-        val ymlFile = foo.resolve("xjdf.yml")
+        val targetFile = Paths.get("build/resources/main/openapi.yml")
 
         val converter = OpenApiConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd")!!)
-
-        Files.newOutputStream(ymlFile).use { stream ->
-            converter.convert(stream)
+        targetFile.outputStream().use {
+            converter.convert(it)
         }
 
-        val api = OpenApi3Parser().parse(ymlFile.toUri().toURL(), false)
-        val results = ValidationWrapper().validate(api)
+        val mapper = ObjectMapper(YAMLFactory())
+        val openapiSpec = mapper.readTree(targetFile.readBytes())
 
-        println(results.toString())
+        val factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012)
+        val config = SchemaValidatorsConfig()
+        config.isTypeLoose = false
+        val openapiSchema = factory.getSchema(URI("https://spec.openapis.org/oas/3.1/dialect/base"), config)
+
+        val result = openapiSchema.validate(openapiSpec)
+        assertEquals(0, result.size, result.joinToString("\n"))
     }
 }

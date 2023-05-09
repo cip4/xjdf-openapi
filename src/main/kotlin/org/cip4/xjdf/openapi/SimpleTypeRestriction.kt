@@ -134,16 +134,19 @@ class SimpleTypeRestriction(
         return node?.nodeValue?.toFloat()
     }
 
-
-
     private fun pattern(): String? {
-        // TODO: Fix handling with multiple patterns (like NamedColor)
-        val node = context.xPath.evaluate(
+        val nodes = context.xPath.evaluate(
             "xs:restriction/xs:pattern/@value",
             node,
-            XPathConstants.NODE
-        ) as Node?
-        return node?.nodeValue
+            XPathConstants.NODESET
+        ) as NodeList
+        return when (nodes.length) {
+            0 -> null
+            1 -> nodes.item(0).nodeValue
+            else -> return (0 until nodes.length).joinToString("|") {
+                "(%s)".format(nodes.item(it).nodeValue)
+            }
+        }
     }
 
     private fun enumeration(): List<String>? {

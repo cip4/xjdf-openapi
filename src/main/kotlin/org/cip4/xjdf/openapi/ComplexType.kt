@@ -215,12 +215,13 @@ class ComplexType(
                                         const = getDiscriminator(reference)
                                     )
                                 )
-                            ),
+                            )
                         )
                     )
                 )
             }.toMutableList(),
-            discriminator = Discriminator("Name")
+            discriminator = Discriminator("Name"),
+            required = mutableListOf("Name")
         )
     }
 
