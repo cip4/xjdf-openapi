@@ -63,7 +63,8 @@ package org.cip4.xjdf.openapi
 import org.cip4.xjdf.openapi.model.Schema
 
 class TypeTranslator(
-    private val componentPath: String
+    private val componentPath: String,
+    private val externalTypes: Map<String, String> = mapOf()
 ) {
 
     fun translate(xsdName: String): Schema {
@@ -82,8 +83,12 @@ class TypeTranslator(
             "xs:NMTOKENS" -> Schema(type = "array", items = translate("xs:NMTOKEN"))
             "xs:duration" -> Schema(type = "string", format = "duration")
             "xs:anyURI" -> Schema(type = "string", format = "uri-reference")
-            else -> Schema(`$ref` = componentPath.plus(xsdName))
+            else -> Schema(`$ref` = externalTypes[xsdName] ?: componentPath.plus(xsdName))
         }
+    }
+
+    fun isExternalType(type: String): Boolean {
+        return externalTypes.containsKey(type) || type.startsWith("xs:")
     }
 
 }

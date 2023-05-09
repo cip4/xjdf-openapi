@@ -144,7 +144,7 @@ class SimpleTypeRestriction(
             0 -> null
             1 -> nodes.item(0).nodeValue
             else -> return (0 until nodes.length).joinToString("|") {
-                "(%s)".format(nodes.item(it).nodeValue)
+                nodes.item(it).nodeValue
             }
         }
     }

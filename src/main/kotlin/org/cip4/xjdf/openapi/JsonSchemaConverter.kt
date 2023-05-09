@@ -60,9 +60,8 @@
 
 package org.cip4.xjdf.openapi
 
-import com.charleskorn.kaml.Yaml
-import com.charleskorn.kaml.YamlConfiguration
 import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import org.cip4.xjdf.openapi.model.Schema
 import org.cip4.xjdf.openapi.model.Schemas
 import org.w3c.dom.Document
@@ -78,7 +77,7 @@ import javax.xml.xpath.XPathFactory
 
 class JsonSchemaConverter(sourceXsd: InputStream) {
     private var doc: Document
-    val xPath: XPath
+    private val xPath: XPath
 
     init {
         doc = readXml(sourceXsd)
@@ -96,23 +95,34 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
         return dBuilder.parse(xmlInput)
     }
 
-    fun convert(outputStream: OutputStream) {
-        val openApi = convertModel()
-
-        val format = Yaml(
-            configuration = YamlConfiguration(
-                encodeDefaults = false
-            )
-        )
-
-        outputStream.writer().use { writer ->
-            writer.write(format.encodeToString(openApi))
+    fun convert(
+        xjdfOutputStream: OutputStream,
+        xjmfOutputStream: OutputStream
+    ) {
+        val format = Json {
+            encodeDefaults = false
+            prettyPrint = true
         }
 
+        val xjdfSchema = convertModel("XJDF")
+        xjdfSchema.`$id` = "https://schema.cip4.org/jdfschema_2_2/xjdf.json"
+        xjdfOutputStream.writer().use { writer ->
+            writer.write(format.encodeToString(xjdfSchema))
+        }
+
+        val xjdfTypes = xjdfSchema.`$defs`.keys.associateWith {
+            // "xjdf-schema.yml#/\$defs/$it"
+            xjdfSchema.`$id` + "#/\$defs/" + it
+        }
+
+        val xjmfSchema = convertModel("XJMF", xjdfTypes)
+        xjmfOutputStream.writer().use { writer ->
+            writer.write(format.encodeToString(xjmfSchema))
+        }
     }
 
-    fun convertModel(root: String = "XJDF"): Schema {
-        val nameTranslator = TypeTranslator("#/\$defs/")
+    fun convertModel(root: String, referencedTypes: Map<String, String> = mapOf()): Schema {
+        val nameTranslator = TypeTranslator("#/\$defs/", referencedTypes)
         val defs = Schemas()
         convertNamedElement(root, nameTranslator, defs)
         val xjdfSchema = defs[root]!!
@@ -137,7 +147,7 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
 
     private fun convertNamedType(typeName: String, nameTranslator: TypeTranslator, schemas: Schemas) {
         if (schemas.containsKey(typeName)
-            || typeName.startsWith("xs:")
+            || nameTranslator.isExternalType(typeName)
         ) {
             return
         }
@@ -189,7 +199,8 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
         convertSubstituteElements(elementName, nameTranslator, schemas)
 
         if (element.attributes.getNamedItem("abstract")?.nodeValue == "true"
-            || element.attributes.getNamedItem("substitutionGroup") != null) {
+            || element.attributes.getNamedItem("substitutionGroup") != null
+        ) {
             return
         }
 
@@ -226,13 +237,19 @@ class JsonSchemaConverter(sourceXsd: InputStream) {
 
         for (i in 0 until elements.length) {
             val elementName = elements.item(i).nodeValue
-            if (!schemas.containsKey(elementName)) {
+            if (!schemas.containsKey(elementName)
+                && !nameTranslator.isExternalType(elementName)
+            ) {
                 convertNamedElement(elementName, nameTranslator, schemas)
             }
         }
     }
 
-    private fun convertSubstituteElements(elementName: String, nameTranslator: TypeTranslator, schemas: Schemas): Boolean {
+    private fun convertSubstituteElements(
+        elementName: String,
+        nameTranslator: TypeTranslator,
+        schemas: Schemas
+    ): Boolean {
         val elements = xPath.evaluate(
             "/xs:schema/xs:element[@substitutionGroup='$elementName']/@name",
             doc,

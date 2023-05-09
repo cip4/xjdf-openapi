@@ -116,6 +116,23 @@ class RoundtripTest {
         }
     }
 
+    @ParameterizedTest
+    @MethodSource("scanForXjmfSamples")
+    internal fun `xjmf is valid`(from: Path) {
+        val jsonWriter = JSONWriter()
+        jsonWriter.setXJDF(true, true)
+        jsonWriter.jsonRoot = JSONWriter.eJSONRoot.schema
+        jsonWriter.prefix = JSONWriter.eJSONPrefix.none
+
+        val xjmf = KElement.parseFile(from.toString())
+        val o = jsonWriter.splitConvert(xjmf)
+        o.forEach {
+            val jsonString = prettyPrint(it)
+            val result = jsonSchemaXjmf.validate(mapper.readTree(jsonString))
+            assertEquals(emptySet<ValidationMessage>(), result, jsonString)
+        }
+    }
+
     private fun validateRequest(messageType: MessageType, jsonString: String) {
         val request = DefaultRequest
             .Builder(
@@ -181,6 +198,7 @@ class RoundtripTest {
 
     companion object {
         lateinit var jsonSchemaXjdf: JsonSchema
+        lateinit var jsonSchemaXjmf: JsonSchema
         lateinit var validator: RequestValidator
         lateinit var openApi: OpenApi3
 
@@ -207,7 +225,8 @@ class RoundtripTest {
         internal fun setUp() {
             openApi = OpenApiSpecSingleton.openapi
             validator = RequestValidator(openApi)
-            jsonSchemaXjdf = JsonSchemaSingleton.schema
+            jsonSchemaXjdf = JsonSchemaSingleton.xjdfSchema
+            jsonSchemaXjmf = JsonSchemaSingleton.xjmfSchema
         }
     }
 

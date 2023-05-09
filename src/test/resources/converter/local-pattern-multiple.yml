@@ -3,4 +3,4 @@ type: object
 properties:
   Bar:
     type: string
-    pattern: '([A-Z][A-Z])|([A-Z][0-9])'
+    pattern: '[A-Z][A-Z]|[A-Z][0-9]'

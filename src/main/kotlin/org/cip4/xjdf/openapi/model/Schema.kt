@@ -68,6 +68,7 @@ import kotlinx.serialization.encodeToString
 @Serializable
 data class Schema(
     @Suppress("PropertyName") var `$schema`: String? = null,
+    @Suppress("PropertyName") var `$id`: String? = null,
     var type: String? = null,
     var properties: MutableMap<String, Schema>? = mutableMapOf(),
     var required: MutableList<String>? = mutableListOf(),

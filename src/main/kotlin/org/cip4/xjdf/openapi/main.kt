@@ -68,5 +68,8 @@ fun main() {
    converter.convert(FileOutputStream("build/resources/main/xjdf.yml"))
 
     val jsonConverter = JsonSchemaConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd"))
-    jsonConverter.convert(FileOutputStream("build/resources/main/xjdf-schema.yml"))
+    jsonConverter.convert(
+        FileOutputStream("build/resources/main/xjdf.json"),
+        FileOutputStream("build/resources/main/xjmf.json")
+    )
 }

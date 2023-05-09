@@ -121,7 +121,7 @@ class SampleValidationTest {
         @BeforeAll
         internal fun setUp() {
             validator = RequestValidator(OpenApiSpecSingleton.openapi)
-            jsonSchemaXjdf = JsonSchemaSingleton.schema
+            jsonSchemaXjdf = JsonSchemaSingleton.xjdfSchema
         }
 
         @JvmStatic
