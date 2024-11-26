@@ -85,6 +85,8 @@ dependencies {
     implementation ("com.googlecode.json-simple:json-simple:1.1.1")
     implementation("com.networknt:json-schema-validator:1.0.81")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.0")
+    compileOnly("org.projectlombok:lombok:1.18.24")
+    annotationProcessor("org.projectlombok:lombok:1.18.24")
 }
 
 tasks {
