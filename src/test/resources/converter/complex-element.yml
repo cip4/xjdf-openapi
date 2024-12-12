@@ -1,22 +1,24 @@
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$schema: https://json-schema.org/draft/2020-12/schema
 type: object
 properties:
-  optionalAttr:
-    type: string
-  requiredAttr:
-    type: string
-  Bar:
-    $ref: '#/$defs/Bar'
   Bar2:
     $ref: '#/$defs/Bar2'
-required: [ Bar2, requiredAttr ]
-$defs:
   Bar:
+    $ref: '#/$defs/Bar'
+  requiredAttr:
+    type: string
+  optionalAttr:
+    type: string
+required:
+  - Bar2
+  - requiredAttr
+$defs:
+  Bar2:
     type: object
     properties:
       att:
         type: string
-  Bar2:
+  Bar:
     type: object
     properties:
       att:

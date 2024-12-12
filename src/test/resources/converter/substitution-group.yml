@@ -1,25 +1,16 @@
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$schema: https://json-schema.org/draft/2020-12/schema
 type: object
 properties:
-  SubstitutionType1:
-    $ref: "#/$defs/SubstitutionType1"
   SubstitutionType2:
-    $ref: "#/$defs/SubstitutionType2"
+    $ref: '#/$defs/SubstitutionType2'
+  SubstitutionType1:
+    $ref: '#/$defs/SubstitutionType1'
 oneOf:
   - required:
-    - SubstitutionType1
+      - SubstitutionType2
   - required:
-    - SubstitutionType2
+      - SubstitutionType1
 $defs:
-  BaseType:
-    type: object
-  SubstitutionType1:
-    type: object
-    properties:
-      e1:
-        type: integer
-    required:
-      - e1
   SubstitutionType2:
     type: object
     properties:
@@ -27,3 +18,12 @@ $defs:
         type: string
     required:
       - e2
+  SubstitutionType1:
+    type: object
+    properties:
+      e1:
+        type: integer
+    required:
+      - e1
+  BaseType:
+    type: object

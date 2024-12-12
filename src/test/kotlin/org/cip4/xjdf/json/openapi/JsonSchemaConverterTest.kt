@@ -58,71 +58,47 @@
  * Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
  */
 
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+package org.cip4.xjdf.json.openapi
 
-plugins {
-    kotlin("jvm") version "1.8.21"
-    kotlin("plugin.serialization") version "1.8.21"
-    id("org.hidetake.swagger.generator") version "2.18.2"
-}
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper
+import org.cip4.xjdf.json.openapi.model.Schema
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
+import java.nio.file.*
+import java.util.stream.Stream
+import java.util.stream.StreamSupport
 
-repositories {
-    mavenCentral()
-    jcenter()
-}
 
-dependencies {
-    implementation("org.junit.jupiter:junit-jupiter:5.4.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
-    implementation("com.charleskorn.kaml:kaml:0.53.0")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
-    testImplementation("com.google.jimfs:jimfs:1.2")
-    swaggerUI("org.webjars:swagger-ui:3.10.0")
-    implementation(kotlin("stdlib-jdk8"))
-    implementation("org.cip4.lib.jdf:JDFLibJ-JSON:1.1.015")
-    implementation("org.cip4.lib.jdf:JDFLibJ:2.1.7.+")
-    implementation ("com.googlecode.json-simple:json-simple:1.1.1")
-    implementation("com.networknt:json-schema-validator:1.0.81")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2")
-    compileOnly("org.projectlombok:lombok:1.18.24")
-    annotationProcessor("org.projectlombok:lombok:1.18.24")
-}
+internal class JsonSchemaConverterTest {
 
-tasks {
-    withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
+    @ParameterizedTest
+    @MethodSource("scanForFixtures")
+    internal fun `fixtures are converted correctly`(from: Path, to: Path) {
+        val converter = JsonSchemaConverter(Files.newInputStream(from))
+        val mapper = Mapper();
+        val actualModel = converter.convertModel("Root")
+
+        assertEquals(
+            Files.readString(to),
+            mapper.toYamlString(actualModel)
+        )
     }
-}
 
-tasks.test {
-    useJUnitPlatform()
-    testLogging {
-        events("passed", "skipped", "failed")
+    companion object {
+        @JvmStatic
+        fun scanForFixtures(): Stream<Arguments> {
+            val fixtureDir = Paths.get(this::class.java.getResource("/converter/")!!.toURI())
+            return StreamSupport.stream(Files.newDirectoryStream(fixtureDir, "*.xsd").spliterator(), false)
+                .map { path ->
+                    Arguments.of(
+                        path,
+                        path.resolveSibling(path.fileName.toString().replace(".xsd", ".yml"))
+                    )
+                }
+        }
     }
-}
-
-swaggerSources {
-    register("xjdf") {
-        setInputFile(file("build/resources/main/xjdf.yml"))
-    }
-}
-
-tasks.withType<org.hidetake.gradle.swagger.generator.GenerateSwaggerUI> {
-    dependsOn("generateOpenApiSpec")
-}
-
-task("generateOpenApiSpec", JavaExec::class) {
-    group = "build"
-    main = "org.cip4.xjdf.openapi.MainKt"
-    classpath = sourceSets["main"].runtimeClasspath
-}
-val compileKotlin: KotlinCompile by tasks
-compileKotlin.kotlinOptions {
-    jvmTarget = "17"
-}
-val compileTestKotlin: KotlinCompile by tasks
-compileTestKotlin.kotlinOptions {
-    jvmTarget = "17"
 }

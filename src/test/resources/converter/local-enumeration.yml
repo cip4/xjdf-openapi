@@ -1,7 +1,9 @@
-$schema: "https://json-schema.org/draft/2020-12/schema"
+$schema: https://json-schema.org/draft/2020-12/schema
 type: object
 properties:
   Bar:
     type: string
-    enum: [ 'V1', 'V2' ]
     pattern: "^[a-zA-Z0-9._\\-:]*$"
+    enum:
+      - V1
+      - V2

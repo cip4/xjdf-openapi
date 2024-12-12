@@ -58,71 +58,66 @@
  * Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
  */
 
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+package org.cip4.xjdf.json.openapi
 
-plugins {
-    kotlin("jvm") version "1.8.21"
-    kotlin("plugin.serialization") version "1.8.21"
-    id("org.hidetake.swagger.generator") version "2.18.2"
-}
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.networknt.schema.*
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
+import java.util.*
+import java.util.stream.Stream
+import kotlin.io.path.readText
 
-repositories {
-    mavenCentral()
-    jcenter()
-}
+class SampleValidationTest {
 
-dependencies {
-    implementation("org.junit.jupiter:junit-jupiter:5.4.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
-    implementation("com.charleskorn.kaml:kaml:0.53.0")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
-    testImplementation("com.google.jimfs:jimfs:1.2")
-    swaggerUI("org.webjars:swagger-ui:3.10.0")
-    implementation(kotlin("stdlib-jdk8"))
-    implementation("org.cip4.lib.jdf:JDFLibJ-JSON:1.1.015")
-    implementation("org.cip4.lib.jdf:JDFLibJ:2.1.7.+")
-    implementation ("com.googlecode.json-simple:json-simple:1.1.1")
-    implementation("com.networknt:json-schema-validator:1.0.81")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2")
-    compileOnly("org.projectlombok:lombok:1.18.24")
-    annotationProcessor("org.projectlombok:lombok:1.18.24")
-}
+    private val mapper = ObjectMapper()
 
-tasks {
-    withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
+    @ParameterizedTest
+    @MethodSource("scanForValidXjmf")
+    internal fun `sample is valid`(requestPath: Path, from: Path) {
+        val schema = SchemaSingleton.getSchemaForRequest(requestPath)
+        SchemaSingleton.assertValid(schema, from.readText())
     }
-}
 
-tasks.test {
-    useJUnitPlatform()
-    testLogging {
-        events("passed", "skipped", "failed")
+    @ParameterizedTest
+    @MethodSource("scanForInvalidXjdf")
+    internal fun `xjdf is invalid`(from: Path) {
+        val schema = SchemaSingleton.getSchemaForRequest(from)
+        SchemaSingleton.assertInvalid(schema, from.readText())
     }
-}
 
-swaggerSources {
-    register("xjdf") {
-        setInputFile(file("build/resources/main/xjdf.yml"))
+    companion object {
+        @JvmStatic
+        fun scanForValidXjmf(): Stream<Arguments> {
+            val fixtureDir = Paths.get(this::class.java.getResource("/samples/")!!.toURI())
+
+            return Files.walk(fixtureDir)
+                .filter { path -> path.toString().lowercase(Locale.getDefault()).endsWith(".json") }
+                .map { path ->
+                    Arguments.of(
+                        fixtureDir.relativize(path).parent,
+                        path
+                    )
+                }
+        }
+
+        @JvmStatic
+        fun scanForInvalidXjdf(): Stream<Arguments> {
+            val fixtureDir = Paths.get(this::class.java.getResource("/invalid/")!!.toURI())
+
+            return Files.walk(fixtureDir)
+                .filter { path -> path.toString().lowercase(Locale.getDefault()).endsWith(".json") }
+                .map { path ->
+                    Arguments.of(
+                        path
+                    )
+                }
+        }
     }
-}
 
-tasks.withType<org.hidetake.gradle.swagger.generator.GenerateSwaggerUI> {
-    dependsOn("generateOpenApiSpec")
-}
-
-task("generateOpenApiSpec", JavaExec::class) {
-    group = "build"
-    main = "org.cip4.xjdf.openapi.MainKt"
-    classpath = sourceSets["main"].runtimeClasspath
-}
-val compileKotlin: KotlinCompile by tasks
-compileKotlin.kotlinOptions {
-    jvmTarget = "17"
-}
-val compileTestKotlin: KotlinCompile by tasks
-compileTestKotlin.kotlinOptions {
-    jvmTarget = "17"
 }
