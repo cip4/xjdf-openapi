@@ -2,9 +2,9 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 properties:
   SubstitutionType2:
-    $ref: '#/$defs/SubstitutionType2'
+    $ref: "#/$defs/SubstitutionType2"
   SubstitutionType1:
-    $ref: '#/$defs/SubstitutionType1'
+    $ref: "#/$defs/SubstitutionType1"
 oneOf:
   - required:
       - SubstitutionType2

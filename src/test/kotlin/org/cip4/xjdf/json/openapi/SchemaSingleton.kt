@@ -3,20 +3,11 @@ package org.cip4.xjdf.json.openapi
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
-import com.google.common.jimfs.Configuration
-import com.google.common.jimfs.Jimfs
-import com.networknt.schema.JsonSchema
-import com.networknt.schema.JsonSchemaFactory
-import com.networknt.schema.SchemaValidatorsConfig
-import com.networknt.schema.SpecVersion
-import com.networknt.schema.uri.URLFactory
-import com.networknt.schema.uri.URLFetcher
+import com.networknt.schema.*
 import org.junit.jupiter.api.Assertions
+import java.io.ByteArrayOutputStream
+import java.net.URI
 import java.nio.file.Path
-import java.nio.file.Paths
-import kotlin.io.path.outputStream
-import kotlin.io.path.readBytes
-
 
 object SchemaSingleton {
 
@@ -29,63 +20,51 @@ object SchemaSingleton {
     private val config: SchemaValidatorsConfig
 
     init {
-        val fs = Jimfs.newFileSystem(Configuration.unix())
-        val xjdfPath = fs.getPath("xjdf.json")
-        val xjmfPath = fs.getPath("xjmf.json")
-        val openapiPath = fs.getPath("openapi.yml")
-
         val jsonConverter = JsonSchemaConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd")!!)
-        xjdfPath.outputStream().use { xjdfStream ->
-            xjmfPath.outputStream().use { xjmfStream ->
+        var xjmf: String
+        val xjdf = ByteArrayOutputStream().use { xjdfStream ->
+            xjmf = ByteArrayOutputStream().use { xjmfStream ->
                 typeMap = jsonConverter.convert(xjdfStream, xjmfStream)
+                xjmfStream.toString("UTF-8")
             }
+            xjdfStream.toString("UTF-8")
         }
 
         val openApiConverter = OpenApiConverter(OpenApiConverter::class.java.getResourceAsStream("/xjdf.xsd")!!)
-        openapiPath.outputStream().use {
-            openApiConverter.convert(typeMap, it)
+        val openApi = ByteArrayOutputStream().use { outputStream ->
+            openApiConverter.convert(typeMap, outputStream)
+            outputStream.toString("UTF-8")
         }
 
-        config = SchemaValidatorsConfig()
-        config.isOpenAPI3StyleDiscriminators = true
-        config.addUriTranslator { uri ->
-            if (uri.toString().startsWith("https://schema.cip4.org/")
-            ) {
-                fs.getPath(Paths.get(uri.path).fileName.toString()).toUri()
-            } else {
-                uri
-            }
-        }
+        val configbuilder = SchemaValidatorsConfig.Builder()
 
-
-        factory = buildJsonSchemaFactory()
-        xjdfSchema = factory.getSchema(
-            mapper.readTree(xjdfPath.readBytes()),
-            config
-        )
-        xjmfSchema = factory.getSchema(
-            mapper.readTree(xjmfPath.readBytes()),
-            config
-        )
-        openApiSpec = factory.getSchema(
-            mapper.readTree(openapiPath.readBytes()),
-            config
-        )
-    }
-
-    private fun buildJsonSchemaFactory(): JsonSchemaFactory {
-        val jsonSchemaVersion = JsonSchemaFactory.checkVersion(SpecVersion.VersionFlag.V202012)
-        val metaSchema = jsonSchemaVersion.instance
-        return JsonSchemaFactory.builder()
-            .defaultMetaSchemaURI(metaSchema.uri)
-            .addMetaSchema(metaSchema)
-            .uriFactory(URLFactory(), setOf("jimfs"))
-            .uriFetcher(URLFetcher(), setOf("jimfs"))
+        config = configbuilder
+            .discriminatorKeywordEnabled(true)
             .build()
+
+
+        val schemas = mapOf(
+            JsonSchemaConverter.XJDF_SCHEMA to xjdf,
+            JsonSchemaConverter.XJMF_SCHEMA to xjmf,
+            OpenApiConverter.SCHEMA to openApi,
+        )
+
+        factory = JsonSchemaFactory.getInstance(
+            SpecVersion.VersionFlag.V202012
+        ) { builder -> builder.schemaLoaders { schemaLoaders -> schemaLoaders.schemas(schemas) } }
+
+        xjdfSchema = factory.getSchema(URI(JsonSchemaConverter.XJDF_SCHEMA))
+        xjmfSchema = factory.getSchema(URI(JsonSchemaConverter.XJMF_SCHEMA))
+        openApiSpec = factory.getSchema(URI(OpenApiConverter.SCHEMA))
     }
 
     private fun getSchemaForPath(path: Path): JsonNode {
-        return openApiSpec.schemaNode["paths"][path.toString().replace("\\", "/")]
+        var pathString = path.toString().replace("\\", "/")
+        if (!pathString.startsWith("/")) {
+            pathString = "/$pathString"
+        }
+
+        return openApiSpec.schemaNode["paths"][pathString]
     }
 
     fun getSchemaForRequest(path: Path): JsonSchema {
@@ -99,7 +78,8 @@ object SchemaSingleton {
     }
 
     fun getSchemaForSignal(path: Path, code: Int = 200): JsonSchema {
-        val schema = getSchemaForPath(path)["post"]["callbacks"]["signal"].first()["post"]["requestBody"]["content"].first()["schema"]
+        val schema =
+            getSchemaForPath(path)["post"]["callbacks"]["signal"].first()["post"]["requestBody"]["content"].first()["schema"]
         try {
             return factory.getSchema(schema, config)
         } catch (e: ClassCastException) {

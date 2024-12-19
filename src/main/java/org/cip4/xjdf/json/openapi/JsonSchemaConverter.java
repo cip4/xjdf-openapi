@@ -9,14 +9,10 @@ import org.cip4.xjdf.json.openapi.model.Schemas;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -28,23 +24,13 @@ public class JsonSchemaConverter {
     private final Document doc;
     private final XPath xPath;
 
-    public JsonSchemaConverter(InputStream sourceXsd) {
-        this.doc = readXml(sourceXsd);
-        XPathFactory xpFactory = XPathFactory.newInstance();
-        this.xPath = xpFactory.newXPath();
-        this.xPath.setNamespaceContext(new XsdNamespaceContext());
-    }
+    public static final String XJDF_SCHEMA = "https://schema.cip4.org/jdfschema_2_2/xjdf.json";
+    public static final String XJMF_SCHEMA = "https://schema.cip4.org/jdfschema_2_2/xjmf.json";
 
-    private Document readXml(InputStream sourceXsd) {
-        try {
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            dbFactory.setNamespaceAware(true);
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            InputSource xmlInput = new InputSource(sourceXsd);
-            return dBuilder.parse(xmlInput);
-        } catch (Exception e) {
-            throw new RuntimeException("Error reading XML input", e);
-        }
+    public JsonSchemaConverter(InputStream sourceXsd) {
+        SchemaReader reader = new SchemaReader();
+        this.doc = reader.readXml(sourceXsd);
+        this.xPath = reader.getXPath();
     }
 
     public TypeMap convert(OutputStream xjdfOutputStream, OutputStream xjmfOutputStream) {
