@@ -77,13 +77,13 @@ object SchemaSingleton {
         return factory.getSchema(schema, config)
     }
 
-    fun getSchemaForSignal(path: Path, code: Int = 200): JsonSchema {
+    fun getSchemaForSignal(path: Path): JsonSchema {
         val schema =
             getSchemaForPath(path)["post"]["callbacks"]["signal"].first()["post"]["requestBody"]["content"].first()["schema"]
         try {
             return factory.getSchema(schema, config)
         } catch (e: ClassCastException) {
-            throw e;
+            throw e
         }
     }
 
