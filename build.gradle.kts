@@ -114,7 +114,7 @@ tasks.withType<org.hidetake.gradle.swagger.generator.GenerateSwaggerUI> {
 
 task("generateOpenApiSpec", JavaExec::class) {
     group = "build"
-    main = "org.cip4.xjdf.openapi.MainKt"
+    main = "org.cip4.xjdf.json.openapi.Main"
     classpath = sourceSets["main"].runtimeClasspath
 }
 val compileKotlin: KotlinCompile by tasks
