@@ -15,7 +15,7 @@
     </Product>
     <Product Amount="1000" ID="IDBook" IsRoot="false" ProductType="Book">
       <Intent Name="BindingIntent">
-        <BindingIntent >
+        <BindingIntent BindingType="SaddleStitch">
           <Product/>
         </BindingIntent>
       </Intent>
