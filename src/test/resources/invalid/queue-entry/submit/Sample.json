@@ -1,8 +1,5 @@
 {
   "Header": {
-    "DeviceID": "TestSender",
-    "Time": "2019-03-26T14:07:49.216+00:00",
-    "ID": "l_000002"
   },
   "CommandSubmitQueueEntry": {
     "QueueSubmissionParams": {

@@ -195,7 +195,7 @@ public class ComplexType implements Modelable {
             propertiesSchema.properties(new Schemas(
                     Collections.singletonMap(
                         "Name",
-                        new Schema().constValue(getDiscriminator(reference))
+                        new Schema().constValue(reference)
                     )
                 )
             );
@@ -208,18 +208,5 @@ public class ComplexType implements Modelable {
         schema.items().oneOf(oneOfSchemas);
         schema.items().discriminator(new Discriminator("Name"));
         schema.items().required(Collections.singletonList("Name"));
-    }
-
-    private String getDiscriminator(String type) {
-        return switch (type) {
-            case "AuditCreated" -> "Created";
-            case "AuditNotification" -> "Notification";
-            case "AuditProcessRun" -> "ProcessRun";
-            case "AuditResource" -> "Resource";
-            case "AuditStatus" -> "Status";
-            case "Glue" -> "Glue";
-            case "Media" -> "Media";
-            default -> throw new RuntimeException("No known discriminator for '" + type + "'");
-        };
     }
 }

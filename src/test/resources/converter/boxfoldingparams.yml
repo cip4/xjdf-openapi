@@ -1,0 +1,20 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+properties:
+  BoxFoldingParams:
+    $ref: "#/$defs/BoxFoldingParams"
+required:
+  - BoxFoldingParams
+$defs:
+  BoxFoldingParams:
+    allOf:
+      - $ref: "#/$defs/SpecificResource"
+      - type: object
+        properties:
+          BoxFoldAction:
+            type: array
+            items:
+              $ref: "#/$defs/BoxFoldAction"
+  BoxFoldAction: {}
+  SpecificResource:
+    type: object

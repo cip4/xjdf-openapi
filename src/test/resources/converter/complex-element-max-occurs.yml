@@ -4,7 +4,7 @@ properties:
   Bar:
     type: array
     items:
-      $ref: '#/$defs/Bar'
+      $ref: "#/$defs/Bar"
     maxItems: 10
 $defs:
   Bar:

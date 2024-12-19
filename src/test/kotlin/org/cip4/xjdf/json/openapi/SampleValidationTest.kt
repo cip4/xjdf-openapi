@@ -86,8 +86,8 @@ class SampleValidationTest {
 
     @ParameterizedTest
     @MethodSource("scanForInvalidXjdf")
-    internal fun `xjdf is invalid`(from: Path) {
-        val schema = SchemaSingleton.getSchemaForRequest(from)
+    internal fun `xjdf is invalid`(requestPath: Path, from: Path) {
+        val schema = SchemaSingleton.getSchemaForRequest(requestPath)
         SchemaSingleton.assertInvalid(schema, from.readText())
     }
 
@@ -114,6 +114,7 @@ class SampleValidationTest {
                 .filter { path -> path.toString().lowercase(Locale.getDefault()).endsWith(".json") }
                 .map { path ->
                     Arguments.of(
+                        fixtureDir.relativize(path).parent,
                         path
                     )
                 }

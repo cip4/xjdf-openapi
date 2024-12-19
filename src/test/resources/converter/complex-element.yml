@@ -2,9 +2,9 @@ $schema: https://json-schema.org/draft/2020-12/schema
 type: object
 properties:
   Bar2:
-    $ref: '#/$defs/Bar2'
+    $ref: "#/$defs/Bar2"
   Bar:
-    $ref: '#/$defs/Bar'
+    $ref: "#/$defs/Bar"
   requiredAttr:
     type: string
   optionalAttr:
