@@ -95,6 +95,14 @@ object SchemaSingleton {
         )
     }
 
+    fun assertValid(schema: JsonSchema, json: JsonNode) {
+        val result = schema.validate(json)
+        Assertions.assertTrue(
+            result.isEmpty(),
+            json.toPrettyString() + "\n" + result.joinToString("\n")
+        )
+    }
+
     fun assertInvalid(schema: JsonSchema, json: String) {
         val result = schema.validate(mapper.readTree(json))
         Assertions.assertFalse(result.isEmpty(), json)

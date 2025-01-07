@@ -60,11 +60,10 @@
 
 package org.cip4.xjdf.json.openapi
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
-import com.fasterxml.jackson.dataformat.yaml.YAMLMapper
-import org.cip4.xjdf.json.openapi.model.Schema
+import com.networknt.schema.*
+import com.networknt.schema.SpecVersion.VersionFlag
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
@@ -74,6 +73,32 @@ import java.util.stream.StreamSupport
 
 
 internal class JsonSchemaConverterTest {
+
+    @Test
+    fun generatedXjdfJsonSchemaIsValid() {
+        val jsonSchemaFactory = JsonSchemaFactory.getInstance(VersionFlag.V202012)
+        val builder = SchemaValidatorsConfig.builder()
+        val config = builder.build()
+        val schema: JsonSchema = jsonSchemaFactory.getSchema(SchemaLocation.of(SchemaId.V202012), config)
+
+        SchemaSingleton.assertValid(
+            schema,
+            SchemaSingleton.xjdfSchema.schemaNode
+        )
+    }
+
+    @Test
+    fun generatedXjmfJsonSchemaIsValid() {
+        val jsonSchemaFactory = JsonSchemaFactory.getInstance(VersionFlag.V202012)
+        val builder = SchemaValidatorsConfig.builder()
+        val config = builder.build()
+        val schema: JsonSchema = jsonSchemaFactory.getSchema(SchemaLocation.of(SchemaId.V202012), config)
+
+        SchemaSingleton.assertValid(
+            schema,
+            SchemaSingleton.xjmfSchema.schemaNode
+        )
+    }
 
     @ParameterizedTest
     @MethodSource("scanForFixtures")
