@@ -60,6 +60,7 @@ public class SimpleTypeRestriction extends SimpleType {
         List<String> enumValues = enumeration();
         if (enumValues != null) {
             schema.enumValues(enumValues);
+            schema.pattern(null);
         }
 
         String pattern = pattern();

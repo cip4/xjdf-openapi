@@ -3,7 +3,6 @@ type: object
 properties:
   Bar:
     type: string
-    pattern: "^[a-zA-Z0-9._\\-:]*$"
     enum:
       - V1
       - V2
