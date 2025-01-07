@@ -16,7 +16,14 @@ jobs:
           java-version: 17
       - name: Build with Gradle 🔧
         run: ./gradlew test generateSwaggerUI
-      - uses: actions/upload-artifact@v2
+      - name: Upload artifacts 📦
+        uses: actions/upload-artifact@v4
+        with:
+          name: schemas
+          path: |
+            build/resources/main/xjdf.json
+            build/resources/main/xjmf.json
+      - uses: actions/upload-artifact@v4
         with:
           name: Documentation
           path: build/swagger-ui-xjdf

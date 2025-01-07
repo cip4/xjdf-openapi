@@ -21,8 +21,8 @@ jobs:
         with:
           name: schemas
           path: |
-            build/resources/xjdf.json
-            build/resources/xjmf.json
+            build/resources/main/xjdf.json
+            build/resources/main/xjmf.json
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
