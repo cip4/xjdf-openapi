@@ -60,14 +60,25 @@ public class ComplexType implements Modelable {
 
         String parent = inheritingFrom();
         if (parent != null) {
-            schema = new Schema()
-                .allOf(Arrays.asList(
-                    context.getNameTranslator().translate(parent),
-                    schema
-                ));
+            Schema parentRef = context.getNameTranslator().translate(parent);
+            if (schemaIsEmpty(schema)) {
+                schema = parentRef;
+            } else {
+                schema = new Schema()
+                    .allOf(Arrays.asList(
+                        parentRef,
+                        schema
+                    ));
+            }
         }
 
         return new Model(getName(), schema);
+    }
+
+    private boolean schemaIsEmpty(Schema schema) {
+        return (schema.properties() == null || schema.properties().isEmpty())
+            && (schema.required() == null || schema.required().isEmpty())
+            && (schema.oneOf() == null || schema.oneOf().isEmpty());
     }
 
     private void addLocalElements(Schema schema) {
