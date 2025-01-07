@@ -17,7 +17,7 @@ public abstract class SimpleType implements Modelable {
     public String getName() {
         return node.getAttributes().getNamedItem("name") != null
             ? node.getAttributes().getNamedItem("name").getNodeValue()
-            : "S" + UUID.randomUUID().toString();
+            : "S" + UUID.randomUUID();
     }
 
     @Override
@@ -31,6 +31,7 @@ public abstract class SimpleType implements Modelable {
 
     static SimpleType create(Node node, Context context) {
         List<Factory<? extends SimpleType>> factories = List.of(
+            new NamedColor.Factory(),
             new SimpleTypeRestriction.Factory(),
             new SimpleTypeList.Factory(),
             new SimpleTypeLocalList.Factory()

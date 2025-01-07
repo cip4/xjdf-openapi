@@ -1,0 +1,11 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+properties:
+  Color:
+    $ref: "#/$defs/NamedColor"
+$defs:
+  NamedColor:
+    type: string
+    enum:
+      - aqua
+      - tan
