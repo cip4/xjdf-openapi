@@ -50,6 +50,7 @@ public class ComplexType implements Modelable {
 
         addLocalElements(schema);
         applyChoicePolymorphism(schema, context.getNameTranslator());
+        applySimpleContent(schema);
 
         schema.required().addAll(
             attributes.stream()
@@ -83,7 +84,7 @@ public class ComplexType implements Modelable {
 
     private void addLocalElements(Schema schema) {
         NodeList elementNodes = context.evaluateNodeList(
-            "(. | xs:complexContent/xs:extension)/xs:sequence/xs:element");
+            "(. | xs:complexContent/xs:extension | xs:simpleContent/xs:extension)/xs:sequence/xs:element");
 
         getChoiceElements().forEach(element -> addPropertyToSchema(element, schema));
 
@@ -149,7 +150,7 @@ public class ComplexType implements Modelable {
 
     private List<LocalElement> getChoiceElements() {
         Node choice = context.evaluateNode(
-            "(. | xs:complexContent/xs:extension)/xs:sequence/xs:choice");
+            "(. | xs:complexContent/xs:extension | xs:simpleContent/xs:extension)/xs:sequence/xs:choice");
         if (choice == null) return Collections.emptyList();
 
         NodeList elementNodes = context.descendant(choice)
@@ -169,7 +170,7 @@ public class ComplexType implements Modelable {
 
     private List<Attribute> getAttributes() {
         NodeList attributeNodes = context.evaluateNodeList(
-            "(. | xs:complexContent/xs:extension)/xs:attribute");
+            "(. | xs:complexContent/xs:extension | xs:simpleContent/xs:extension)/xs:attribute");
 
         List<Attribute> attributes = new ArrayList<>();
         for (int i = 0; i < attributeNodes.getLength(); i++) {
@@ -219,5 +220,19 @@ public class ComplexType implements Modelable {
         schema.items().oneOf(oneOfSchemas);
         schema.items().discriminator(new Discriminator("Name"));
         schema.items().required(Collections.singletonList("Name"));
+    }
+
+    private void applySimpleContent(Schema schema) {
+        Node extensionNode = context.evaluateNode("xs:simpleContent/xs:extension");
+        if (extensionNode == null) {
+            return;
+        }
+
+        String base = extensionNode.getAttributes().getNamedItem("base").getNodeValue();
+        if (!base.equals("xs:string")) {
+            throw new RuntimeException("Unknown simple content '%s'.".formatted(extensionNode.getNodeValue()));
+        }
+
+        schema.propertiesPut("Text", context.getNameTranslator().translate(base));
     }
 }
