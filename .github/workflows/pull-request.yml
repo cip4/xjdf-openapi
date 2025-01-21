@@ -26,4 +26,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Documentation
-          path: build/swagger-ui-xjdf
+          path: build/swagger-ui-xjdf-2x
