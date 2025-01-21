@@ -16,11 +16,13 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
 public class JsonSchemaConverter {
 
+    public static final String PREFIX = "#/$defs/";
     private final Document doc;
     private final XPath xPath;
 
@@ -33,7 +35,7 @@ public class JsonSchemaConverter {
         this.xPath = reader.getXPath();
     }
 
-    public TypeMap convert(OutputStream xjdfOutputStream, OutputStream xjmfOutputStream) {
+    public Schemas convert(OutputStream xjdfOutputStream, OutputStream xjmfOutputStream) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
@@ -43,19 +45,19 @@ public class JsonSchemaConverter {
         Schema xjdfSchema = convertModel("XJDF");
         xjdfSchema.id("https://schema.cip4.org/jdfschema_2_2/xjdf.json");
 
-        try (OutputStreamWriter writer = new OutputStreamWriter(xjdfOutputStream)) {
+        try (OutputStreamWriter writer = new OutputStreamWriter(xjdfOutputStream, StandardCharsets.UTF_8)) {
             writer.write(objectWriter.writeValueAsString(xjdfSchema));
         } catch (Exception e) {
             throw new RuntimeException("Error writing XJDF schema", e);
         }
 
         Map<String, String> xjdfTypes = new HashMap<>();
-        xjdfSchema.defs().forEach((key, value) -> xjdfTypes.put(key, xjdfSchema.id() + "#/$defs/" + key));
+        xjdfSchema.defs().forEach((key, value) -> xjdfTypes.put(key, xjdfSchema.id() + PREFIX + key));
 
         Schema xjmfSchema = convertModel("XJMF", xjdfTypes);
         xjmfSchema.id("https://schema.cip4.org/jdfschema_2_2/xjmf.json");
 
-        try (OutputStreamWriter writer = new OutputStreamWriter(xjmfOutputStream)) {
+        try (OutputStreamWriter writer = new OutputStreamWriter(xjmfOutputStream, StandardCharsets.UTF_8)) {
             writer.write(objectWriter.writeValueAsString(xjmfSchema));
         } catch (Exception e) {
             throw new RuntimeException("Error writing XJMF schema", e);
@@ -65,7 +67,7 @@ public class JsonSchemaConverter {
         schemaMap.put("XJDF", xjdfSchema);
         schemaMap.put("XJMF", xjmfSchema);
 
-        return new TypeMap(schemaMap);
+        return schemaMap;
     }
 
     public Schema convertModel(String root) {
@@ -73,7 +75,7 @@ public class JsonSchemaConverter {
     }
 
     public Schema convertModel(String root, Map<String, String> referencedTypes) {
-        TypeTranslator nameTranslator = new TypeTranslator("#/$defs/", referencedTypes);
+        TypeTranslator nameTranslator = new TypeTranslator(PREFIX, referencedTypes);
         Schemas defs = new Schemas();
         convertNamedElement(root, nameTranslator, defs);
         Schema xjdfSchema = defs.remove(root);

@@ -1,12 +1,12 @@
 package org.cip4.xjdf.json.openapi.model;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import lombok.Data;
-import lombok.NonNull;
+import lombok.*;
 
 import java.util.Map;
 
-@Data
+@AllArgsConstructor
+@Getter
 @JsonTypeName("OpenApi")
 public class OpenApi {
     @NonNull
@@ -16,5 +16,5 @@ public class OpenApi {
     @NonNull
     private final Map<String, PathItem> paths;
     @NonNull
-    private Components components  = new Components();
+    private final Components components;
 }

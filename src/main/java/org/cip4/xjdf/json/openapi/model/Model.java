@@ -1,6 +1,5 @@
 package org.cip4.xjdf.json.openapi.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 

@@ -1,8 +1,8 @@
 package org.cip4.xjdf.json.openapi;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.cip4.xjdf.json.openapi.model.Model;
-import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.Node;
 
 import javax.xml.xpath.XPath;
@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 public abstract class SimpleType implements Modelable {
-    @NotNull
+    @NonNull
     protected Node node;
 
     public String getName() {

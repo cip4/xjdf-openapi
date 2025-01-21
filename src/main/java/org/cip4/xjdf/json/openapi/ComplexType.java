@@ -6,7 +6,6 @@ import org.cip4.xjdf.json.openapi.model.Discriminator;
 import org.cip4.xjdf.json.openapi.model.Model;
 import org.cip4.xjdf.json.openapi.model.Schema;
 import org.cip4.xjdf.json.openapi.model.Schemas;
-import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -21,7 +20,7 @@ public class ComplexType implements Modelable {
     private final Context context;
     private final String elementName;
 
-    public ComplexType(@NotNull Context context) {
+    public ComplexType(@NonNull Context context) {
         this.context = context;
         this.elementName = null;
     }
@@ -35,29 +34,13 @@ public class ComplexType implements Modelable {
 
     @Override
     public Model getModel() {
-        List<Attribute> attributes = getAttributes();
-        Schemas properties = new Schemas(
-            attributes.stream()
-                .map(Attribute::getModel)
-                .collect(Collectors.toMap(Model::getName, Model::getSchema))
-        );
+        Schema schema = new Schema()
+            .type("object");
 
-        Schema schema = new Schema();
-        schema.type("object");
-        if (!properties.isEmpty()) {
-            schema.properties(properties);
-        }
-
+        addAttributes(schema);
         addLocalElements(schema);
         applyChoicePolymorphism(schema, context.getNameTranslator());
         applySimpleContent(schema);
-
-        schema.required().addAll(
-            attributes.stream()
-                .filter(Attribute::isRequired)
-                .map(Attribute::getName)
-                .toList()
-        );
 
         String parent = inheritingFrom();
         if (parent != null) {
@@ -66,14 +49,32 @@ public class ComplexType implements Modelable {
                 schema = parentRef;
             } else {
                 schema = new Schema()
-                    .allOf(Arrays.asList(
+                    .allOf(
                         parentRef,
                         schema
-                    ));
+                    );
             }
         }
 
         return new Model(getName(), schema);
+    }
+
+    private void addAttributes(Schema schema) {
+        List<Attribute> attributes = getAttributes();
+        if (!attributes.isEmpty()) {
+            schema.properties(
+                new Schemas(
+                    attributes.stream()
+                        .map(Attribute::getModel)
+                        .collect(Collectors.toMap(Model::getName, Model::getSchema))
+                )
+            ).required().addAll(
+                attributes.stream()
+                    .filter(Attribute::isRequired)
+                    .map(Attribute::getName)
+                    .toList()
+            );
+        }
     }
 
     private boolean schemaIsEmpty(Schema schema) {
@@ -112,12 +113,11 @@ public class ComplexType implements Modelable {
     }
 
     private Schema getSubstitution(Node node) {
-        String ref = Optional.ofNullable(node.getAttributes().getNamedItem("ref"))
-            .map(Node::getNodeValue)
-            .orElse(null);
-        if (ref == null) {
+        Node refNode = node.getAttributes().getNamedItem("ref");
+        if (refNode == null) {
             return null;
         }
+        String ref = refNode.getNodeValue();
 
         Schemas substitutes = context.getSubstitutes(ref, context.getNameTranslator());
         if (substitutes == null) {
@@ -125,19 +125,17 @@ public class ComplexType implements Modelable {
         }
 
         List<Schema> oneOf = substitutes.keySet().stream()
-            .map(key -> new Schema().required(Collections.singletonList(key))).collect(Collectors.toList());
+            .map(key -> new Schema().required(List.of(key))).collect(Collectors.toList());
 
         Node minOccurs = node.getAttributes().getNamedItem("minOccurs");
         if (minOccurs != null && minOccurs.getNodeValue().equals("0")) {
-            Schema optionalSchema = new Schema();
-            Schema notSchema = new Schema().anyOf(oneOf);
-            optionalSchema.not(notSchema);
-
             oneOf.add(new Schema()
                 .not(
                     new Schema().anyOf(
-                        substitutes.keySet().stream()
-                            .map(key -> new Schema().required(Collections.singletonList(key))).collect(Collectors.toList())
+                        substitutes.keySet()
+                            .stream()
+                            .map(key -> new Schema().required(List.of(key)))
+                            .collect(Collectors.toList())
                     )
                 )
             );
@@ -172,7 +170,7 @@ public class ComplexType implements Modelable {
         NodeList attributeNodes = context.evaluateNodeList(
             "(. | xs:complexContent/xs:extension | xs:simpleContent/xs:extension)/xs:attribute");
 
-        List<Attribute> attributes = new ArrayList<>();
+        List<Attribute> attributes = new ArrayList<>(attributeNodes.getLength());
         for (int i = 0; i < attributeNodes.getLength(); i++) {
             attributes.add(new Attribute(attributeNodes.item(i), context.descendant(attributeNodes.item(i))));
         }
@@ -186,7 +184,9 @@ public class ComplexType implements Modelable {
 
     private void applyChoicePolymorphism(Schema schema, TypeTranslator nameTranslator) {
         Node choice = context.evaluateNode("xs:choice");
-        if (choice == null) return;
+        if (choice == null) {
+            return;
+        }
 
         if (!"0".equals(choice.getAttributes().getNamedItem("minOccurs").getNodeValue())) {
             throw new RuntimeException("Handling of xs:choice/@minOccurs != 0 is not implemented.");
@@ -199,27 +199,30 @@ public class ComplexType implements Modelable {
         schema.type("array");
 
         NodeList choices = context.descendant(choice).evaluateNodeList("xs:element");
-        List<Schema> oneOfSchemas = new ArrayList<>();
+        List<Schema> oneOfSchemas = new ArrayList<>(choices.getLength());
         for (int i = 0; i < choices.getLength(); i++) {
             String reference = choices.item(i).getAttributes().getNamedItem("ref").getNodeValue();
-            Schema refSchema = nameTranslator.translate(reference);
-            Schema propertiesSchema = new Schema();
-            propertiesSchema.properties(new Schemas(
-                    Collections.singletonMap(
-                        "Name",
-                        new Schema().constValue(reference)
-                    )
+            oneOfSchemas.add(new Schema()
+                .allOf(
+                    nameTranslator.translate(reference),
+                    new Schema()
+                        .properties(new Schemas(
+                                Collections.singletonMap(
+                                    "Name",
+                                    new Schema().constValue(reference)
+                                )
+                            )
+                        )
                 )
             );
-            Schema combinedSchema = new Schema();
-            combinedSchema.allOf(Arrays.asList(refSchema, propertiesSchema));
-            oneOfSchemas.add(combinedSchema);
         }
 
-        schema.items(new Schema());
-        schema.items().oneOf(oneOfSchemas);
-        schema.items().discriminator(new Discriminator("Name"));
-        schema.items().required(Collections.singletonList("Name"));
+        schema.items(
+            new Schema()
+                .oneOf(oneOfSchemas)
+                .discriminator(new Discriminator("Name"))
+                .required(Collections.singletonList("Name"))
+        );
     }
 
     private void applySimpleContent(Schema schema) {

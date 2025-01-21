@@ -5,19 +5,14 @@ import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 import java.io.InputStream;
-import java.io.StringWriter;
 
 public class SchemaReader {
 
-    private static XPath xPath;
+    private XPath xPath;
 
     public Document readXml(InputStream sourceXsd) {
         try {
@@ -85,16 +80,4 @@ public class SchemaReader {
 
         return document;
     }
-
-    @SneakyThrows
-    public String getStringFromDocument(Document doc) {
-        DOMSource domSource = new DOMSource(doc);
-        StringWriter writer = new StringWriter();
-        StreamResult result = new StreamResult(writer);
-        TransformerFactory tf = TransformerFactory.newInstance();
-        Transformer transformer = tf.newTransformer();
-        transformer.transform(domSource, result);
-        return writer.toString();
-    }
-
 }

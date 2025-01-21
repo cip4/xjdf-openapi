@@ -3,16 +3,16 @@ package org.cip4.xjdf.json.openapi.model;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.util.*;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Accessors(fluent = true)
+@Builder(toBuilder = true)
 public class Schema {
     @JsonProperty(value = "$schema", index = 0)
     private String schema;
@@ -23,6 +23,7 @@ public class Schema {
     @JsonProperty
     private Schemas properties;
     @JsonProperty
+    @Builder.Default
     private List<String> required = new ArrayList<>();
     @JsonProperty
     private Schema items;
@@ -54,7 +55,18 @@ public class Schema {
     private String constValue;
     @JsonProperty("$ref")
     private String ref;
+    @Builder.Default
+    @JsonProperty("$defs")
     private Schemas defs = new Schemas();
+
+    public Schema allOf(Schema... schemas) {
+        this.allOf = Arrays.asList(schemas);
+        return this;
+    }
+
+    public List<Schema> allOf() {
+        return allOf;
+    }
 
     public void oneOfAdd(List<Schema> schemas) {
         if (oneOf == null) {

@@ -15,44 +15,35 @@ public class PathsGenerator {
     }
 
     public Map<String, PathItem> paths() {
-        Map<String, PathItem> paths = new HashMap<>();
-
-        paths.put(
-            "/queue-entry/submit",
-            PathItem.builder()
-                .post(
+        return Stream.of(
+            Map.entry(
+                "/queue-entry/submit",
+                PathItem.post(
                     Operation.builder()
                         .requestBody(requestBody("CommandSubmitQueueEntry"))
                         .responses(responses("ResponseSubmitQueueEntry"))
                         .build()
                 )
-                .build()
-        );
-
-        paths.putAll(
-            Stream.of(
-                command("/queue-entry/modify", "ModifyQueueEntry"),
-                command("/queue-entry/resubmit", "ResubmitQueueEntry"),
-                command("/queue-entry/return", "ReturnQueueEntry"),
-                command("/queue-entry/request", "RequestQueueEntry"),
-                command("/gang/force", "ForceGang"),
-                query("/gang/status", "GangStatus", true),
-                query("/known-devices", "KnownDevices", true),
-                query("/known-messages", "KnownMessages", false),
-                query("/known-subscriptions", "KnownSubscriptions", true),
-                query("/notification", "Notification", true),
-                command("/pipe-control", "PipeControl"),
-                query("/queue-status", "QueueStatus", false),
-                command("/resource/command", "Resource"),
-                query("/resource/query", "Resource", true),
-                command("/persistent-channel/stop", "StopPersistentChannel"),
-                query("/status", "Status", true),
-                command("/wake-up", "WakeUp"),
-                command("/shutdown", "ShutDown")
-            ).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
-        );
-
-        return paths;
+            ),
+            Map.entry("/queue-entry/modify", command("ModifyQueueEntry")),
+            Map.entry("/queue-entry/resubmit", command("ResubmitQueueEntry")),
+            Map.entry("/queue-entry/return", command("ReturnQueueEntry")),
+            Map.entry("/queue-entry/request", command("RequestQueueEntry")),
+            Map.entry("/gang/force", command("ForceGang")),
+            Map.entry("/gang/status", query("GangStatus", true)),
+            Map.entry("/known-devices", query("KnownDevices", true)),
+            Map.entry("/known-messages", query("KnownMessages", false)),
+            Map.entry("/known-subscriptions", query("KnownSubscriptions", true)),
+            Map.entry("/notification", query("Notification", true)),
+            Map.entry("/pipe-control", command("PipeControl")),
+            Map.entry("/queue-status", query("QueueStatus", false)),
+            Map.entry("/resource/command", command("Resource")),
+            Map.entry("/resource/query", query("Resource", true)),
+            Map.entry("/persistent-channel/stop", command("StopPersistentChannel")),
+            Map.entry("/status", query("Status", true)),
+            Map.entry("/wake-up", command("WakeUp")),
+            Map.entry("/shutdown", command("ShutDown"))
+        ).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
     private Schema strippedXjmf(String operation) {
@@ -67,15 +58,13 @@ public class PathsGenerator {
             .required(Arrays.asList("Header", operation));
     }
 
-    private Map.Entry<String, PathItem> buildPathItem(String path, String requestType, String responseType, String callbackType) {
-        return Map.entry(
-            path, PathItem.builder().post(
-                Operation.builder()
-                    .requestBody(requestBody(requestType))
-                    .responses(responses(responseType))
-                    .callbacks(callbackType != null ? callbacks(requestType, callbackType) : null)
-                    .build()
-            ).build()
+    private PathItem buildPathItem(String requestType, String responseType, String callbackType) {
+        return PathItem.post(
+            Operation.builder()
+                .requestBody(requestBody(requestType))
+                .responses(responses(responseType))
+                .callbacks(callbackType != null ? callbacks(requestType, callbackType) : null)
+                .build()
         );
     }
 
@@ -94,13 +83,12 @@ public class PathsGenerator {
         return Map.of(
             "signal", Map.of(
                 "{\\$request.body#/" + queryType + "/Subscription}",
-                // "{\\$request.body#/" + queryType + "/Subscription/URL}"
-                PathItem.builder().post(
+                PathItem.post(
                     Operation.builder()
                         .requestBody(requestBody(signalType))
                         .responses(responses("XJDF")) // Map to correct type if needed
                         .build()
-                ).build()
+                )
             )
         );
     }
@@ -112,13 +100,16 @@ public class PathsGenerator {
         );
     }
 
-    private Map.Entry<String, PathItem> command(String path, String command) {
-        return buildPathItem(path, "Command" + command, "Response" + command, null);
+    private PathItem command(String command) {
+        return buildPathItem(
+            "Command" + command,
+            "Response" + command,
+            null
+        );
     }
 
-    private Map.Entry<String, PathItem> query(String path, String query, boolean hasSignal) {
+    private PathItem query(String query, boolean hasSignal) {
         return buildPathItem(
-            path,
             "Query" + query,
             "Response" + query,
             hasSignal ? "Signal" + query : null

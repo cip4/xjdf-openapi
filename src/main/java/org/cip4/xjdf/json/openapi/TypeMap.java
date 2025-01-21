@@ -1,35 +1,32 @@
 package org.cip4.xjdf.json.openapi;
 
+import lombok.Getter;
 import org.cip4.xjdf.json.openapi.model.Schema;
+import org.cip4.xjdf.json.openapi.model.Schemas;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Getter
 public class TypeMap {
 
-    private final Map<String, String> types = new HashMap<>();
+    private final Map<String, String> prefixes = new HashMap<>();
 
-    public TypeMap(Map<String, Schema> schemas) {
-        schemas.forEach(this::register);
+    public TypeMap(Schemas schemas) {
+        schemas.forEach((s, schema) -> register(schemas.getPrefix(), s, schema));
     }
 
-    private void register(String rootElement, Schema schema) {
-        if (schema.id() != null) {
-            types.put(rootElement, schema.id());
-            String prefix = schema.id() + "#/$defs/";
-            if (schema.defs() != null) {
-                schema.defs().keySet().forEach(elementName -> types.put(elementName, prefix + elementName));
-            }
+    private void register(String prefix, String rootElement, Schema schema) {
+        prefixes.put(rootElement, prefix);
+        if (schema.defs() != null) {
+            schema.defs().keySet().forEach(key -> prefixes.put(key, prefix));
         }
     }
 
     public Schema getReference(String elementName) {
-        String ref = types.get(elementName);
-        if (ref == null) {
+        if (!prefixes.containsKey(elementName)) {
             throw new IllegalArgumentException("No reference found for element name: " + elementName);
         }
-        Schema schema = new Schema();
-        schema.ref(ref);
-        return schema;
+        return new Schema().ref(prefixes.get(elementName) + elementName);
     }
 }

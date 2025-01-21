@@ -1,5 +1,7 @@
 package org.cip4.xjdf.json.openapi;
 
+import org.cip4.xjdf.json.openapi.model.Schemas;
+
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
@@ -16,17 +18,12 @@ public class Main {
             JsonSchemaConverter jsonConverter = new JsonSchemaConverter(xjdfXsd);
             try (FileOutputStream xjdfOutput = new FileOutputStream("build/resources/main/xjdf.json");
                  FileOutputStream xjmfOutput = new FileOutputStream("build/resources/main/xjmf.json")) {
-                TypeMap typeMap = jsonConverter.convert(xjdfOutput, xjmfOutput);
+                Schemas schemas = jsonConverter.convert(xjdfOutput, xjmfOutput);
 
                 // Convert OpenAPI
-                InputStream xjdfXsdForOpenApi = OpenApiConverter.class.getResourceAsStream("/xjdf.xsd");
-                if (xjdfXsdForOpenApi == null) {
-                    throw new IllegalStateException("Resource '/xjdf.xsd' not found");
-                }
-
-                OpenApiConverter converter = new OpenApiConverter(xjdfXsdForOpenApi);
+                OpenApiConverter converter = new OpenApiConverter();
                 try (FileOutputStream openApiOutput = new FileOutputStream("build/resources/main/xjdf.yml")) {
-                    converter.convert(typeMap, openApiOutput);
+                    converter.convert(schemas, openApiOutput);
                 }
             }
         } catch (Exception e) {

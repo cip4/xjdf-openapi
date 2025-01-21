@@ -3,8 +3,10 @@ package org.cip4.xjdf.json.openapi.model;
 import lombok.Data;
 import lombok.NonNull;
 
+import java.util.Map;
+
 @Data
 public class Components {
     @NonNull
-    private final Schema[] schemas = new Schema[0];
+    private final Map<String, Schema> schemas;
 }

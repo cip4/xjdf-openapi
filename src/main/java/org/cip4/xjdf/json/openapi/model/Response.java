@@ -10,5 +10,5 @@ public class Response {
     @NonNull
     private final Map<String, MediaType> content;
     @NonNull
-    private String description;
+    private final String description;
 }
