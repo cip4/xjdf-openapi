@@ -25,7 +25,7 @@ dependencies {
 
     testImplementation 'com.networknt:json-schema-validator:1.5.5'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.11.4'
 
     swaggerUI 'org.webjars:swagger-ui:5.15.1'
 }
