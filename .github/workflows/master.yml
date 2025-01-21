@@ -26,4 +26,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: docs # The branch the action should deploy to.
-          folder: build/swagger-ui-xjdf # The folder the action should deploy.
+          folder: build/swagger-ui-xjdf_2x # The folder the action should deploy.
