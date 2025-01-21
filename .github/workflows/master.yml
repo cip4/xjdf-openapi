@@ -24,7 +24,7 @@ jobs:
             build/resources/main/xjdf.json
             build/resources/main/xjmf.json
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@4
         with:
           branch: docs # The branch the action should deploy to.
           folder: build/swagger-ui-xjdf # The folder the action should deploy.
