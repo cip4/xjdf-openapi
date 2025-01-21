@@ -10,8 +10,8 @@ properties:
   optionalAttr:
     type: string
 required:
-  - Bar2
   - requiredAttr
+  - Bar2
 $defs:
   Bar2:
     type: object
