@@ -1403,8 +1403,7 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/SheetLay"
             },
             "Powder" : {
-              "type" : "number",
-              "format" : "float"
+              "$ref" : "#/components/schemas/Percentage"
             },
             "Drying" : {
               "$ref" : "#/components/schemas/EnumDrying"
@@ -1708,8 +1707,7 @@ window.swaggerSpec={
               "enum" : [ "Front", "Back" ]
             },
             "Waste" : {
-              "type" : "number",
-              "format" : "float"
+              "$ref" : "#/components/schemas/Percentage"
             }
           }
         } ]
@@ -4898,8 +4896,7 @@ window.swaggerSpec={
             }
           },
           "PercentCompleted" : {
-            "type" : "number",
-            "format" : "float"
+            "$ref" : "#/components/schemas/Percentage"
           },
           "Waste" : {
             "type" : "number",
@@ -4983,6 +4980,11 @@ window.swaggerSpec={
           }
         },
         "required" : [ "BlockName" ]
+      },
+      "Percentage" : {
+        "type" : "number",
+        "format" : "float",
+        "maximum" : 100.0
       },
       "Use" : {
         "type" : "number",
@@ -9858,7 +9860,7 @@ window.swaggerSpec={
         "properties" : {
           "DataType" : {
             "type" : "string",
-            "enum" : [ "xs:string", "xs:int", "xs:float", "xs:NMTOKEN", "xs:boolean", "xs:dateTime", "xs:duration", "NamedFeature" ]
+            "enum" : [ "boolean", "dateTime", "duration", "float", "integer", "NamedFeature", "NMTOKEN", "string" ]
           },
           "IDValue" : {
             "type" : "string"
@@ -11585,8 +11587,7 @@ window.swaggerSpec={
               "pattern" : "^[a-zA-Z0-9._\\-:]*$"
             },
             "RecycledPercentage" : {
-              "type" : "number",
-              "format" : "float"
+              "$ref" : "#/components/schemas/Percentage"
             }
           },
           "required" : [ "MediaType" ]
