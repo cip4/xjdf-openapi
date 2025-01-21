@@ -38,8 +38,11 @@ tasks.test {
 }
 
 swaggerSources {
-    xjdf {
-        inputFile = file('build/resources/main/xjdf.yml')
+    xjdf_22 {
+        inputFile = file('build/resources/main/xjdf_2_2.yml')
+    }
+    xjdf_2x {
+        inputFile = file('build/resources/main/xjdf_2_x.yml')
     }
 }
 

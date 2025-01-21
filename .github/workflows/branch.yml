@@ -21,8 +21,7 @@ jobs:
         with:
           name: schemas
           path: |
-            build/resources/main/xjdf.json
-            build/resources/main/xjmf.json
+            build/resources/main/xjdf_*
       - uses: actions/upload-artifact@v4
         with:
           name: Documentation
