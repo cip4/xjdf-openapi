@@ -22,6 +22,7 @@ jobs:
           name: schemas
           path: |
             build/resources/main/xjdf_*
+            build/resources/main/xjmf_*
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
