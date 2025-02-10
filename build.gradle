@@ -27,7 +27,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.11.4'
 
-    swaggerUI 'org.webjars:swagger-ui:5.15.1'
+    swaggerUI 'org.webjars:swagger-ui:5.18.3'
 }
 
 tasks.test {
