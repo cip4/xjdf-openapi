@@ -2,7 +2,7 @@ import org.hidetake.gradle.swagger.generator.GenerateSwaggerUI
 
 plugins {
     id 'java'
-    id 'org.hidetake.swagger.generator' version '2.18.2'
+    id 'org.hidetake.swagger.generator' version '2.19.2'
     id("com.github.spotbugs") version "6.1.3"
 }
 
