@@ -1396,6 +1396,9 @@ window.swaggerSpec={
               "type" : "string",
               "enum" : [ "On", "Off" ]
             },
+            "FeedSheetLay" : {
+              "$ref" : "#/components/schemas/FeedSheetLay"
+            },
             "WorkStyle" : {
               "$ref" : "#/components/schemas/WorkStyle"
             },
@@ -2388,6 +2391,9 @@ window.swaggerSpec={
               "items" : {
                 "$ref" : "#/components/schemas/Device"
               }
+            },
+            "FeedSheetLay" : {
+              "$ref" : "#/components/schemas/FeedSheetLay"
             },
             "WorkStyle" : {
               "$ref" : "#/components/schemas/WorkStyle"
@@ -3522,6 +3528,12 @@ window.swaggerSpec={
               "items" : {
                 "$ref" : "#/components/schemas/IdentificationField"
               }
+            },
+            "SurfaceMark" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/SurfaceMark"
+              }
             }
           }
         } ]
@@ -4281,6 +4293,9 @@ window.swaggerSpec={
             "type" : "string",
             "format" : "date-time"
           },
+          "Device" : {
+            "$ref" : "#/components/schemas/Device"
+          },
           "Activity" : {
             "type" : "array",
             "items" : {
@@ -4895,6 +4910,10 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/GangSource"
             }
           },
+          "TotalAmount" : {
+            "type" : "number",
+            "format" : "float"
+          },
           "PercentCompleted" : {
             "$ref" : "#/components/schemas/Percentage"
           },
@@ -5071,6 +5090,10 @@ window.swaggerSpec={
             "enum" : [ "Forward", "Reverse" ]
           }
         }
+      },
+      "FeedSheetLay" : {
+        "type" : "string",
+        "enum" : [ "Leading", "Trailing" ]
       },
       "PlacedObject" : {
         "type" : "object",
@@ -6158,6 +6181,36 @@ window.swaggerSpec={
       "StripMark" : {
         "type" : "object",
         "properties" : {
+          "BarcodeReproParams" : {
+            "$ref" : "#/components/schemas/BarcodeReproParams"
+          },
+          "RegisterMark" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }
+          },
+          "Font" : {
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
+          },
+          "MarkName" : {
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
+          },
+          "RelativeWidth" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "RelativeHeight" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "ID" : {
+            "type" : "string",
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
+          },
           "CutMark" : {
             "type" : "array",
             "items" : {
@@ -6180,31 +6233,14 @@ window.swaggerSpec={
           "Orientation" : {
             "$ref" : "#/components/schemas/Orientation"
           },
-          "BarcodeReproParams" : {
-            "$ref" : "#/components/schemas/BarcodeReproParams"
-          },
           "JobField" : {
             "$ref" : "#/components/schemas/JobField"
           },
           "RefAnchor" : {
             "$ref" : "#/components/schemas/RefAnchor"
           },
-          "RegisterMark" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/RegisterMark"
-            }
-          },
-          "Font" : {
-            "type" : "string",
-            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
-          },
           "Offset" : {
             "$ref" : "#/components/schemas/XYPair"
-          },
-          "MarkName" : {
-            "type" : "string",
-            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
           },
           "VerticalFitPolicy" : {
             "$ref" : "#/components/schemas/EnumFitPolicy"
@@ -6217,6 +6253,11 @@ window.swaggerSpec={
           },
           "Anchor" : {
             "$ref" : "#/components/schemas/Anchor"
+          },
+          "PositionRef" : {
+            "type" : "string",
+            "format" : "id",
+            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "FillMark" : {
             "type" : "array",
@@ -6232,21 +6273,8 @@ window.swaggerSpec={
             "type" : "number",
             "format" : "float"
           },
-          "RelativeWidth" : {
-            "type" : "number",
-            "format" : "float"
-          },
-          "RelativeHeight" : {
-            "type" : "number",
-            "format" : "float"
-          },
           "HorizontalFitPolicy" : {
             "$ref" : "#/components/schemas/EnumFitPolicy"
-          },
-          "ID" : {
-            "type" : "string",
-            "format" : "id",
-            "pattern" : "^[a-zA-Z_][\\w.-]*$"
           },
           "IdentificationField" : {
             "type" : "array",
@@ -6614,9 +6642,6 @@ window.swaggerSpec={
           }
         } ]
       },
-      "PackingParams" : {
-        "$ref" : "#/components/schemas/SpecificResource"
-      },
       "Activity" : {
         "type" : "object",
         "properties" : {
@@ -6739,7 +6764,7 @@ window.swaggerSpec={
       },
       "MediaType" : {
         "type" : "string",
-        "enum" : [ "Blanket", "CorrugatedBoard", "Disc", "EmbossingFoil", "Film", "Foil", "GravureCylinder", "ImagingCylinder", "LaminatingFoil", "MountingTape", "Other", "Paper", "Plate", "Screen", "SelfAdhesive", "ShrinkFoil", "Sleeve", "Textile", "Transparency", "Vinyl" ]
+        "enum" : [ "Blanket", "CorrugatedBoard", "Disc", "EmbossingFoil", "Film", "Foil", "GravureCylinder", "ImagingCylinder", "LaminatingFoil", "MountingTape", "Other", "Paper", "Plate", "Screen", "SelfAdhesive", "ShrinkFoil", "Sleeve", "Synthetic", "Textile", "Transparency", "Vinyl" ]
       },
       "LaminatingParams" : {
         "allOf" : [ {
@@ -7557,7 +7582,43 @@ window.swaggerSpec={
         },
         "required" : [ "EventID" ]
       },
-      "SurfaceColor" : { },
+      "SurfaceColor" : {
+        "type" : "object",
+        "properties" : {
+          "ColorsUsed" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
+            }
+          },
+          "PrintStandard" : {
+            "type" : "string",
+            "pattern" : "^[a-zA-Z0-9._\\-:]*$"
+          },
+          "Coverage" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "Coatings" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "pattern" : "^[a-zA-Z0-9._\\-:]*$"
+            }
+          },
+          "Certification" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Certification"
+            }
+          },
+          "Surface" : {
+            "$ref" : "#/components/schemas/Side"
+          }
+        },
+        "required" : [ "Surface" ]
+      },
       "BundlingParams" : {
         "allOf" : [ {
           "$ref" : "#/components/schemas/SpecificResource"
@@ -9415,6 +9476,39 @@ window.swaggerSpec={
         },
         "required" : [ "ModuleID" ]
       },
+      "SurfaceMark" : {
+        "type" : "object",
+        "properties" : {
+          "ColorControlStrip" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ColorControlStrip"
+            }
+          },
+          "CutMark" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CutMark"
+            }
+          },
+          "ScavengerArea" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScavengerArea"
+            }
+          },
+          "RegisterMark" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RegisterMark"
+            }
+          },
+          "Surface" : {
+            "$ref" : "#/components/schemas/Face"
+          }
+        },
+        "required" : [ "Surface" ]
+      },
       "ImageEnhancementParams" : {
         "allOf" : [ {
           "$ref" : "#/components/schemas/SpecificResource"
@@ -9872,6 +9966,9 @@ window.swaggerSpec={
         },
         "required" : [ "IDUsage", "IDValue" ]
       },
+      "TransferFunction" : {
+        "$ref" : "#/components/schemas/FloatList"
+      },
       "FillMark" : {
         "type" : "object",
         "properties" : {
@@ -9900,9 +9997,6 @@ window.swaggerSpec={
           }
         },
         "required" : [ "KnockoutSource", "MarkColor" ]
-      },
-      "TransferFunction" : {
-        "$ref" : "#/components/schemas/FloatList"
       },
       "ByteMap" : {
         "type" : "object",
@@ -10608,9 +10702,6 @@ window.swaggerSpec={
           "CreasingParams" : {
             "$ref" : "#/components/schemas/CreasingParams"
           },
-          "PackingParams" : {
-            "$ref" : "#/components/schemas/PackingParams"
-          },
           "ColorantControl" : {
             "$ref" : "#/components/schemas/ColorantControl"
           },
@@ -10977,8 +11068,6 @@ window.swaggerSpec={
         }, {
           "required" : [ "CreasingParams" ]
         }, {
-          "required" : [ "PackingParams" ]
-        }, {
           "required" : [ "ColorantControl" ]
         }, {
           "required" : [ "ColorCorrectionParams" ]
@@ -11176,8 +11265,6 @@ window.swaggerSpec={
               "required" : [ "BoxFoldingParams" ]
             }, {
               "required" : [ "CreasingParams" ]
-            }, {
-              "required" : [ "PackingParams" ]
             }, {
               "required" : [ "ColorantControl" ]
             }, {
@@ -11902,9 +11989,6 @@ window.swaggerSpec={
       "ModuleInfo" : {
         "type" : "object",
         "properties" : {
-          "Status" : {
-            "$ref" : "#/components/schemas/DeviceStatus"
-          },
           "ModuleID" : {
             "type" : "string",
             "pattern" : "^[a-zA-Z0-9._\\-:]*$"
@@ -11926,6 +12010,9 @@ window.swaggerSpec={
               "$ref" : "#/components/schemas/Part"
             }
           },
+          "ModuleStatus" : {
+            "$ref" : "#/components/schemas/DeviceStatus"
+          },
           "StatusDetails" : {
             "type" : "string"
           },
@@ -11938,7 +12025,7 @@ window.swaggerSpec={
             "format" : "duration"
           }
         },
-        "required" : [ "ModuleID", "Status" ]
+        "required" : [ "ModuleID", "ModuleStatus" ]
       },
       "Content" : {
         "allOf" : [ {
@@ -12361,13 +12448,16 @@ window.swaggerSpec={
         }, {
           "type" : "object",
           "properties" : {
+            "PageDelivery" : {
+              "type" : "string",
+              "enum" : [ "FanFold", "SameOrderFaceUp", "SameOrderFaceDown", "ReverseOrderFaceUp", "ReverseOrderFaceDown" ]
+            },
             "Collate" : {
               "type" : "string",
               "enum" : [ "None", "Sheet" ]
             },
-            "PageDelivery" : {
-              "type" : "string",
-              "enum" : [ "FanFold", "SameOrderFaceUp", "SameOrderFaceDown", "ReverseOrderFaceUp", "ReverseOrderFaceDown" ]
+            "FeedSheetLay" : {
+              "$ref" : "#/components/schemas/FeedSheetLay"
             },
             "ManualFeed" : {
               "type" : "boolean"
@@ -12530,19 +12620,25 @@ window.swaggerSpec={
         }, {
           "type" : "object",
           "properties" : {
-            "PreviewFileType" : {
-              "type" : "string",
-              "enum" : [ "PNG", "CIP3Multiple", "CIP3Single" ]
-            },
             "FileSpec" : {
               "$ref" : "#/components/schemas/FileSpec"
-            },
-            "CTM" : {
-              "$ref" : "#/components/schemas/matrix"
             },
             "Compensation" : {
               "type" : "string",
               "enum" : [ "None", "Film", "Plate", "Press" ]
+            },
+            "Size" : {
+              "$ref" : "#/components/schemas/XYPair"
+            },
+            "PreviewFileType" : {
+              "type" : "string",
+              "enum" : [ "PNG", "CIP3Multiple", "CIP3Single" ]
+            },
+            "CTM" : {
+              "$ref" : "#/components/schemas/matrix"
+            },
+            "Resolution" : {
+              "$ref" : "#/components/schemas/XYPair"
             }
           }
         } ]
