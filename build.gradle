@@ -1,4 +1,6 @@
 import org.hidetake.gradle.swagger.generator.GenerateSwaggerUI
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     id 'java'
@@ -34,6 +36,10 @@ tasks.test {
     useJUnitPlatform()
     testLogging {
         events 'passed', 'skipped', 'failed'
+	    exceptionFormat TestExceptionFormat.FULL
+        showExceptions true
+        showCauses true
+        showStackTraces true
     }
 }
 
