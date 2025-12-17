@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.CIP4.org/JDFSchema_2_0"
+  version="@@version@@"
+  xmlns="http://www.CIP4.org/JDFSchema_2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="FloatList">
+    <xs:list itemType="xs:float"/>
+  </xs:simpleType>
+  <xs:simpleType name="XYPair">
+    <xs:restriction base="FloatList">
+      <xs:length value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Version">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="2.3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MediaType">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="Paper"/>
+      <xs:enumeration value="Plate"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Side">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="Back"/>
+      <xs:enumeration value="Front"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="WorkStyle">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="Perfecting"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Resource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" ref="AmountPool"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="Part"/>
+        <xs:element maxOccurs="1" minOccurs="0" ref="SpecificResource"/>
+      </xs:sequence>
+      <xs:attribute name="ID" type="xs:ID" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element abstract="true" name="SpecificResource" type="SpecificResource"/>
+  <xs:complexType abstract="true" name="SpecificResource"/>
+  <xs:element name="AmountPool">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="1" ref="PartAmount"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartAmount">
+    <xs:complexType>
+      <xs:attribute name="Amount" type="xs:float" use="optional"/>
+      <xs:attribute name="Waste" type="xs:float" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XJDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" ref="AuditPool"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ResourceSet"/>
+      </xs:sequence>
+      <xs:attribute name="ICSVersions" type="xs:NMTOKENS" use="optional"/>
+      <xs:attribute name="JobID" type="xs:NMTOKEN" use="required"/>
+      <xs:attribute name="Types" type="xs:NMTOKENS" use="required"/>
+      <xs:attribute name="Version" type="Version" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResourceSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="Resource"/>
+      </xs:sequence>
+      <xs:attribute name="ID" type="xs:ID" use="optional"/>
+      <xs:attribute name="Name" type="xs:NMTOKEN" use="required"/>
+      <xs:attribute name="Usage" use="optional">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="Input"/>
+            <xs:enumeration value="Output"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeInfo"
+    substitutionGroup="SpecificResource" type="NodeInfo"/>
+  <xs:complexType name="NodeInfo">
+    <xs:complexContent>
+      <xs:extension base="SpecificResource"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Header">
+    <xs:complexType>
+      <xs:attribute name="AgentName" type="xs:string" use="optional"/>
+      <xs:attribute name="AgentVersion" type="xs:string" use="optional"/>
+      <xs:attribute name="DeviceID" type="xs:NMTOKEN" use="required"/>
+      <xs:attribute name="Time" type="xs:dateTime" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuditPool">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="AuditCreated"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType abstract="true" name="Audit">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" ref="Header"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditCreated">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="Audit"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Part">
+    <xs:complexType>
+      <xs:attribute name="Separation" type="xs:NMTOKEN" use="optional"/>
+      <xs:attribute name="SheetName" type="xs:NMTOKEN" use="optional"/>
+      <xs:attribute name="Side" type="Side" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ColorantControl"
+    substitutionGroup="SpecificResource" type="ColorantControl"/>
+  <xs:complexType name="ColorantControl">
+    <xs:complexContent>
+      <xs:extension base="SpecificResource">
+        <xs:attribute name="ColorantParams" type="xs:NMTOKENS" use="optional"/>
+        <xs:attribute name="ProcessColorModel" use="optional">
+          <xs:simpleType>
+            <xs:restriction base="xs:NMTOKEN">
+              <xs:enumeration value="DeviceCMYK"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Component"
+    substitutionGroup="SpecificResource" type="Component"/>
+  <xs:complexType name="Component">
+    <xs:complexContent>
+      <xs:extension base="SpecificResource">
+        <xs:attribute name="MediaRef" type="xs:IDREF" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConventionalPrintingParams"
+    substitutionGroup="SpecificResource" type="ConventionalPrintingParams"/>
+  <xs:complexType name="ConventionalPrintingParams">
+    <xs:complexContent>
+      <xs:extension base="SpecificResource">
+        <xs:attribute name="WorkStyle" type="WorkStyle" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExposedMedia"
+    substitutionGroup="SpecificResource" type="ExposedMedia"/>
+  <xs:complexType name="ExposedMedia">
+    <xs:complexContent>
+      <xs:extension base="SpecificResource">
+        <xs:attribute name="MediaRef" type="xs:IDREF" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Media" substitutionGroup="SpecificResource" type="Media"/>
+  <xs:complexType name="Media">
+    <xs:complexContent>
+      <xs:extension base="SpecificResource">
+        <xs:attribute name="Dimension" type="XYPair" use="optional"/>
+        <xs:attribute name="MediaType" type="MediaType" use="required"/>
+        <xs:attribute name="MediaUnit" use="optional">
+          <xs:simpleType>
+            <xs:restriction base="xs:NMTOKEN">
+              <xs:enumeration value="Sheet"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
