@@ -10,6 +10,8 @@ import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.stream.Stream;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.cip4.jdflib.util.UrlUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -29,6 +31,8 @@ public class JsonSchemaConverterTest
 
 	static protected final String sm_dirTestData = getTestDataDir();
 	static protected final String sm_dirTestDataTemp = sm_dirTestData + "temp" + File.separator;
+
+	private static final Log log = LogFactory.getLog(JsonSchemaConverterTest.class);
 
 	private static String getTestDataDir()
 	{
@@ -64,7 +68,20 @@ public class JsonSchemaConverterTest
 		final Mapper mapper = new Mapper();
 		final Object actualModel = converter.convertModel("Root");
 
-		Assertions.assertEquals(Files.readString(to), mapper.toYamlString(actualModel));
+		final String string = Files.readString(to).replace("\r\n", "\n").replace("\r", "\n");
+		final String yamlString = mapper.toYamlString(actualModel).replace("\r\n", "\n").replace("\r", "\n");
+
+		int i = 0;
+		for (final byte b : string.getBytes())
+		{
+			final byte bb = yamlString.getBytes()[i];
+			if (b != bb)
+			{
+				log.info(i + " '" + (char) b + "'!='" + (char) bb + '\'');
+			}
+			i++;
+		}
+		Assertions.assertEquals(string, yamlString);
 	}
 
 	public static Stream<Arguments> scanForFixtures() throws Exception
