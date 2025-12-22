@@ -18,7 +18,7 @@ jobs:
       - name: Build with Gradle 🔧
         run: ./gradlew test generateSwaggerUI
       - name: Upload artifacts 📦
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: schemas
           path: |

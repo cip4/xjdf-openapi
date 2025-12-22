@@ -19,13 +19,13 @@ jobs:
       - name: Build with Gradle 🔧
         run: ./gradlew test generateSwaggerUI
       - name: Upload artifacts 📦
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: schemas
           path: |
             build/resources/main/xjdf_*
             build/resources/main/xjmf_*
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: Documentation
           path: build/swagger-ui-xjdf-2x
